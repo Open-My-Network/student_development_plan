@@ -1,0 +1,721 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  height: 675px; /* Maintain 16:9 aspect ratio */
+  background: linear-gradient(135deg, #f4f4f4 50%, #e6e6e6);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.slide {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Text and Image Slides */
+.text-section {
+  flex: 1;
+  padding: 2rem 3rem; /* Add more padding for spacing */
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.text-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #008cff;
+}
+
+.text-section p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.image-section {
+  flex: 1;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* clip-path: ellipse(40% 100% at 0% 50%); Curve the left side while keeping full width */
+}
+
+
+
+/* Custom 4th Slide */
+.slide-container {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.slide-header h1 {
+  font-size: 1.8rem;
+  color: #005073;
+  margin-bottom: 1.5rem;
+}
+
+.slide-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.goal-box {
+  flex: 1;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border-left: 4px solid #32cd32;
+  text-align: left;
+}
+
+.short-term {
+  border-left-color: #00a3cc;
+}
+
+.goal-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.goal-box span {
+  color: #008cff;
+  font-size: 1rem;
+}
+
+.goal-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.slide-footer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.cta-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #008cff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s; 
+  box-shadow: 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Slide Styles */
+.form-section {
+  flex: 1;
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #008cff;
+}
+
+.form-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #32cd32;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #28a428;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Styled Table Slide */
+.styled-table-slide {
+  padding: 2rem;
+  text-align: center;
+}
+
+.table-header {
+  background-color: #32cd32;
+  padding: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 1.5rem;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #32cd32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #28a428;
+}
+
+/* LEEP Logo Slide */
+.logo-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #ffffff; /* White background for the logo */
+}
+
+.centered-logo {
+  max-width: 100%; /* Adjust size as needed */
+  max-height: 100%; /* Ensure proportional scaling */
+  object-fit: contain;
+}
+
+/* Milestone Slide */
+.milestone-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+}
+
+.milestone-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.milestone-text h2 {
+  font-size: 2.5rem;
+  color: #008cff; /* Light blue color */
+  margin: 0;
+}
+
+.milestone-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.curved-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: ellipse(50% 100% at 100% 50%); /* Curve on the right side */
+}
+
+/* Milestone Welcome Slide */
+.milestone-welcome-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+}
+
+.milestone-header {
+  font-size: 2.5rem;
+  color: #32cd32; /* Green color */
+  margin-bottom: 1.5rem;
+}
+
+.milestone-description {
+  font-size: 1.5rem;
+  color: #333; /* Dark color for description */
+  margin-bottom: 2rem;
+}
+
+.milestone-cta {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #008cff; /* Light blue color for CTA */
+  cursor: pointer;
+}
+
+/* Two Columns with Image Slide */
+.two-columns-with-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.column {
+  flex: 1;
+  padding: 1rem;
+}
+
+.column-left {
+  background-color: #008cff; /* Light Blue Background */
+  color: #ffffff;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.column-right {
+  background-color: #005073; /* Dark Blue Background */
+  color: #ffffff;
+  border-radius: 10px;
+  margin-left: 1rem;
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.column p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.image-20point {
+  margin-bottom: 1.5rem;
+}
+
+.image-20point img {
+  max-width: 200px; /* Limit the size of the image */
+  height: auto;
+}
+
+
+.cta-text {
+  font-size: 1.5rem;
+  color: #008cff; /* Light Blue */
+  font-weight: bold;
+}
+
+/* Image and Two Rows Slide */
+.image-and-two-rows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+}
+
+.image-milestone {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-image {
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Restrict maximum width for the image */
+  border-radius: 0; /* Ensure no curves */
+}
+
+.text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem; /* Spacing between rows */
+  padding-left: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff; /* White text */
+}
+
+.row-blue {
+  background-color: #008cff; /* Light Blue Background */
+}
+
+.row-green {
+  background-color: #32cd32; /* Green Background */
+}
+
+/* Two Colored Columns with Image Slide */
+.two-colored-columns-with-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+  text-align: center;
+}
+
+.slide-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.column {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.column-blue {
+  background-color: #008cff; /* Light Blue Background */
+  color: #ffffff; /* White text */
+}
+
+.column-white {
+  background-color: #f4f4f4; /* Light Grey Background */
+  color: #333; /* Dark text */
+}
+
+.column h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.column p, .column ol {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.instructions {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.image-10point {
+  margin-bottom: 1.5rem;
+}
+
+.image-10point img {
+  max-width: 200px; /* Limit the size of the image */
+  height: auto;
+}
+
+.cta-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #008cff; /* Light Blue */
+  cursor: pointer;
+}
+
+/* Table Slide */
+.table-slide2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+}
+
+.table-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: auto; /* Handle overflow on small screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd; /* Light border */
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+table td {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light background for alternate rows */
+}
+
+/* Personal Mission Slide */
+.personal-mission-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+  text-align: center;
+}
+
+.slide-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.column {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.column-green {
+  background-color: #32cd32; /* Green Background */
+  color: #ffffff; /* White text */
+}
+
+.column-white {
+  background-color: #f4f4f4; /* Light Grey Background */
+  color: #333; /* Dark text */
+}
+
+.column h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.column p, .column ol {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cta-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #32cd32; /* Green Text */
+  margin-top: 2rem;
+}
+
+.image-mission {
+  margin-top: 2rem;
+}
+
+.image-mission img {
+  max-width: 200px; /* Limit the size of the image */
+  height: auto;
+}
+
+.fullscreen-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.8rem 1.2rem;
+  background-color: #008cff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above the slideshow */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.fullscreen-button:hover {
+  background-color: #005bb5;
+  transform: scale(1.1);
+}
+
+/* Loading and Error States */
+.api-slide {
+  text-align: center;
+  padding: 2rem;
+}
+
+.api-data h2 {
+  font-size: 2rem;
+  color: #32cd32; /* Green color for title */
+}
+
+.api-data p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.loading-slide {
+  font-size: 1.5rem;
+  color: #ff6347; /* Red color */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .carousel {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .text-section, .image-section {
+    flex: 1;
+    padding: 1rem;
+  }
+}
+
+
+
