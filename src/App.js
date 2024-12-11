@@ -92,6 +92,10 @@ const slides = [
   {
     id: 16,
     apiSlide: true,
+  },
+  {
+    id: 17, // New slide ID
+    formWithFields: true, // Custom flag for the form slide
   }
 ];
 
@@ -426,9 +430,41 @@ function App() {
             ))}
           </ul>
         </div>
-      ) 
-        
-      
+      )
+      // Form Creation
+      : slides[currentSlide].formWithFields ? (
+        <div className="custom-form-slide">
+          <h1 className="slide-title">CREATE YOUR PLAN</h1>
+          <div className="columns">
+            <div className="column column-green">
+              <p>
+                Planning is an essential step to turn your goals into actionable steps. Use this form to define the key elements of your plan. Provide details about what you want to achieve, the time it will take, and any additional descriptions to ensure clarity and focus.
+              </p>
+            </div>
+            <div className="column column-white">
+              <form className="plan-form">
+                <div className="form-group">
+                  <label htmlFor="title">Title:</label>
+                  <input type="text" id="title" name="title" placeholder="Enter Title" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="planDescription">Plan Description:</label>
+                  <textarea id="planDescription" name="planDescription" rows="4" placeholder="Enter Plan Description"></textarea>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="estimatedTime">Estimated Time:</label>
+                  <input type="text" id="estimatedTime" name="estimatedTime" placeholder="Enter Estimated Time" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="description">Description:</label>
+                  <textarea id="description" name="description" rows="4" placeholder="Enter Additional Description"></textarea>
+                </div>
+                <button type="submit" className="submit-button">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )
         : (
           <>
             <div className="text-section">
