@@ -70,7 +70,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* clip-path: ellipse(40% 100% at 0% 50%); Curve the left side while keeping full width */
 }
 
 
@@ -285,7 +284,6 @@ input {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 2rem;
 }
 
 .milestone-text {
@@ -294,7 +292,7 @@ input {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  padding-right: 2rem;
+  padding: 2rem;
 }
 
 .milestone-text h2 {
@@ -307,7 +305,6 @@ input {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%;
 }
 
@@ -315,7 +312,6 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: ellipse(50% 100% at 100% 50%); /* Curve on the right side */
 }
 
 /* Milestone Welcome Slide */
@@ -366,7 +362,7 @@ input {
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .column {
@@ -398,13 +394,13 @@ input {
   line-height: 1.5;
 }
 
-.image-20point {
+.image-journey {
   margin-bottom: 1.5rem;
 }
-
-.image-20point img {
-  max-width: 200px; /* Limit the size of the image */
-  height: auto;
+  
+.image-journey img {
+  max-width: 500px; /* Limit the size of the image */
+  height: 250px;
 }
 
 
@@ -413,6 +409,8 @@ input {
   color: #008cff; /* Light Blue */
   font-weight: bold;
 }
+
+
 
 /* Image and Two Rows Slide */
 .image-and-two-rows {
@@ -758,6 +756,17 @@ label {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 5px;
+}
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 input[type="text"],

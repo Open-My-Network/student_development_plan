@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 // Import your images
-import slide1 from "./5.png";
+import slide1 from "./1.png";
 import slide2 from "./2.png";
 import slide3 from "./3.png";
 import slide6 from "./leep.png"; // LEEP logo image
@@ -104,6 +104,70 @@ function App() {
   const [apiData, setApiData] = useState(null);
   const [hasFetchedData, setHasFetchedData] = useState(false); // Track if data is already fetched
   const [posts, setPosts] = useState([]); // Store new posts
+  const [formData, setFormData] = useState({
+    sdp_title: "",
+    est_year: "",
+    plan_mode: "",
+    str_month: "",
+    end_month: "",
+    description: "",
+  });
+
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(
+        "http://localhost:3001/development-plan/create-plan",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            sdp_title: formData.sdp_title,
+            est_year: formData.est_year,
+            plan_mode: formData.plan_mode, // Replace with a field from the form if needed
+            str_month: formData.str_month, // Replace with a field from the form if needed
+            end_month: formData.end_month, // Replace with a field from the form if needed
+            description: formData.description,
+          }),
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setSuccessMessage("Plan successfully created!");
+      setFormData({
+        sdp_title: "",
+        est_year: "",
+        plan_mode: "",
+        str_month: "",
+        end_month: "",
+        description: "",
+      });
+      console.log("Form submitted successfully:", data);
+    } catch (error) {
+      setErrorMessage("Failed to create the plan. Please try again.");
+      console.error("Error submitting the form:", error);
+    }
+  };
 
   // Load API data when API slide is active (if not already fetched)
   useEffect(() => {
@@ -115,15 +179,23 @@ function App() {
   const fetchApiData = async () => {
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos/"
+        "http://localhost:3001/development-plan?page=1&limit=10"
       );
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
       const data = await response.json();
-      setApiData(data);
+  
+      // Update state with the fetched data
+      setApiData(data.data); // Assuming the API response has a `data` field for the list
       setHasFetchedData(true);
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
   };
+  
 
   // Keyboard navigation for slides
   useEffect(() => {
@@ -245,7 +317,7 @@ function App() {
                 </p>
               </div>
             </div>
-            <div className="image-section">
+            <div className="image-journey">
               <img src={slide9} alt="20 LEEP Points" />
             </div>
             <p className="cta-text">CLICK TO MOVE FORWARD ON YOUR JOURNEY</p>
@@ -418,19 +490,22 @@ function App() {
           </div>
         )
 
-      : slides[currentSlide].apiSlide ? (
-        <div className="api-slide">
-          <h1>API Data</h1>
-          <ul>
-            {apiData?.map((item) => (
-              <li key={item.id}>
-                <strong>{item.title}</strong> - Completed:{" "}
-                {item.completed ? "Yes" : "No"}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )
+        : slides[currentSlide].apiSlide ? (
+          <div className="api-slide">
+            <h1>API Data</h1>
+            {apiData?.length > 0 ? (
+              <ul>
+                {apiData.map((item) => (
+                  <li key={item.id}>
+                    <strong>{item.sdp_title}</strong> - estimatedTime: {item.est_year} - Plan Mode: {item.plan_mode} - starting Month: {item.str_month} - End Month: {item.end_month}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No data available.</p>
+            )}
+          </div>
+        )
       // Form Creation
       : slides[currentSlide].formWithFields ? (
         <div className="custom-form-slide">
@@ -442,18 +517,26 @@ function App() {
               </p>
             </div>
             <div className="column column-white">
-              <form className="plan-form">
+              <form className="plan-form" onSubmit={handleFormSubmit}>
                 <div className="form-group">
                   <label htmlFor="title">Title:</label>
-                  <input type="text" id="title" name="title" placeholder="Enter Title" />
+                  <input type="text" id="title" name="sdp_title" value={formData.sdp_title} onChange={handleFormChange} placeholder="Enter Title" required />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="planDescription">Plan Description:</label>
-                  <textarea id="planDescription" name="planDescription" rows="4" placeholder="Enter Plan Description"></textarea>
+                  <label htmlFor="estimatedYear">Estimated Year:</label>
+                  <input type="text" id="estimatedYear" name="est_year" value={formData.est_year} onChange={handleFormChange} placeholder="Enter Estimated Year" required />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="estimatedTime">Estimated Time:</label>
-                  <input type="text" id="estimatedTime" name="estimatedTime" placeholder="Enter Estimated Time" />
+                  <label htmlFor="planMode">Plan Mode:</label>
+                  <input type="text" id="planMode" name="plan_mode" value={formData.plan_mode} onChange={handleFormChange} placeholder="Enter Estimated Time" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="startMonth">Start Month:</label>
+                  <input type="text" id="startMonth" name="str_month" value={formData.str_month} onChange={handleFormChange} placeholder="Enter Estimated Start Time" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="endMonth">End Month:</label>
+                  <input type="text" id="endMonth" name="end_month" value={formData.end_month} onChange={handleFormChange} placeholder="Enter Estimated End Time" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="description">Description:</label>
@@ -461,6 +544,12 @@ function App() {
                 </div>
                 <button type="submit" className="submit-button">Submit</button>
               </form>
+              {successMessage && (
+                  <p className="success-message">{successMessage}</p>
+                )}
+                {errorMessage && (
+                  <p className="error-message">{errorMessage}</p>
+                )}
             </div>
           </div>
         </div>
