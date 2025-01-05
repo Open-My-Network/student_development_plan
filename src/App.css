@@ -478,7 +478,7 @@ input {
   text-align: center;
 }
 
-.slide-title {
+.two-colored-columns-with-image .slide-title {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -599,7 +599,7 @@ table tr:nth-child(even) {
   text-align: center;
 }
 
-.slide-title {
+.personal-mission-slide .slide-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
@@ -704,12 +704,18 @@ table tr:nth-child(even) {
 /* General Slide Styling */
 .custom-form-slide {
   padding: 20px;
-  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* Light background for better contrast */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
-.slide-title {
+.custom-form-slide .slide-title {
   font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
@@ -732,12 +738,16 @@ table tr:nth-child(even) {
 .column-green {
   background-color: #e6f7e6;
   color: #2f662f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .column-white {
   background-color: #ffffff;
   color: #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Form Styling */
@@ -745,17 +755,21 @@ table tr:nth-child(even) {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
+  max-width: 500px; /* Restrict form width */
+  margin: 0 auto; /* Center the form */
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 label {
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 .success-message {
   color: green;
@@ -776,11 +790,13 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+  box-sizing: border-box;
   resize: none;
 }
 
 textarea {
   height: auto;
+  min-height: 80px;
 }
 
 input:focus,

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use"
 import "./App.css";
 
 // Import your images
@@ -116,6 +118,8 @@ function App() {
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { width, height } = useWindowSize();
+  
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -222,6 +226,9 @@ function App() {
 
   return (
     <div className="carousel">
+      {(currentSlide === 0 || currentSlide === 7) && (
+        <Confetti width={width} height={height} />
+      )}
       <div className="slide">
         {slides[currentSlide].customContent ? (
           <div className="slide-container">
