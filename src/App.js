@@ -8,9 +8,9 @@ import slide1 from "./1.png";
 import slide2 from "./2.png";
 import slide3 from "./3.png";
 import slide6 from "./leep.png"; // LEEP logo image
-import slide7 from "./1.png";
+import slide7 from "./8.png";
 import slide9 from "./20point.PNG"; // Image for "20 LEEP Points"
-import milestoneImage from "./1.png"; // Image for the milestone slide
+import milestoneImage from "./8.png"; // Image for the milestone slide
 import leapPointsImage from "./10point.png"; // Image for "10 LEEP Points"
 
 
@@ -106,6 +106,7 @@ function App() {
   const [apiData, setApiData] = useState(null);
   const [hasFetchedData, setHasFetchedData] = useState(false); // Track if data is already fetched
   const [posts, setPosts] = useState([]); // Store new posts
+  const [loading, setLoading] = useState(false); // New state for loading indicator
   const [formData, setFormData] = useState({
     sdp_title: "",
     est_year: "",
@@ -131,6 +132,7 @@ function App() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading indicator
     setSuccessMessage("");
     setErrorMessage("");
 
@@ -145,9 +147,9 @@ function App() {
           body: JSON.stringify({
             sdp_title: formData.sdp_title,
             est_year: formData.est_year,
-            plan_mode: formData.plan_mode, // Replace with a field from the form if needed
-            str_month: formData.str_month, // Replace with a field from the form if needed
-            end_month: formData.end_month, // Replace with a field from the form if needed
+            plan_mode: formData.plan_mode,  
+            str_month: formData.str_month,  
+            end_month: formData.end_month,  
             description: formData.description,
           }),
         }
@@ -170,6 +172,8 @@ function App() {
     } catch (error) {
       setErrorMessage("Failed to create the plan. Please try again.");
       console.error("Error submitting the form:", error);
+    } finally {
+      setLoading(false); // Stop loading indicator
     }
   };
 
@@ -181,9 +185,10 @@ function App() {
   }, [currentSlide]);
 
   const fetchApiData = async () => {
+    setLoading(true); // Start loading indicator
     try {
       const response = await fetch(
-        "http://localhost:3001/development-plan?page=1&limit=10"
+        "http://localhost:3001/development-plan?page=1&limit=25"
       );
   
       if (!response.ok) {
@@ -197,6 +202,8 @@ function App() {
       setHasFetchedData(true);
     } catch (error) {
       console.error("Error fetching API data:", error);
+    }finally {
+      setLoading(false); // Stop loading
     }
   };
   
@@ -500,11 +507,13 @@ function App() {
         : slides[currentSlide].apiSlide ? (
           <div className="api-slide">
             <h1>API Data</h1>
+            {loading && <p>Loading data...</p>}
             {apiData?.length > 0 ? (
               <ul>
                 {apiData.map((item) => (
+                  console.log(item),
                   <li key={item.id}>
-                    <strong>{item.sdp_title}</strong> - estimatedTime: {item.est_year} - Plan Mode: {item.plan_mode} - starting Month: {item.str_month} - End Month: {item.end_month}
+                    <strong>{item.sdp_title}</strong> - estimatedTime: {item.est_year} - Plan Mode: {item.plan_mode} - starting Month: {item.str_month} - End Month: {item.end_month} - Description: {item.description}
                   </li>
                 ))}
               </ul>
@@ -547,10 +556,11 @@ function App() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="description">Description:</label>
-                  <textarea id="description" name="description" rows="4" placeholder="Enter Additional Description"></textarea>
+                  <textarea id="description" name="description" rows="4" value={formData.description} onChange={handleFormChange} placeholder="Enter Additional Description"></textarea>
                 </div>
                 <button type="submit" className="submit-button">Submit</button>
               </form>
+              {loading && <p>Loading...</p>}
               {successMessage && (
                   <p className="success-message">{successMessage}</p>
                 )}
