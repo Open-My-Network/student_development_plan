@@ -3,10 +3,11 @@ import Confetti from "react-confetti";
 import { useWindowSize } from "react-use"
 import "./App.css";
 
+import {MyButton} from "./components/Button/index";
+import { LogoSlide } from "./components/Logo";
+
 // Import your images
-import slide1 from "./1.png";
-import slide2 from "./2.png";
-import slide3 from "./3.png";
+
 import slide6 from "./leep.png"; // LEEP logo image
 import slide7 from "./8.png";
 import slide9 from "./20point.PNG"; // Image for "20 LEEP Points"
@@ -14,92 +15,7 @@ import milestoneImage from "./8.png"; // Image for the milestone slide
 import leapPointsImage from "./10point.png"; // Image for "10 LEEP Points"
 
 
-const slides = [
-  {
-    id: 1,
-    title: "LEEP 9th GRADE STUDENT DEVELOPMENT PLAN",
-    description: "CLICK HERE TO ENTER THE JOURNEY",
-    image: slide1,
-  },
-  {
-    id: 2,
-    title: "",
-    description:
-      "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
-    image: slide2,
-  },
-  {
-    id: 3,
-    title: "",
-    description:
-      "The development process starts with you! You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
-    image: slide3,
-  },
-  {
-    id: 4,
-    customContent: true,
-  },
-  {
-    id: 5, // New slide with questions grid
-    questions: true,
-  },
-  {
-    id: 6, // LEEP Logo Slide
-    logoSlide: true,
-  },
-  {
-    id: 7, // New Milestone Slide
-    milestoneSlide: true,
-  },
-  {
-    id: 8, // New "Welcome to Milestone 1" Slide
-    milestoneWelcome: true,
-  },
-  {
-    id: 9, // New slide with 2 columns and an image
-    twoColumnsWithImage: true,
-  },
-  {
-    id: 10, // New slide with image on the left and two rows on the right
-    imageAndTwoRows: true,
-  },
-  {
-    id: 11, // New Slide with Two Colored Columns and Information
-    twoColoredColumnsWithImage: true,
-  },
-  {
-    id: 12, // New Slide with Table of Sample Values
-    tableSlide: true,
-  },
-  {
-    id: 13,
-    title: "Personal Mission Statement",
-    description: `
-      Create a Personal Mission Statement: "My mission is to always be true to myself, stay curious, and be kind to others. 
-      I want to keep learning, follow my passions, and use my strengths to make a difference in the world, no matter how big or small."`,
-    form: true,
-  },
-  {
-    id: 14, // New Slide with Two Columns and Image
-    personalMissionStatement: true,
-  },
-  {
-    id: 15,
-    title: "NEXT STOP ON THE JOURNEY… MILESTONE 2 ",
-    description: `
-      CONGRATS, NAME OF STUDENT! You've crushed this milestone and earned your LEEP points, bringing you one step closer to reaching your NorthStar goal! 
-      Keep that energy going – you’re on the path to greatness!`,
-    cta: true,
-  },
-  {
-    id: 16,
-    apiSlide: true,
-  },
-  {
-    id: 17, // New slide ID
-    formWithFields: true, // Custom flag for the form slide
-  }
-];
+import { slides } from "./utils/slide_items";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -263,7 +179,7 @@ function App() {
                 Once you set your goals, think about the steps that will help you get there. These steps could be going to a 
                 LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.
               </p>
-              <button className="cta-button">CLICK TO MOVE FORWARD ON YOUR JOURNEY</button>
+              <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
             </div>
           </div>
         ) : slides[currentSlide].questions ? (
@@ -285,12 +201,10 @@ function App() {
                 </tr>
               </tbody>
             </table>
-            <button className="cta-button">CLICK TO MOVE FORWARD ON YOUR JOURNEY</button>
+            <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
           </div>
         ) : slides[currentSlide].logoSlide ? (
-          <div className="logo-slide">
-            <img src={slide6} alt="LEEP Logo" className="centered-logo" />
-          </div>
+          <LogoSlide/>
         ) : slides[currentSlide].milestoneSlide ? (
           <div className="milestone-slide">
             <div className="milestone-text">
