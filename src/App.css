@@ -130,25 +130,6 @@ body {
   color: #555;
 }
 
-.cta-button {
-  padding: 0.8rem 1.5rem;
-  background-color: #008cff;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s; 
-  box-shadow: 0.2s;
-}
-
-.cta-button:hover {
-  background-color: #005bb5;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
 /* Form Slide Styles */
 .form-section {
   flex: 1;
@@ -263,20 +244,6 @@ input {
   background-color: #28a428;
 }
 
-/* LEEP Logo Slide */
-.logo-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  background-color: #ffffff; /* White background for the logo */
-}
-
-.centered-logo {
-  max-width: 100%; /* Adjust size as needed */
-  max-height: 100%; /* Ensure proportional scaling */
-  object-fit: contain;
-}
 
 /* Milestone Slide */
 .milestone-slide {
