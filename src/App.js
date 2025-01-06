@@ -4,6 +4,7 @@ import { useWindowSize } from "react-use"
 import "./App.css";
 
 import {MyButton} from "./components/Button/index";
+import { MyContainer } from "./components/Container";
 import { LogoSlide } from "./components/Logo";
 
 // Import your images
@@ -20,7 +21,7 @@ import { slides } from "./utils/slide_items";
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [apiData, setApiData] = useState(null);
-  const [hasFetchedData, setHasFetchedData] = useState(false); // Track if data is already fetched
+  const [hasFetchedData, setHasFetchedData] = useState(false);
   const [posts, setPosts] = useState([]); // Store new posts
   const [loading, setLoading] = useState(false); // New state for loading indicator
   const [formData, setFormData] = useState({
@@ -36,7 +37,6 @@ function App() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const { width, height } = useWindowSize();
-  
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -48,7 +48,7 @@ function App() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading indicator
+    setLoading(true);
     setSuccessMessage("");
     setErrorMessage("");
 
@@ -155,33 +155,44 @@ function App() {
       <div className="slide">
         {slides[currentSlide].customContent ? (
           <div className="slide-container">
-            <div className="slide-header">
-              <h1>Your NorthStar Goal is the ULTIMATE GOAL you want to accomplish by the end of high school.</h1>
-            </div>
-            <div className="slide-content">
-              <div className="goal-box short-term">
-                <h2>“Current Grade” NorthStar Goal <span>(Short-Term)</span></h2>
-                <p>
-                  This goal is all about staying on track and doing your best in your current grade. 
-                  It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.
-                </p>
-              </div>
-              <div className="goal-box long-term">
-                <h2>“Graduation” NorthStar Goal <span>(Long-Term)</span></h2>
-                <p>
-                  This is your big dream for when you finish school. It’s the goal you're aiming for, 
-                  with steps you take now and later to help you reach it and succeed.
-                </p>
-              </div>
-            </div>
-            <div className="slide-footer">
+          <div className="slide-header">
+            <h1>
+              Your NorthStar Goal is the ULTIMATE GOAL you want to accomplish by the
+              end of high school.
+            </h1>
+          </div>
+          <div className="slide-content">
+            <div className="goal-box short-term">
+              <h2>
+                “Current Grade” NorthStar Goal <span>(Short-Term)</span>
+              </h2>
               <p>
-                Once you set your goals, think about the steps that will help you get there. These steps could be going to a 
-                LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.
+                This goal is all about staying on track and doing your best in your
+                current grade. It focuses on your schoolwork, personal growth, and
+                activities that will help you succeed this year.
               </p>
-              <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
+            </div>
+            <div className="goal-box long-term">
+              <h2>
+                “Graduation” NorthStar Goal <span>(Long-Term)</span>
+              </h2>
+              <p>
+                This is your big dream for when you finish school. It’s the goal
+                you're aiming for, with steps you take now and later to help you
+                reach it and succeed.
+              </p>
             </div>
           </div>
+          <div className="slide-footer">
+            <p>
+              Once you set your goals, think about the steps that will help you get
+              there. These steps could be going to a LEEP workshop, studying on your
+              own, doing special projects, or completing assignments that help you
+              grow.
+            </p>
+            <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
+          </div>
+        </div>
         ) : slides[currentSlide].questions ? (
           <div className="styled-table-slide">
             <div className="table-header">
