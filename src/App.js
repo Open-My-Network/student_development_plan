@@ -73,10 +73,10 @@ const slides = [
   },
   {
     id: 13,
-    title: "Personal Mission Statement",
+    title: "MY PERSONAL CORE VALUE STATEMENT IS… ",
     description: `
-      Create a Personal Mission Statement: "My mission is to always be true to myself, stay curious, and be kind to others. 
-      I want to keep learning, follow my passions, and use my strengths to make a difference in the world, no matter how big or small."`,
+      My personal values are honesty, kindness, and determination. I believe in always telling the truth, 
+      treating others with respect, and never giving up, even when things get tough. These values help me be the best version of myself and guide me toward my goals."`,
     form: true,
   },
   {
@@ -85,6 +85,14 @@ const slides = [
   },
   {
     id: 15,
+    title: "Personal Mission Statement",
+    description: `
+      Create a Personal Mission Statement: "My mission is to always be true to myself, stay curious, and be kind to others. 
+      I want to keep learning, follow my passions, and use my strengths to make a difference in the world, no matter how big or small."`,
+    form: true,
+  },
+  {
+    id: 16,
     title: "NEXT STOP ON THE JOURNEY… MILESTONE 2 ",
     description: `
       CONGRATS, NAME OF STUDENT! You've crushed this milestone and earned your LEEP points, bringing you one step closer to reaching your NorthStar goal! 
@@ -92,11 +100,11 @@ const slides = [
     cta: true,
   },
   {
-    id: 16,
+    id: 17,
     apiSlide: true,
   },
   {
-    id: 17, // New slide ID
+    id: 18, // New slide ID
     formWithFields: true, // Custom flag for the form slide
   }
 ];
