@@ -190,6 +190,7 @@ function App() {
               own, doing special projects, or completing assignments that help you
               grow.
             </p>
+            <MyButton>Alert</MyButton>
             <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
           </div>
         </div>

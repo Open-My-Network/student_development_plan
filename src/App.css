@@ -244,20 +244,6 @@ input {
   background-color: #28a428;
 }
 
-/* LEEP Logo Slide */
-.logo-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  background-color: #ffffff; /* White background for the logo */
-}
-
-.centered-logo {
-  max-width: 100%; /* Adjust size as needed */
-  max-height: 100%; /* Ensure proportional scaling */
-  object-fit: contain;
-}
 
 /* Milestone Slide */
 .milestone-slide {
