@@ -1,14 +1,27 @@
 /* LEEP Logo Slide */
 .logo-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    background-color: #ffffff; /* White background for the logo */
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #ffffff; /* White background for the logo */
+}
 
 .centered-logo {
-    max-width: 100%; /* Adjust size as needed */
-    max-height: 100%; /* Ensure proportional scaling */
-    object-fit: contain;
+  max-width: 100%; /* Adjust size as needed */
+  max-height: 100%; /* Ensure proportional scaling */
+  object-fit: contain;
+  animation: fly-in 1.5s ease-out; /* Add fly-in animation */
+}
+
+/* Fly-in animation */
+@keyframes fly-in {
+  from {
+      transform: translateX(-100%); /* Start off-screen from the left */
+      opacity: 0; /* Start invisible */
   }
+  to {
+      transform: translateX(0); /* End in its normal position */
+      opacity: 1; /* Fully visible */
+  }
+}

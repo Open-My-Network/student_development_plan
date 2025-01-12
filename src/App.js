@@ -17,111 +17,144 @@ import leapPointsImage from "./10point.png"; // Image for "10 LEEP Points"
 
 
 import { slides } from "./utils/slide_items";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [apiData, setApiData] = useState(null);
-  const [hasFetchedData, setHasFetchedData] = useState(false);
-  const [posts, setPosts] = useState([]); // Store new posts
-  const [loading, setLoading] = useState(false); // New state for loading indicator
-  const [formData, setFormData] = useState({
-    sdp_title: "",
-    est_year: "",
-    plan_mode: "",
-    str_month: "",
-    end_month: "",
-    description: "",
-  });
-
-
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const { width, height } = useWindowSize();
-
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setSuccessMessage("");
-    setErrorMessage("");
-
-    try {
-      const response = await fetch(
-        "http://localhost:3001/development-plan/create-plan",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            sdp_title: formData.sdp_title,
-            est_year: formData.est_year,
-            plan_mode: formData.plan_mode,  
-            str_month: formData.str_month,  
-            end_month: formData.end_month,  
-            description: formData.description,
-          }),
-        }
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setSuccessMessage("Plan successfully created!");
-      setFormData({
-        sdp_title: "",
-        est_year: "",
-        plan_mode: "",
-        str_month: "",
-        end_month: "",
-        description: "",
-      });
-      console.log("Form submitted successfully:", data);
-    } catch (error) {
-      setErrorMessage("Failed to create the plan. Please try again.");
-      console.error("Error submitting the form:", error);
-    } finally {
-      setLoading(false); // Stop loading indicator
-    }
-  };
-
-  // Load API data when API slide is active (if not already fetched)
+  const [statement, setStatement] = useState("");
+  const [valueType, setValueType] = useState("");
+  const [dynamicTitle, setDynamicTitle] = useState("");
+  const [dynamicDescription, setDynamicDescription] = useState("");
+  const [apiData, setApiData] = useState([]); // Store API data
+  
+// Trigger API call when slide 15 is active
   useEffect(() => {
-    if (slides[currentSlide].apiSlide && !hasFetchedData) {
+    if (slides[currentSlide].apiContent) {
       fetchApiData();
     }
   }, [currentSlide]);
+    // Function to fetch API data
+    const fetchApiData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/development-plan/list-value"); 
+        if (!response.ok) {
+          throw new Error("Failed to fetch API data");
+        }
+        const data = await response.json();
+        setApiData(data.items); // Store the fetched data
+      } catch (error) {
+        console.error("Error fetching API data:", error);
 
-  const fetchApiData = async () => {
-    setLoading(true); // Start loading indicator
-    try {
-      const response = await fetch(
-        "http://localhost:3001/development-plan?page=1&limit=25"
-      );
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+    };
+
   
-      const data = await response.json();
+
+  // const [apiData, setApiData] = useState(null);
+  // const [hasFetchedData, setHasFetchedData] = useState(false);
+  // const [posts, setPosts] = useState([]); // Store new posts
+  // const [loading, setLoading] = useState(false); // New state for loading indicator
+  // const [error, setError] = useState(null); // New state for error handling
+  // const [formData, setFormData] = useState({
+  //   sdp_title: "",
+  //   est_year: "",
+  //   plan_mode: "",
+  //   str_month: "",
+  //   end_month: "",
+  //   description: "",
+  // });
+
+
+  // const [successMessage, setSuccessMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
   
-      // Update state with the fetched data
-      setApiData(data.data); // Assuming the API response has a `data` field for the list
-      setHasFetchedData(true);
-    } catch (error) {
-      console.error("Error fetching API data:", error);
-    }finally {
-      setLoading(false); // Stop loading
-    }
-  };
+
+  // const handleFormChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }));
+  // };
+
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setSuccessMessage("");
+  //   setErrorMessage("");
+
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:3001/development-plan/create-plan",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           sdp_title: formData.sdp_title,
+  //           est_year: formData.est_year,
+  //           plan_mode: formData.plan_mode,  
+  //           str_month: formData.str_month,  
+  //           end_month: formData.end_month,  
+  //           description: formData.description,
+  //         }),
+  //       }
+  //     );
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+
+  //     const data = await response.json();
+  //     setSuccessMessage("Plan successfully created!");
+  //     setFormData({
+  //       sdp_title: "",
+  //       est_year: "",
+  //       plan_mode: "",
+  //       str_month: "",
+  //       end_month: "",
+  //       description: "",
+  //     });
+  //     console.log("Form submitted successfully:", data);
+  //   } catch (error) {
+  //     setErrorMessage("Failed to create the plan. Please try again.");
+  //     console.error("Error submitting the form:", error);
+  //   } finally {
+  //     setLoading(false); // Stop loading indicator
+  //   }
+  // };
+  ///submitting the mission statement
+
+  // // Load API data when API slide is active (if not already fetched)
+  // useEffect(() => {
+  //   if (slides[currentSlide].apiSlide && !hasFetchedData) {
+  //     fetchApiData();
+  //   }
+  // }, [currentSlide]);
+
+  // const fetchApiData = async () => {
+  //   setLoading(true); // Start loading indicator
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:3001/development-plan?page=1&limit=25"
+  //     );
+  
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+  
+  //     const data = await response.json();
+  
+  //     // Update state with the fetched data
+  //     setApiData(data.data); // Assuming the API response has a `data` field for the list
+  //     setHasFetchedData(true);
+  //   } catch (error) {
+  //     console.error("Error fetching API data:", error);
+  //   }finally {
+  //     setLoading(false); // Stop loading
+  //   }
+  // };
   
 
   // Keyboard navigation for slides
@@ -140,20 +173,82 @@ function App() {
   }, [currentSlide]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    if (currentSlide < slides.length - 1) {
+      setCurrentSlide((prev) => prev + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    if (currentSlide > 0) {
+      setCurrentSlide((prev) => prev - 1);
+    }
   };
 
+  useEffect(() => {
+    if (slides[currentSlide]?.dynamicContent) {
+      if (valueType === "Mission") {
+        setDynamicTitle("Personal Mission Statement");
+        setDynamicDescription(
+          `Create a Personal Mission Statement: "My mission is to always be true to myself, stay curious, and be kind to others. 
+          I want to keep learning, follow my passions, and use my strengths to make a difference in the world, no matter how big or small."`
+        );
+      } else if (valueType === "Personal Core Value") {
+        setDynamicTitle("Sample Core Value Statement");
+        setDynamicDescription(
+          `Create a Core Value Statement: "My personal values are honesty, kindness, and determination. I believe in always telling the truth, treating others with respect, 
+          and never giving up, even when things get tough. These values help me be the best version of myself and guide me toward my goals."`
+        );
+      } else {
+        setDynamicTitle("");
+        setDynamicDescription("");
+      }
+    }
+  }, [valueType, currentSlide]);
+
+
+  const handleSubmit = async () => {
+      // Validation: Ensure both fields are filled out
+  if (!statement.trim()) {
+    alert("Please enter your statement.");
+    return;
+  }
+
+  if (!valueType) {
+    alert("Please select a value type.");
+    return;
+  }
+    try {
+      const response = await fetch("http://localhost:3001/development-plan/create-value", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ 
+        value_title: statement,
+        value_type: valueType,
+        user_id: 644, 
+      }), // Send the user's input statement
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit data");
+      }
+
+      const result = await response.json();
+      console.log("Form submitted successfully:", result);
+      setStatement(""); // Clear the textarea after submitting
+      setValueType(""); // Clear the value type after submitting
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
   return (
     <div className="carousel">
       {(currentSlide === 0 || currentSlide === 7) && (
         <Confetti width={width} height={height} />
       )}
       <div className="slide">
-        {slides[currentSlide].customContent ? (
+        :{slides[currentSlide].customContent ? (
           <div className="slide-container">
           <div className="slide-header">
             <h1>
@@ -190,10 +285,10 @@ function App() {
               own, doing special projects, or completing assignments that help you
               grow.
             </p>
-            <MyButton>Alert</MyButton>
-            <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
+            <MyButton onClick={nextSlide}>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
           </div>
         </div>
+
         ) : slides[currentSlide].questions ? (
           <div className="styled-table-slide">
             <div className="table-header">
@@ -213,17 +308,19 @@ function App() {
                 </tr>
               </tbody>
             </table>
-            <MyButton>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
+            <MyButton onClick={nextSlide} style={{ backgroundColor: "#32cd32", color: "white" }}>CLICK TO MOVE FORWARD ON YOUR JOURNEY</MyButton>
           </div>
         ) : slides[currentSlide].logoSlide ? (
           <LogoSlide/>
         ) : slides[currentSlide].milestoneSlide ? (
           <div className="milestone-slide">
-            <div className="milestone-text">
-              <h2>CLICK HERE</h2>
-              <h2>AND</h2>
-              <h2>TAKE ACTION</h2>
-            </div>
+            <MyButton onClick={nextSlide} style={{ backgroundColor: "transparent", hover:"none" }}> 
+              <div className="milestone-text">
+                <h2>CLICK HERE</h2>
+                <h2>AND</h2>
+                <h2>TAKE ACTION</h2>
+              </div>
+            </MyButton>
             <div className="milestone-image">
               <img
                 src={slide7}
@@ -238,7 +335,9 @@ function App() {
             <p className="milestone-description">
               Congrats on taking the LEEP and starting your awesome journey – this is just the beginning of something great!
             </p>
-            <p className="milestone-cta">CLICK TO MOVE FORWARD ON YOUR JOURNEY</p>
+            <MyButton onClick={nextSlide} style={{ backgroundColor: "transparent", hover:"none" }}>
+              <p className="milestone-cta">CLICK TO MOVE FORWARD ON YOUR JOURNEY</p>
+            </MyButton>
           </div>
                 ) : slides[currentSlide].twoColumnsWithImage ? (
           <div className="two-columns-with-image">
@@ -260,30 +359,10 @@ function App() {
             <div className="image-journey">
               <img src={slide9} alt="20 LEEP Points" />
             </div>
-            <p className="cta-text">CLICK TO MOVE FORWARD ON YOUR JOURNEY</p>
+            <MyButton onClick={nextSlide} style={{ backgroundColor: "transparent", hover:"none" }}>
+              <p className="cta-text">CLICK TO MOVE FORWARD ON YOUR JOURNEY</p>
+            </MyButton>  
           </div>
-                ) : slides[currentSlide].twoColumnsWithImage ? (
-                  <div className="two-columns-with-image">
-                    <div className="columns">
-                      <div className="column column-left">
-                        <h2>MILESTONE 1: THE GOAL AND PURPOSE</h2>
-                        <p>
-                          Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.
-                        </p>
-                      </div>
-                      <div className="column column-right">
-                        <p>
-                          <strong>This month,</strong> we’re going to focus on setting your big "NorthStar Goal." As you work
-                          toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first
-                          step to reaching that next milestone!
-                        </p>
-                      </div>
-                    </div>
-                    <div className="image-20point">
-                      <img src={slide9} alt="20 LEEP Points"/>
-                    </div>
-                    <p className="cta-text">CLICK TO MOVE FORWARD ON YOUR JOURNEY</p>
-                  </div>
         ) : slides[currentSlide].imageAndTwoRows ? (
           <div className="image-and-two-rows">
             <div className="image-milestone">
@@ -292,11 +371,11 @@ function App() {
             <div className="text-section">
               <div className="row row-blue">
                 <h2>Create a Personal Core Value Statement</h2>
-                <p>CLICK HERE</p>
+                <p className="click-here" onClick={() => setCurrentSlide(10)}>CLICK HERE</p>
               </div>
               <div className="row row-green">
                 <h2>Create a Personal Mission Statement</h2>
-                <p>CLICK HERE</p>
+                <p className="click-here" onClick={() => setCurrentSlide(12)}>CLICK HERE</p>
               </div>
             </div>
           </div>
@@ -332,9 +411,17 @@ function App() {
             <div className="image-10point">
               <img src={leapPointsImage} alt="10 LEEP Points" />
             </div>
-            <p className="cta-text">Create a Personal Core Value Statement</p>
+            <p
+              className="cta-text"
+              onClick={() => {
+                setCurrentSlide(13); // Navigate to slide 13
+                setValueType("Personal Core Value"); // Automatically select "Personal Core Value"
+              }}
+            >
+              Create a Personal Core Value Statement
+            </p>
           </div>
-        ) : slides[currentSlide].form ? (
+        ) : slides[currentSlide].Coreform ? (
           <div className="form-section">
             <h1>{slides[currentSlide].title}</h1>
             <p>{slides[currentSlide].description}</p>
@@ -345,8 +432,62 @@ function App() {
           <div className="text-section">
             <h1>{slides[currentSlide].title}</h1>
             <p>{slides[currentSlide].description}</p>
-            <button className="cta-button">CLICK TO MOVE FORWARD</button>
+            <MyButton onClick={nextSlide} className="cta-button">CLICK TO MOVE FORWARD</MyButton>
           </div>
+        ) : slides[currentSlide].Missionform ? (
+          <div className="form-section">
+            <h1>{dynamicTitle || slides[currentSlide]?.title}</h1>
+            <p>{dynamicDescription || slides[currentSlide]?.description}</p>
+            <textarea rows="5"
+              placeholder="Write your statement here..."
+              value={statement}
+              onChange={(e) => setStatement(e.target.value)}
+            />
+                  {/* Dropdown for Value Type */}
+          <select
+            value={valueType}
+            onChange={(e) => {
+              const selectedType = e.target.value;
+              setValueType(selectedType);
+            }}
+          >
+            <option value="">Select a Value Type</option>
+            <option value="Mission">Mission</option>
+            <option value="Personal Core Value">Personal Core Value</option>
+          </select>
+            <button className="submit-button" onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
+          ) : slides[currentSlide].apiContent ? (
+            <div className="api-slide">
+              <h1>{slides[currentSlide].title}</h1>
+              {apiData.length > 0 ? (
+                <table className="api-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Value Type</th>
+                      <th>Value Title</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {apiData.map((item, index) =>
+                      item.items.map((nestedItem, nestedIndex) => (
+                        <tr key={`${item.id}-${nestedIndex}`}>
+                          <td>{item.id}</td>
+                          <td>{nestedItem.value_type}</td>
+                          <td>{nestedItem.value_title}</td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              ) : (
+                <p>Loading...</p>
+              )}
+            </div>
+
         ): slides[currentSlide].tableSlide ? (
           <div className="table-slide2">
             <h1 className="table-title">SAMPLE VALUES TO GET GOING...</h1>
@@ -423,98 +564,110 @@ function App() {
                 </ol>
               </div>
             </div>
-            <p className="cta-text">Create a Personal Mission Statement</p>
+            <p        
+              className="cta-text"
+              onClick={() => {
+                setCurrentSlide(13); // Navigate to slide 13
+                setValueType("Mission"); // Automatically select "Personal Core Value"
+              }}
+            >Create a Personal Mission Statement
+            </p>
             <div className="image-mission">
               <img src={leapPointsImage} alt="10 LEEP Points" />
             </div>
           </div>
         )
 
-        : slides[currentSlide].apiSlide ? (
-          <div className="api-slide">
-            <h1>API Data</h1>
-            {loading && <p>Loading data...</p>}
-            {apiData?.length > 0 ? (
-              <ul>
-                {apiData.map((item) => (
-                  console.log(item),
-                  <li key={item.id}>
-                    <strong>{item.sdp_title}</strong> - estimatedTime: {item.est_year} - Plan Mode: {item.plan_mode} - starting Month: {item.str_month} - End Month: {item.end_month} - Description: {item.description}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No data available.</p>
-            )}
-          </div>
-        )
-      // Form Creation
-      : slides[currentSlide].formWithFields ? (
-        <div className="custom-form-slide">
-          <h1 className="slide-title">CREATE YOUR PLAN</h1>
-          <div className="columns">
-            <div className="column column-green">
-              <p>
-                Planning is an essential step to turn your goals into actionable steps. Use this form to define the key elements of your plan. Provide details about what you want to achieve, the time it will take, and any additional descriptions to ensure clarity and focus.
-              </p>
-            </div>
-            <div className="column column-white">
-              <form className="plan-form" onSubmit={handleFormSubmit}>
-                <div className="form-group">
-                  <label htmlFor="title">Title:</label>
-                  <input type="text" id="title" name="sdp_title" value={formData.sdp_title} onChange={handleFormChange} placeholder="Enter Title" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="estimatedYear">Estimated Year:</label>
-                  <input type="text" id="estimatedYear" name="est_year" value={formData.est_year} onChange={handleFormChange} placeholder="Enter Estimated Year" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="planMode">Plan Mode:</label>
-                  <input type="text" id="planMode" name="plan_mode" value={formData.plan_mode} onChange={handleFormChange} placeholder="Enter Estimated Time" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="startMonth">Start Month:</label>
-                  <input type="text" id="startMonth" name="str_month" value={formData.str_month} onChange={handleFormChange} placeholder="Enter Estimated Start Time" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="endMonth">End Month:</label>
-                  <input type="text" id="endMonth" name="end_month" value={formData.end_month} onChange={handleFormChange} placeholder="Enter Estimated End Time" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="description">Description:</label>
-                  <textarea id="description" name="description" rows="4" value={formData.description} onChange={handleFormChange} placeholder="Enter Additional Description"></textarea>
-                </div>
-                <button type="submit" className="submit-button">Submit</button>
-              </form>
-              {loading && <p>Loading...</p>}
-              {successMessage && (
-                  <p className="success-message">{successMessage}</p>
-                )}
-                {errorMessage && (
-                  <p className="error-message">{errorMessage}</p>
-                )}
-            </div>
-          </div>
-        </div>
-      )
+      //   : slides[currentSlide].apiSlide ? (
+      //     <div className="api-slide">
+      //       <h1>API Data</h1>
+      //       {loading && <p>Loading data...</p>}
+      //       {apiData?.length > 0 ? (
+      //         <ul>
+      //           {apiData.map((item) => (
+      //             console.log(item),
+      //             <li key={item.id}>
+      //               <strong>{item.sdp_title}</strong> - estimatedTime: {item.est_year} - Plan Mode: {item.plan_mode} - starting Month: {item.str_month} - End Month: {item.end_month} - Description: {item.description}
+      //             </li>
+      //           ))}
+      //         </ul>
+      //       ) : (
+      //         <p>No data available.</p>
+      //       )}
+      //     </div>
+      //   )
+      // // Form Creation
+      // : slides[currentSlide].formWithFields ? (
+      //   <div className="custom-form-slide">
+      //     <h1 className="slide-title">CREATE YOUR PLAN</h1>
+      //     <div className="columns">
+      //       <div className="column column-green">
+      //         <p>
+      //           Planning is an essential step to turn your goals into actionable steps. Use this form to define the key elements of your plan. Provide details about what you want to achieve, the time it will take, and any additional descriptions to ensure clarity and focus.
+      //         </p>
+      //       </div>
+      //       <div className="column column-white">
+      //         <form className="plan-form" onSubmit={handleFormSubmit}>
+      //           <div className="form-group">
+      //             <label htmlFor="title">Title:</label>
+      //             <input type="text" id="title" name="sdp_title" value={formData.sdp_title} onChange={handleFormChange} placeholder="Enter Title" required />
+      //           </div>
+      //           <div className="form-group">
+      //             <label htmlFor="estimatedYear">Estimated Year:</label>
+      //             <input type="text" id="estimatedYear" name="est_year" value={formData.est_year} onChange={handleFormChange} placeholder="Enter Estimated Year" required />
+      //           </div>
+      //           <div className="form-group">
+      //             <label htmlFor="planMode">Plan Mode:</label>
+      //             <input type="text" id="planMode" name="plan_mode" value={formData.plan_mode} onChange={handleFormChange} placeholder="Enter Estimated Time" required />
+      //           </div>
+      //           <div className="form-group">
+      //             <label htmlFor="startMonth">Start Month:</label>
+      //             <input type="text" id="startMonth" name="str_month" value={formData.str_month} onChange={handleFormChange} placeholder="Enter Estimated Start Time" required />
+      //           </div>
+      //           <div className="form-group">
+      //             <label htmlFor="endMonth">End Month:</label>
+      //             <input type="text" id="endMonth" name="end_month" value={formData.end_month} onChange={handleFormChange} placeholder="Enter Estimated End Time" required />
+      //           </div>
+      //           <div className="form-group">
+      //             <label htmlFor="description">Description:</label>
+      //             <textarea id="description" name="description" rows="4" value={formData.description} onChange={handleFormChange} placeholder="Enter Additional Description"></textarea>
+      //           </div>
+      //           <button type="submit" className="submit-button">Submit</button>
+      //         </form>
+      //         {loading && <p>Loading...</p>}
+      //         {successMessage && (
+      //             <p className="success-message">{successMessage}</p>
+      //           )}
+      //           {errorMessage && (
+      //             <p className="error-message">{errorMessage}</p>
+      //           )}
+      //       </div>
+      //     </div>
+      //   </div>
+      // )
         : (
           <>
-            <div className="text-section">
+            <div className="text-section" style={{ animation: slides[currentSlide].animation }}>
               <h1>{slides[currentSlide].title}</h1>
               <p>{slides[currentSlide].description}</p>
+              {currentSlide === 0 && slides[currentSlide].Button && ( // Render button only on the first slide
+                  <MyButton onClick={nextSlide}>{slides[currentSlide].Button}</MyButton>
+              )}
             </div>
             <div className="image-section">
               {slides[currentSlide].image && (
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].title}
+                  style={{ animation: slides[currentSlide].animation }}
                 />
               )}
             </div>
             
             
           </>
-        )}
+        )
+        }
         
       </div>
     </div>
