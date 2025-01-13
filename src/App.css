@@ -820,6 +820,23 @@ textarea:focus {
     opacity: 1;
   }
 }
+/* Define a reusable animation class for the fly-in effect */
+@keyframes flyInFromTop {
+  0% {
+    transform: translateY(-100vh); /* Start above the viewport */
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1;
+  }
+}
+
+
+
 
 
 /* Responsive Adjustments */

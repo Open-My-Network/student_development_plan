@@ -42,9 +42,14 @@ function App() {
           throw new Error("Failed to fetch API data");
         }
         const data = await response.json();
-        setApiData(data.items); // Store the fetched data
+        if (data.items && data.items.length > 0) {
+          setApiData(data.items); // Store the fetched data
+        } else{
+          setApiData([]); // Reset the data if no items are found
+        }
       } catch (error) {
         console.error("Error fetching API data:", error);
+        setApiData([]); // Reset the data in case of an error
 
       }
     };
@@ -483,6 +488,8 @@ function App() {
                     )}
                   </tbody>
                 </table>
+              ) : apiData.length === 0 ? (
+                <p>No Content Found</p>
               ) : (
                 <p>Loading...</p>
               )}

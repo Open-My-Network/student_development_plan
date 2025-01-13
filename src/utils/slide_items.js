@@ -17,7 +17,8 @@ export const slides = [
     description:
       "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
     image: slide2,
-    animation: "fadeIn 2.5s ease-in-out",
+    animation: "flyInFromTop 2s ease-in-out",
+    
   },
   {
     id: 3,
@@ -25,6 +26,7 @@ export const slides = [
     description:
       "The development process starts with you! You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
     image: slide3,
+    animation: "fadeIn 2.5s ease-in-out",
     
   },
   {
