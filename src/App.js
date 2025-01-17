@@ -229,9 +229,9 @@ function App() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ 
-        value_title: statement,
+        statement,
         value_type: valueType,
-        user_id: 644, 
+        user_id:3, 
       }), // Send the user's input statement
       });
 
@@ -253,7 +253,7 @@ function App() {
         <Confetti width={width} height={height} />
       )}
       <div className="slide">
-        :{slides[currentSlide].customContent ? (
+      {slides[currentSlide].customContent ? (
           <div className="slide-container">
           <div className="slide-header">
             <h1>
@@ -434,10 +434,28 @@ function App() {
             <button className="submit-button">Submit</button>
           </div>
         ) : slides[currentSlide].cta ? (
-          <div className="text-section">
-            <h1>{slides[currentSlide].title}</h1>
-            <p>{slides[currentSlide].description}</p>
-            <MyButton onClick={nextSlide} className="cta-button">CLICK TO MOVE FORWARD</MyButton>
+          <div className="cta-section">
+            <div className="text-section">
+              <h1>{slides[currentSlide].title}</h1>
+              <p>{slides[currentSlide].description}</p>
+              <MyButton onClick={nextSlide} className="cta-button">CLICK TO MOVE FORWARD</MyButton>
+            </div>
+            
+            {currentSlide === 15 && (
+              <div className="confetti-wrapper">
+                {Array.from({ length: 50 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="confetti"
+                    style={{
+                      left: `${Math.random() * 100}vw`,
+                      top: `${Math.random() * 100}vh`,
+                      backgroundColor: ['#ff6f61', '#ffc107', '#00c853', '#0288d1'][Math.floor(Math.random() * 4)],
+                    }}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         ) : slides[currentSlide].Missionform ? (
           <div className="form-section">
@@ -468,26 +486,28 @@ function App() {
             <div className="api-slide">
               <h1>{slides[currentSlide].title}</h1>
               {apiData.length > 0 ? (
-                <table className="api-table">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Value Type</th>
-                      <th>Value Title</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {apiData.map((item, index) =>
-                      item.items.map((nestedItem, nestedIndex) => (
-                        <tr key={`${item.id}-${nestedIndex}`}>
-                          <td>{item.id}</td>
-                          <td>{nestedItem.value_type}</td>
-                          <td>{nestedItem.value_title}</td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
+                <div className="api-container">
+                  <table className="api-table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Value Type</th>
+                        <th>Value Title</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {apiData.map((item, index) =>
+                        item.items.map((nestedItem, nestedIndex) => (
+                          <tr key={`${item.id}-${nestedIndex}`}>
+                            <td>{item.id}</td>
+                            <td>{nestedItem.value_type}</td>
+                            <td>{nestedItem.value_title}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
               ) : apiData.length === 0 ? (
                 <p>No Content Found</p>
               ) : (
