@@ -231,7 +231,7 @@ function App() {
         body: JSON.stringify({ 
         statement,
         value_type: valueType,
-        user_id:3, 
+        user_id:600, 
       }), // Send the user's input statement
       });
 
