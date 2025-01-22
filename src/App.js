@@ -6,6 +6,8 @@ import "./App.css";
 import {MyButton} from "./components/Button/index";
 import { MyContainer } from "./components/Container";
 import { LogoSlide } from "./components/Logo";
+import Table from "./value/Table";
+import { fetchData, deleteItem, markAsTop, unmarkAsTop } from "./value/service/api";
 
 // Import your images
 
@@ -28,32 +30,70 @@ function App() {
   const [dynamicDescription, setDynamicDescription] = useState("");
   const [apiData, setApiData] = useState([]); // Store API data
   
-// Trigger API call when slide 15 is active
-  useEffect(() => {
-    if (slides[currentSlide].apiContent) {
-      fetchApiData();
-    }
-  }, [currentSlide]);
-    // Function to fetch API data
-    const fetchApiData = async () => {
-      try {
-        const response = await fetch("http://localhost:3001/development-plan/list-value"); 
-        if (!response.ok) {
-          throw new Error("Failed to fetch API data");
-        }
-        const data = await response.json();
-        if (data.items && data.items.length > 0) {
-          setApiData(data.items); // Store the fetched data
-        } else{
-          setApiData([]); // Reset the data if no items are found
-        }
-      } catch (error) {
-        console.error("Error fetching API data:", error);
-        setApiData([]); // Reset the data in case of an error
+  const [data, setData] = useState([]);
+  const [frozenData, setFrozenData] = useState([]); // Frozen data state
+  const [loading, setLoading] = useState(false);
+  const userId = 645;
 
-      }
+  // Fetch data when the component loads or slide changes
+  useEffect(() => {
+    const fetchDataForSlide = async () => {
+      setLoading(true);
+      const result = await fetchData(userId);
+      setData(result.items || []); // Load the main data
+      setLoading(false);
     };
 
+    fetchDataForSlide();
+  }, [currentSlide, userId]);
+
+  // Handle delete action
+  const handleDelete = async (itemId) => {
+    setLoading(true);
+    const success = await deleteItem(itemId, userId); // Call deleteItem from api.js
+    if (success) {
+      // Remove the deleted item from the local state
+      setData((prevData) => prevData.filter((item) => item.id !== itemId));
+    } else {
+      console.error("Failed to delete the item");
+    }
+    setLoading(false);
+  };
+
+  // Handle marking an item as top
+  // Handle marking an item as top
+  const handleMarkAsTop = async (itemId) => {
+    const isMarked = await markAsTop(itemId, userId);
+    if (isMarked) {
+      // Find the marked item in the current data
+      const markedItem = data.find((item) => item.id === itemId);
+
+      // Update frozen data without duplicates
+      setFrozenData((prevFrozen) => {
+        const exists = prevFrozen.some((item) => item.id === itemId);
+        return exists ? prevFrozen : [...prevFrozen, { ...markedItem, markAsValue: true }];
+      });
+    }
+  };
+
+ 
+  // Handle unmarking an item as top
+  const handleUnmarkAsTop = async (itemId) => {
+    const isUnmarked = await unmarkAsTop(itemId, userId);
+    if (isUnmarked) {
+      setFrozenData((prevFrozen) => prevFrozen.filter((item) => item.id !== itemId));
+      setData((prevData) =>
+        prevData.map((item) =>
+          item.id === itemId ? { ...item, markAsValue: false } : item
+        )
+      );
+    } else {
+      console.error("Failed to unmark item");
+    }
+  };
+
+  // Combine frozen and main data (frozen data always on top)
+  const combinedData = [...frozenData, ...data.filter((item) => !frozenData.some((f) => f.id === item.id))];
   
 
   // const [apiData, setApiData] = useState(null);
@@ -231,7 +271,7 @@ function App() {
         body: JSON.stringify({ 
         statement,
         value_type: valueType,
-        user_id:3, 
+        user_id:645, 
       }), // Send the user's input statement
       });
 
@@ -485,34 +525,14 @@ function App() {
           ) : slides[currentSlide].apiContent ? (
             <div className="api-slide">
               <h1>{slides[currentSlide].title}</h1>
-              {apiData.length > 0 ? (
-                <div className="api-container">
-                  <table className="api-table">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Value Type</th>
-                        <th>Value Title</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {apiData.map((item, index) =>
-                        item.items.map((nestedItem, nestedIndex) => (
-                          <tr key={`${item.id}-${nestedIndex}`}>
-                            <td>{item.id}</td>
-                            <td>{nestedItem.value_type}</td>
-                            <td>{nestedItem.value_title}</td>
-                          </tr>
-                        ))
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              ) : apiData.length === 0 ? (
-                <p>No Content Found</p>
-              ) : (
-                <p>Loading...</p>
-              )}
+              <tbody>
+                <Table
+                data={combinedData}
+                handleDelete={handleDelete}
+                handleMarkAsTop={handleMarkAsTop}
+                handleUnmarkAsTop={handleUnmarkAsTop}
+                />
+                </tbody>
             </div>
 
         ): slides[currentSlide].tableSlide ? (
