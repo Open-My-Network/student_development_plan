@@ -40,20 +40,32 @@ function App() {
     const fetchDataForSlide = async () => {
       setLoading(true);
       const result = await fetchData(userId);
-      setData(result.items || []); // Load the main data
+      //fetch marked items from local storage
+      const savedFrozenData = JSON.parse(localStorage.getItem("frozenData")) || [];
+
+      //Merge API data and frozenData to ensure consistency
+      const updateData = result.items.map((item) => ({
+        ...item,
+        markAsValue: savedFrozenData.some((f) => f.id === item.id),
+      }));
+      setData(updateData);
+      setFrozenData(savedFrozenData);
       setLoading(false);
     };
 
     fetchDataForSlide();
   }, [currentSlide, userId]);
 
-  // Handle delete action
   const handleDelete = async (itemId) => {
     setLoading(true);
-    const success = await deleteItem(itemId, userId); // Call deleteItem from api.js
+    const success = await deleteItem(itemId, userId);
     if (success) {
-      // Remove the deleted item from the local state
       setData((prevData) => prevData.filter((item) => item.id !== itemId));
+      setFrozenData((prevFrozen) => prevFrozen.filter((item) => item.id !== itemId));
+      localStorage.setItem(
+        "frozenData",
+        JSON.stringify(frozenData.filter((item) => item.id !== itemId))
+      );
     } else {
       console.error("Failed to delete the item");
     }
@@ -68,11 +80,10 @@ function App() {
       // Find the marked item in the current data
       const markedItem = data.find((item) => item.id === itemId);
 
-      // Update frozen data without duplicates
-      setFrozenData((prevFrozen) => {
-        const exists = prevFrozen.some((item) => item.id === itemId);
-        return exists ? prevFrozen : [...prevFrozen, { ...markedItem, markAsValue: true }];
-      });
+      // Update frozenData and save it in localStorage
+      const updatedFrozenData = [...frozenData, { ...markedItem, markAsValue: true }];
+      setFrozenData(updatedFrozenData);
+      localStorage.setItem("frozenData", JSON.stringify(updatedFrozenData));
     }
   };
 
@@ -81,14 +92,10 @@ function App() {
   const handleUnmarkAsTop = async (itemId) => {
     const isUnmarked = await unmarkAsTop(itemId, userId);
     if (isUnmarked) {
-      setFrozenData((prevFrozen) => prevFrozen.filter((item) => item.id !== itemId));
-      setData((prevData) =>
-        prevData.map((item) =>
-          item.id === itemId ? { ...item, markAsValue: false } : item
-        )
-      );
-    } else {
-      console.error("Failed to unmark item");
+      // Remove the item from frozenData and update localStorage
+      const updatedFrozenData = frozenData.filter((item) => item.id !== itemId);
+      setFrozenData(updatedFrozenData);
+      localStorage.setItem("frozenData", JSON.stringify(updatedFrozenData));
     }
   };
 
