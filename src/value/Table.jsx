@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../App.css";
 
-const Table = ({ data, handleDelete, handleMarkAsTop, handleUnmarkAsTop }) => {
+const Table = ({ data, handleDelete, handleMarkAsTop, handleUnmarkAsTop, handleEditClick}) => {
   const [openRowId, setOpenRowId] = useState(null); // State to store the ID of the row with visible options
+  
 
   // Toggle options visibility for a specific row based on its ID
   const handleMoreClick = (id) => {
@@ -20,6 +21,29 @@ const Table = ({ data, handleDelete, handleMarkAsTop, handleUnmarkAsTop }) => {
   if (!Array.isArray(data)) {
     return <div>No data available</div>; // Handle when data is not available or invalid
   }
+
+  // Helper function for button styles
+  const getButtonStyle = (type) => {
+    const baseStyle = {
+      padding: "5px 10px",
+      margin: "5px",
+      borderRadius: "5px",
+      color: "#fff",
+      border: "none",
+      cursor: "pointer",
+    };
+
+    const styleVariants = {
+      more: { backgroundColor: "#007bff" }, // Blue
+      close: { backgroundColor: "#dc3545" }, // Red
+      edit: { backgroundColor: "#28a745" }, // Green
+      delete: { backgroundColor: "#ff073a" }, // Dark Red
+      markAsTop: { backgroundColor: "#ffc107" }, // Yellow
+      unmarkAsTop: { backgroundColor: "#6c757d" }, // Grey
+    };
+
+    return { ...baseStyle, ...styleVariants[type] };
+  };
 
   return (
     <table className="api-table" >
@@ -44,7 +68,7 @@ const Table = ({ data, handleDelete, handleMarkAsTop, handleUnmarkAsTop }) => {
             <td style={tdStyle}>{item.value_type}</td>
             <td style={tdStyle}>{item.value_title}</td>
             <td style={tdStyle}>
-              <button onClick={() => handleMoreClick(item.id)}>
+              <button  style={getButtonStyle(openRowId === item.id ? "close" : "more")} onClick={() => handleMoreClick(item.id)}>
                 {openRowId === item.id ? "Close" : "More"}
               </button>
               {openRowId === item.id && (
@@ -52,15 +76,15 @@ const Table = ({ data, handleDelete, handleMarkAsTop, handleUnmarkAsTop }) => {
                 {/* Display Edit and Delete for marked items */}
                 {item.markAsValue ? (
                   <>
-                  <button>Edit</button>
-                  <button onClick={() => handleDelete(item.id)}>Delete</button>
-                  <button onClick={() => handleUnmarkAsTop(item.id)}>Unmark as Top</button>
+                  <button style={getButtonStyle("edit")} onClick={() => handleEditClick(item)}>Edit</button>
+                  <button style={getButtonStyle("delete")} onClick={() => handleDelete(item.id)}>Delete</button>
+                  <button style={getButtonStyle("unmarkAsTop")} onClick={() => handleUnmarkAsTop(item.id)}>Unmark as Top</button>
                   </>
                 ) : (
                   <>
-                  <button>Edit</button>
-                  <button onClick={() => handleDelete(item.id)}>Delete</button>
-                  <button onClick={() => handleMarkAsTop(item.id)}>Mark as Top</button>
+                  <button style={getButtonStyle("edit")} onClick={() => handleEditClick(item)}>Edit</button>
+                  <button style={getButtonStyle("delete")} onClick={() => handleDelete(item.id)}>Delete</button>
+                  <button style={getButtonStyle("markAsTop")} onClick={() => handleMarkAsTop(item.id)}>Mark as Top</button>
                   </>
                 )}
                 </div>

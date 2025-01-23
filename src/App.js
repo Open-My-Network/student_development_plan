@@ -7,7 +7,8 @@ import {MyButton} from "./components/Button/index";
 import { MyContainer } from "./components/Container";
 import { LogoSlide } from "./components/Logo";
 import Table from "./value/Table";
-import { fetchData, deleteItem, markAsTop, unmarkAsTop } from "./value/service/api";
+import EditPopup from "./EditPopup";
+import { fetchData, deleteItem, markAsTop, unmarkAsTop,updateItem } from "./value/service/api";
 
 // Import your images
 
@@ -34,6 +35,8 @@ function App() {
   const [frozenData, setFrozenData] = useState([]); // Frozen data state
   const [loading, setLoading] = useState(false);
   const userId = 645;
+
+  const [editingItem, setEditingItem] = useState(null); // State for the item being edited
 
   // Fetch data when the component loads or slide changes
   useEffect(() => {
@@ -98,6 +101,46 @@ function App() {
       localStorage.setItem("frozenData", JSON.stringify(updatedFrozenData));
     }
   };
+
+  const handleSaveEdit = async (itemData) => {
+    try {
+      const response = await fetch("http://localhost:3001/development-plan/update-value", {
+        method: "PUT",  // PUT request since you're updating the data
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: 645,  // Use the correct user_id
+          item_id: itemData.id,  // Use item.id for item identification
+          statement: itemData.statement,  // Edited statement
+          value_type: itemData.value_type,  // Edited value_type
+        }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log("Update successful:", data);
+        // Optionally, update state to reflect the changes
+        setData((prevData) =>
+          prevData.map((item) =>
+            item.id === itemData.id ? { ...item, ...itemData } : item
+          )
+        );
+        setEditingItem(null); // Close the edit popup
+      } else {
+        console.error("Update failed:", data);
+      }
+    } catch (error) {
+      console.error("Error updating item:", error);
+    }
+  };
+  
+
+  const handleEditClick = (item) => {
+    setEditingItem(item); // Open the popup with the selected item's data
+  };
+  
 
   // Combine frozen and main data (frozen data always on top)
   const combinedData = [...frozenData, ...data.filter((item) => !frozenData.some((f) => f.id === item.id))];
@@ -532,16 +575,25 @@ function App() {
           ) : slides[currentSlide].apiContent ? (
             <div className="api-slide">
               <h1>{slides[currentSlide].title}</h1>
-              <tbody>
-                <Table
-                data={combinedData}
-                handleDelete={handleDelete}
-                handleMarkAsTop={handleMarkAsTop}
-                handleUnmarkAsTop={handleUnmarkAsTop}
-                />
-                </tbody>
+              <div className="scrollable-container">
+                <tbody>
+                  <Table
+                  data={combinedData}
+                  handleDelete={handleDelete}
+                  handleMarkAsTop={handleMarkAsTop}
+                  handleUnmarkAsTop={handleUnmarkAsTop}
+                  handleEditClick={handleEditClick}
+                  />
+                  {editingItem && (
+                    <EditPopup
+                      item={editingItem}
+                      onSubmit={handleSaveEdit}
+                      onCancel={() => setEditingItem(null)}
+                    />
+                  )}
+                  </tbody>
+                </div>
             </div>
-
         ): slides[currentSlide].tableSlide ? (
           <div className="table-slide2">
             <h1 className="table-title">SAMPLE VALUES TO GET GOING...</h1>

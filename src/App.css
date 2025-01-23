@@ -871,6 +871,12 @@ textarea:focus {
   }
 }
 
+.scrollable-container {
+  max-height: 400px; /* Adjust the height as needed */
+  overflow-y: auto;
+  border: 1px solid #ccc; /* Optional: Adds a border for better visibility */
+  padding: 10px; /* Optional: Adds padding inside the scrollable area */
+}
 
 
 

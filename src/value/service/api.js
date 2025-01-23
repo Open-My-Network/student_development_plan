@@ -105,3 +105,27 @@ export const unmarkAsTop = async (itemId, userId) => {
     return false;
   }
 };
+
+export const updateItem = async (itemData) => {
+  try {
+    const response = await fetch(`${baseUrl}/development-plan/update-value`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemData),
+    });
+
+    const result = await response.json();
+
+    if (result.status === 200) {
+      return true; // Return true on successful update
+    } else {
+      console.error("Failed to update the item");
+      return false;
+    }
+  } catch (error) {
+    console.error("Error updating item:", error);
+    return false;
+  }
+};
