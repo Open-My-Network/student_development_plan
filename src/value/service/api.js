@@ -13,7 +13,7 @@ export const fetchData = async (userId) => {
     const result = await response.json();
 
     if (result.status === 200) {
-      return result.items; // Return the items from the API response
+      return result; // Return the items from the API response
     } else {
       console.error("Failed to fetch data");
       return [];

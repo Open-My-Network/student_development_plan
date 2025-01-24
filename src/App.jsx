@@ -11,7 +11,6 @@ const App = () => {
     const getData = async () => {
       setLoading(true);
       const result = await fetchData(userId);
-      console.log(result);
       setData(result.items ? result.items : []);
       setLoading(false);
     };
