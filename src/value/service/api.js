@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:4000";
+const baseUrl = "http://localhost:3001";
 
 export const fetchData = async (userId) => {
   try {
@@ -74,6 +74,58 @@ export const markAsTop = async (itemId, userId) => {
     }
   } catch (error) {
     console.error("Error marking as top:", error);
+    return false;
+  }
+};
+
+
+export const unmarkAsTop = async (itemId, userId) => {
+  try {
+    const response = await fetch(`${baseUrl}/development-plan/unmark-value`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        item_id: itemId,
+        user_id: userId,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (result.status === 200) {
+      return true; // Return true on successful update
+    } else {
+      console.error("Failed to unmark as top");
+      return false;
+    }
+  } catch (error) {
+    console.error("Error unmarking as top:", error);
+    return false;
+  }
+};
+
+export const updateItem = async (itemData) => {
+  try {
+    const response = await fetch(`${baseUrl}/development-plan/update-value`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemData),
+    });
+
+    const result = await response.json();
+
+    if (result.status === 200) {
+      return true; // Return true on successful update
+    } else {
+      console.error("Failed to update the item");
+      return false;
+    }
+  } catch (error) {
+    console.error("Error updating item:", error);
     return false;
   }
 };
