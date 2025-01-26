@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const EditPopup = ({ item, onSubmit, onCancel }) => {
-  const [statement, setStatement] = useState(item?.statement || "");
-  const [valueType, setValueType] = useState(item?.valueType || "");
+  const [statement, setStatement] = useState(item?.value_title || "");
+  const [valueType, setValueType] = useState(item?.value_type || "");
 
   const handleSave = () => {
     const updatedItem = { ...item, statement, value_type: valueType };
@@ -30,12 +30,10 @@ const EditPopup = ({ item, onSubmit, onCancel }) => {
           </label>
           <label style={labelStyle}>
             Statement:
-            <input
-              type="text"
-              value={statement}
-              onChange={(e) => setStatement(e.target.value)}
-              style={inputStyle}
-            />
+            <textarea  onChange={(e) => setStatement(e.target.value)}>
+              {statement}
+            </textarea>
+
           </label>
           <div style={buttonGroupStyle}>
             <button onClick={handleSave} style={{ ...buttonStyle, backgroundColor: "#4CAF50" }}>

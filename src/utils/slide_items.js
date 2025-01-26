@@ -66,15 +66,15 @@ export const slides = [
     tableSlide: true,
   },
   {
-    id: 13, // New Slide with Two Columns and Image
-    personalMissionStatement: true,
-  },
-  {
-    id: 14,
+    id: 13,
     title: "", // Will be dynamically set
     description: "", // Will be dynamically set
     Missionform: true,
     dynamicContent: true, // Indicates this slide has dynamic content
+  },
+  {
+    id: 14, // New Slide with Two Columns and Image
+    personalMissionStatement: true,
   },
   {
     id: 15,
