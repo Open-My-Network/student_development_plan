@@ -280,8 +280,24 @@ function App() {
   };
 
   useEffect(() => {
+    // Check if the current slide has dynamic content
     if (slides[currentSlide]?.dynamicContent) {
-      if (valueType === "Mission") {
+      // Automatically set valueType to "Personal Mission Statement" if the slide is Missionform
+      if (slides[currentSlide]?.Missionform) {
+        setValueType("Personal Mission Statement");
+      }
+      if (slides[currentSlide]?.Personalform) {
+        setValueType("Personal Core Value");
+      }
+      
+      // Set dynamic title and description based on the valueType
+      if (slides[currentSlide]?.name === "personalform") {
+        setDynamicTitle("Sample Core Value Statement");
+        setDynamicDescription(
+          `Create a Core Value Statement: "My personal values are honesty, kindness, and determination. I believe in always telling the truth, treating others with respect, 
+          and never giving up, even when things get tough. These values help me be the best version of myself and guide me toward my goals."`
+        );
+      } else if (valueType === "Personal Mission Statement") {
         setDynamicTitle("Personal Mission Statement");
         setDynamicDescription(
           `Create a Personal Mission Statement: "My mission is to always be true to myself, stay curious, and be kind to others. 
@@ -293,13 +309,10 @@ function App() {
           `Create a Core Value Statement: "My personal values are honesty, kindness, and determination. I believe in always telling the truth, treating others with respect, 
           and never giving up, even when things get tough. These values help me be the best version of myself and guide me toward my goals."`
         );
-      } else {
-        setDynamicTitle("");
-        setDynamicDescription("");
       }
     }
   }, [valueType, currentSlide]);
-
+  
 
   const handleSubmit = async () => {
       // Validation: Ensure both fields are filled out
@@ -470,7 +483,7 @@ function App() {
               </div>
               <div className="row row-green">
                 <h2>Create a Personal Mission Statement</h2>
-                <p className="click-here" onClick={() => setCurrentSlide(12)}>CLICK HERE</p>
+                <p className="click-here" onClick={() => setCurrentSlide(13)}>CLICK HERE</p>
               </div>
             </div>
           </div>
@@ -509,19 +522,11 @@ function App() {
             <p
               className="cta-text"
               onClick={() => {
-                setCurrentSlide(13); // Navigate to slide 13
                 setValueType("Personal Core Value"); // Automatically select "Personal Core Value"
               }}
             >
-              Create a Personal Core Value Statement
+            <MyButton onClick={nextSlide} className="mission-button">CLICK TO MOVE FORWARD</MyButton> 
             </p>
-          </div>
-        ) : slides[currentSlide].Coreform ? (
-          <div className="form-section">
-            <h1>{slides[currentSlide].title}</h1>
-            <p>{slides[currentSlide].description}</p>
-            <textarea rows="5" placeholder="Write your statement here..."></textarea>
-            <button className="submit-button">Submit</button>
           </div>
         ) : slides[currentSlide].cta ? (
           <div className="cta-section">
@@ -556,7 +561,7 @@ function App() {
               value={statement}
               onChange={(e) => setStatement(e.target.value)}
             />
-                  {/* Dropdown for Value Type */}
+          {/* Dropdown for Value Type */}
           <select
             value={valueType}
             onChange={(e) => {
@@ -565,13 +570,38 @@ function App() {
             }}
           >
             <option value="">Select a Value Type</option>
-            <option value="Mission">Mission</option>
+            <option value="Personal Mission Statement">Personal Mission Statement</option>
             <option value="Personal Core Value">Personal Core Value</option>
           </select>
             <button className="submit-button" onClick={handleSubmit}>
               Submit
             </button>
           </div>
+                  ) : slides[currentSlide].Personalform ? (
+                    <div className="form-section">
+                      <h1>{dynamicTitle || slides[currentSlide]?.title}</h1>
+                      <p>{dynamicDescription || slides[currentSlide]?.description}</p>
+                      <textarea rows="5"
+                        placeholder="Write your statement here..."
+                        value={statement}
+                        onChange={(e) => setStatement(e.target.value)}
+                      />
+                    {/* Dropdown for Value Type */}
+                    <select
+                      value={valueType}
+                      onChange={(e) => {
+                        const selectedType = e.target.value;
+                        setValueType(selectedType);
+                      }}
+                    >
+                      <option value="">Select a Value Type</option>
+                      <option value="Personal Mission Statement">Personal Mission Statement</option>
+                      <option value="Personal Core Value">Personal Core Value</option>
+                    </select>
+                      <button className="submit-button" onClick={handleSubmit}>
+                        Submit
+                      </button>
+                    </div>
           ) : slides[currentSlide].apiContent ? (
             <div className="api-slide">
               <h1>{slides[currentSlide].title}</h1>
@@ -673,10 +703,10 @@ function App() {
             <p        
               className="cta-text"
               onClick={() => {
-                setCurrentSlide(13); // Navigate to slide 13
-                setValueType("Mission"); // Automatically select "Personal Core Value"
+                setValueType("Personal Mission Statement"); // Automatically select "Personal Core Value"
               }}
-            >Create a Personal Mission Statement
+            >
+              <MyButton onClick={nextSlide} className="mission-button">Create a Personal Mission Statement</MyButton>
             </p>
             <div className="image-mission">
               <img src={leapPointsImage} alt="10 LEEP Points" />

@@ -371,11 +371,6 @@ input {
 }
 
 
-.cta-text {
-  font-size: 1.5rem;
-  color: #008cff; /* Light Blue */
-  font-weight: bold;
-}
 
 
 
@@ -509,12 +504,7 @@ input {
   height: auto;
 }
 
-.cta-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #008cff; /* Light Blue */
-  cursor: pointer;
-}
+
 
 /* Table Slide */
 .table-slide2 {
@@ -620,6 +610,26 @@ table tr:nth-child(even) {
   font-weight: bold;
   color: #32cd32; /* Green Text */
   margin-top: 2rem;
+  cursor: pointer;
+}
+
+.mission-button{
+  padding: 0.8rem 1.5rem;
+  background-color: #32cd32;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0.2s;
+}
+.mission-button:hover {
+  background-color: #32cd32;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .image-mission {

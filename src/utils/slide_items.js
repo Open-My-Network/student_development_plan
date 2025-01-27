@@ -69,21 +69,28 @@ export const slides = [
     id: 13,
     title: "", // Will be dynamically set
     description: "", // Will be dynamically set
-    Missionform: true,
-    dynamicContent: true, // Indicates this slide has dynamic content
+    Personalform: true,
+    dynamicContent: true, // Indicates this slide has dynamic 
   },
   {
     id: 14, // New Slide with Two Columns and Image
     personalMissionStatement: true,
   },
+ { 
+  id: 15,
+  title: "", // Will be dynamically set
+  description: "", // Will be dynamically set
+  Missionform: true,
+  dynamicContent: true, // Indicates this slide has dynamic 
+},
   {
-    id: 15,
+    id: 16,
     title: "Values You Submitted",
     description: "", // Dynamically fetched content will go here
     apiContent: true, // Indicates this slide fetches data from an API
   },
   {
-    id: 16,
+    id: 17,
     title: "NEXT STOP ON THE JOURNEY… MILESTONE 2 ",
     description: `
         CONGRATS, NAME OF STUDENT! You've crushed this milestone and earned your LEEP points, bringing you one step closer to reaching your NorthStar goal! 
