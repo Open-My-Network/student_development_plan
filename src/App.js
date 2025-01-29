@@ -519,14 +519,7 @@ function App() {
             <div className="image-10point">
               <img src={leapPointsImage} alt="10 LEEP Points" />
             </div>
-            <p
-              className="cta-text"
-              onClick={() => {
-                setValueType("Personal Core Value"); // Automatically select "Personal Core Value"
-              }}
-            >
             <MyButton onClick={nextSlide} className="mission-button">CLICK TO MOVE FORWARD</MyButton> 
-            </p>
           </div>
         ) : slides[currentSlide].cta ? (
           <div className="cta-section">
@@ -708,7 +701,7 @@ function App() {
             >
               <MyButton onClick={nextSlide} className="mission-button">Create a Personal Mission Statement</MyButton>
             </p>
-            <div className="image-mission">
+            <div className="image-10point">
               <img src={leapPointsImage} alt="10 LEEP Points" />
             </div>
           </div>

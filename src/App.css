@@ -500,8 +500,8 @@ input {
 }
 
 .image-10point img {
-  max-width: 200px; /* Limit the size of the image */
-  height: auto;
+  max-width: 350px; /* Limit the size of the image */
+  height: 150px;
 }
 
 
@@ -571,7 +571,7 @@ table tr:nth-child(even) {
 
 .columns {
   display: flex;
-  justify-content: center;
+ 
   gap: 2rem;
   margin-bottom: 2rem;
   width: 100%;
@@ -598,7 +598,20 @@ table tr:nth-child(even) {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: left;
 }
+.column ol {
+  margin: 0;
+  padding: 0;
+}
+
+.column ol li {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside; /* Optional: keeps the bullet closer to the text */
+  text-align: left;
+}
+
 
 .column p, .column ol {
   font-size: 1rem;
@@ -632,14 +645,7 @@ table tr:nth-child(even) {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.image-mission {
-  margin-top: 2rem;
-}
 
-.image-mission img {
-  max-width: 200px; /* Limit the size of the image */
-  height: auto;
-}
 
 .fullscreen-button {
   position: absolute;
