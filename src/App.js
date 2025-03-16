@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use"
 import "./App.css";
-
 import {MyButton} from "./components/Button/index";
 import { MyContainer } from "./components/Container";
 import { LogoSlide } from "./components/Logo";
@@ -47,10 +46,10 @@ function App() {
       const savedFrozenData = JSON.parse(localStorage.getItem("frozenData")) || [];
 
       //Merge API data and frozenData to ensure consistency
-      const updateData = result.items.map((item) => ({
+      const updateData = Array.isArray(result.items) ? result.items.map((item) => ({
         ...item,
         markAsValue: savedFrozenData.some((f) => f.id === item.id),
-      }));
+      })) : [];
       setData(updateData);
       setFrozenData(savedFrozenData);
       setLoading(false);
@@ -437,6 +436,23 @@ function App() {
               />
             </div>
           </div>
+                ) : slides[currentSlide].milestoneSlide2 ? (
+                  <div className="milestone-slide">
+                    <MyButton onClick={nextSlide} style={{ backgroundColor: "transparent", hover:"none" }}> 
+                      <div className="milestone-text">
+                        <h2>CLICK HERE</h2>
+                        <h2>AND</h2>
+                        <h2>TAKE ACTION</h2>
+                      </div>
+                    </MyButton>
+                    <div className="milestone-image">
+                      <img
+                        src={slide6}
+                        alt="Milestone 1"
+                        className="curved-image"
+                      />
+                    </div>
+                  </div>
         ) : slides[currentSlide].milestoneWelcome ? (
           <div className="milestone-welcome-slide">
             <h1 className="milestone-header">WELCOME TO MILESTONE 1</h1>
