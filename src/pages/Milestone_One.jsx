@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use"
-import "./App.css";
+import "../App.css";
 
-import {MyButton} from "./components/Button/index";
-import { MyContainer } from "./components/Container";
-import { LogoSlide } from "./components/Logo";
-import Table from "./value/Table";
-import EditPopup from "./EditPopup";
-import { fetchData, deleteItem, markAsTop, unmarkAsTop,updateItem } from "./value/service/api";
+import {MyButton} from "../components/Button/index";
+import { MyContainer } from "../components/Container";
+import { LogoSlide } from "../components/Logo";
+import Table from "../value/Table";
+import EditPopup from "../EditPopup";
+import { fetchData, deleteItem, markAsTop, unmarkAsTop,updateItem } from "../value/service/api";
 
 // Import your images
 
-import slide6 from "./leep.png"; // LEEP logo image
-import slide7 from "./8.png";
-import slide9 from "./20point.PNG"; // Image for "20 LEEP Points"
-import milestoneImage from "./8.png"; // Image for the milestone slide
-import leapPointsImage from "./10point.png"; // Image for "10 LEEP Points"
+import slide7 from "../assets/8.png";
+import slide9 from "../assets/20point.PNG"; // Image for "20 LEEP Points"
+import milestoneImage from "../assets/8.png"; // Image for the milestone slide
+import leapPointsImage from "../assets/10point.png"; // Image for "10 LEEP Points"
 
 
-import { slides } from "./utils/slide_items";
+import { slides } from "../utils/slide_items";
 import { hover } from "@testing-library/user-event/dist/hover";
 
-function App() {
+function MilestoneOne() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { width, height } = useWindowSize();
   const [statement, setStatement] = useState("");
@@ -803,4 +802,4 @@ function App() {
   );
   
 }
-export default App;
+export default MilestoneOne;
