@@ -46,10 +46,11 @@ function MilestoneOne() {
       const savedFrozenData = JSON.parse(localStorage.getItem("frozenData")) || [];
 
       //Merge API data and frozenData to ensure consistency
-      const updateData = result.items.map((item) => ({
+      const updateData = Array.isArray(result.items) ? result.items.map((item) => ({
         ...item,
         markAsValue: savedFrozenData.some((f) => f.id === item.id),
-      }));
+      })) : [];
+      
       setData(updateData);
       setFrozenData(savedFrozenData);
       setLoading(false);
