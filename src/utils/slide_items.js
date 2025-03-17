@@ -98,8 +98,4 @@ export const slides = [
         Keep that energy going – you’re on the path to greatness!`,
     cta: true,
   },
-  {
-    id: 18,
-    milestoneSlide2: true,
-  },
 ];
