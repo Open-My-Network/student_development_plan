@@ -792,8 +792,6 @@ function MilestoneOne() {
                 />
               )}
             </div>
-            
-            
           </>
         )
         }

@@ -5,7 +5,7 @@ import { FaBox, FaWarehouse, FaBoxOpen, FaTruck, FaRedo, FaLock, FaCheck } from 
 import "./style/Roadmap.css";
 
 const steps = [
-  { id: 1, title: "Inventory Handling", icon: <FaBox />, description: "Sourcing, storing, and shipping products." },
+  { id: 1, title: "Milestone 1", icon: <FaBox />, description: "Sourcing, storing, and shipping products." },
   { id: 2, title: "Warehouse Storage", icon: <FaWarehouse />, description: "Pallet racking & material handling." },
   { id: 3, title: "Order Processing", icon: <FaBoxOpen />, description: "Packing & processing of orders." },
   { id: 4, title: "Packing", icon: <FaBox />, description: "Boxing & preparing orders for shipping." },
