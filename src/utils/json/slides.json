@@ -1,0 +1,195 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-7 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "heading",
+                "body": "Welcome to Slide 1",
+                "css": "mb-2"
+              },
+              {
+                "type": "paragraph",
+                "body": "This is something I want to try from my side",
+                "css": ""
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-5 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "css": "mb-1 img-fluid rounded-2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "div": true,
+      "row": false,
+      "content": [
+        {
+          "type": "image",
+          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "css": "mb-1 img-fluid rounded-2"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "heading",
+                "body": "Slide 3 Title",
+                "css": "mb-2"
+              },
+              {
+                "type": "paragraph",
+                "body": "Slide 3 description text.",
+                "css": ""
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "css": "mb-1 img-fluid rounded-2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "div": true,
+      "row": false,
+      "content": [
+        {
+          "type": "image",
+          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "css": "mb-1 img-fluid rounded-2"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "heading",
+                "body": "Slide 5 Title",
+                "css": "mb-2"
+              },
+              {
+                "type": "paragraph",
+                "body": "Slide 5 description text.",
+                "css": ""
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "css": "mb-1 img-fluid rounded-2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "div": true,
+      "row": false,
+      "content": [
+        {
+          "type": "image",
+          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "css": "mb-1 img-fluid rounded-2"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "heading",
+                "body": "Slide 7 Title",
+                "css": "mb-2"
+              },
+              {
+                "type": "paragraph",
+                "body": "Slide 7 description text.",
+                "css": ""
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "css": "mb-1 img-fluid rounded-2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "div": true,
+      "row": false,
+      "content": {
+        "type": "table",
+        "css": "table table-striped table-bordered",
+        "items": [
+          ["ID", "Name", "Age"],
+          ["1", "Alice", "25"],
+          ["2", "Bob", "30"],
+          ["3", "Charlie", "28"]
+        ]
+      }
+    }
+  ]
+}
