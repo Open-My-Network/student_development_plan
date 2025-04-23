@@ -12,12 +12,12 @@
             "items": [
               {
                 "type": "heading",
-                "body": "Welcome to Slide 1",
-                "css": "mb-2"
+                "body": "WLEEP  9th GRADE STUDENT DEVELOPMENT PLAN",
+                "css": "mb-5"
               },
               {
-                "type": "paragraph",
-                "body": "This is something I want to try from my side",
+                "type": "heading",
+                "body": "CLICK HERE TO ENTER THE JOURNEY",
                 "css": ""
               }
             ]
@@ -38,111 +38,38 @@
     {
       "id": 2,
       "div": true,
-      "row": false,
+      "row": true,
+      "columns": 2,
       "content": [
         {
-          "type": "image",
-          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "css": "mb-1 img-fluid rounded-2"
+          "col-1": {
+            "css": "col-lg-7 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "paragraph",
+                "body": "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way.",
+                "css": "text-center",
+                "style": {
+                  "font-size": "1.2rem"
+                }
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-5 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "css": "mb-1 img-fluid rounded-2"
+              }
+            ]
+          }
         }
       ]
     },
     {
       "id": 3,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "heading",
-                "body": "Slide 3 Title",
-                "css": "mb-2"
-              },
-              {
-                "type": "paragraph",
-                "body": "Slide 3 description text.",
-                "css": ""
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "div": true,
-      "row": false,
-      "content": [
-        {
-          "type": "image",
-          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "css": "mb-1 img-fluid rounded-2"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "heading",
-                "body": "Slide 5 Title",
-                "css": "mb-2"
-              },
-              {
-                "type": "paragraph",
-                "body": "Slide 5 description text.",
-                "css": ""
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "div": true,
-      "row": false,
-      "content": [
-        {
-          "type": "image",
-          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "css": "mb-1 img-fluid rounded-2"
-        }
-      ]
-    },
-    {
-      "id": 7,
       "div": true,
       "row": true,
       "columns": 2,
@@ -177,7 +104,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 4,
       "div": true,
       "row": false,
       "content": {

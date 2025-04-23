@@ -6,7 +6,7 @@ const DynamicRenderer = ({ content }) => {
       case "heading":
         return <h2 className={item.css}>{item.body}</h2>;
       case "paragraph":
-        return <p className={item.css}>{item.body}</p>;
+        return <p className={item.css} style={item.style}>{item.body}</p>;
       case "image":
         return <img src={item.body} alt="" className={item.css} />;
       case "button":
