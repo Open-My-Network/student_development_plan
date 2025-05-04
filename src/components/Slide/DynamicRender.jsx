@@ -7,7 +7,9 @@ const DynamicRenderer = ({ content }) => {
     // Support recursively rendering nested items
     const renderChildren = (children) =>
       children?.map((child, idx) => (
-        <div key={`${keyPrefix}-child-${idx}`}>{renderContent(child, `${keyPrefix}-${idx}`)}</div>
+        <div key={`${keyPrefix}-child-${idx}`}>
+          {renderContent(child, `${keyPrefix}-${idx}`)}
+        </div>
       ));
 
     switch (item.type) {
@@ -34,7 +36,7 @@ const DynamicRenderer = ({ content }) => {
         return (
           <button
             className={item.css}
-            onClick={() => window.location.href = item.link || "#"}
+            onClick={() => (window.location.href = item.link || "#")}
           >
             {item.body}
           </button>
@@ -62,37 +64,45 @@ const DynamicRenderer = ({ content }) => {
           </table>
         );
 
-      case "row":
-        // Handle row with named columns (col-1, col-2)
-        if (Array.isArray(item.content)) {
-          return (
-            <div className="row">
-              {item.content.map((colBlock, index) =>
-                Object.entries(colBlock).map(([colKey, colValue]) => (
-                  <div key={`${keyPrefix}-${colKey}-${index}`} className={colValue.css}>
-                    {renderChildren(colValue.items)}
-                  </div>
-                ))
-              )}
-            </div>
-          );
-        }
-        return null;
+        case "row":
+          if (Array.isArray(item.content)) {
+            return (
+              <div className="row">
+                {item.content.map((colBlock, index) => {
+                  if (typeof colBlock === "object" && !Array.isArray(colBlock)) {
+                    // support either { "col-1": { css, items } } or { css, items }
+                    const isNamedCol = Object.keys(colBlock).length === 1 && colBlock[Object.keys(colBlock)[0]].items;
+                    if (isNamedCol) {
+                      const [_, colValue] = Object.entries(colBlock)[0];
+                      return (
+                        <div key={`${keyPrefix}-col-named-${index}`} className={colValue.css}>
+                          {renderChildren(colValue.items)}
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div key={`${keyPrefix}-col-${index}`} className={colBlock.css}>
+                          {renderChildren(colBlock.items)}
+                        </div>
+                      );
+                    }
+                  }
+                  return null;
+                })}
+              </div>
+            );
+          }
+          return null;
+        
 
       case "column":
-        return (
-          <div className={item.css}>
-            {renderChildren(item.items)}
-          </div>
-        );
+        return <div className={item.css}>{renderChildren(item.items)}</div>;
 
       default:
         // For generic containers or div wrappers
         if (Array.isArray(item.content)) {
           return (
-            <div className={item.css || ""}>
-              {renderChildren(item.content)}
-            </div>
+            <div className={item.css || ""}>{renderChildren(item.content)}</div>
           );
         }
         return null;
@@ -100,7 +110,9 @@ const DynamicRenderer = ({ content }) => {
   };
 
   if (Array.isArray(content)) {
-    return <>{content.map((item, index) => renderContent(item, `top-${index}`))}</>;
+    return (
+      <>{content.map((item, index) => renderContent(item, `top-${index}`))}</>
+    );
   } else if (typeof content === "object" && content !== null) {
     return <>{renderContent(content)}</>;
   } else {

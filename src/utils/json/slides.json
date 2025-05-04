@@ -44,7 +44,6 @@
         {
           "col-1": {
             "css": "col-lg-7 col-md-6 col-sm-12",
-            "css": "col-lg-7 col-md-6 col-sm-12",
             "items": [
               {
                 "type": "paragraph",
@@ -85,7 +84,6 @@
           },
           "col-2": {
             "css": "col-lg-5 col-md-6 col-sm-12",
-            "css": "col-lg-5 col-md-6 col-sm-12",
             "items": [
               {
                 "type": "image",
@@ -113,28 +111,26 @@
           "columns": 2,
           "content": [
             {
-              "col-1": {
-                "css": "col-md-6 border-end pe-4",
-                "items": [
-                  {
-                    "type": "paragraph",
-                    "body": "<strong>“Current Grade” NorthStar Goal</strong> <span class='text-info'>(Short-Term)</span><br>This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
-                    "css": "text-center"
-                  }
-                ]
-              }
+              "type": "column",
+              "css": "col-md-6 border-end pe-4",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "<strong>“Current Grade” NorthStar Goal</strong> <span class='text-info'>(Short-Term)</span><br>This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
+                  "css": "text-center"
+                }
+              ]
             },
             {
-              "col-2": {
-                "css": "col-md-6 ps-4",
-                "items": [
-                  {
-                    "type": "paragraph",
-                    "body": "<strong>“Graduation” NorthStar Goal</strong> <span class='text-success'>(Long-Term)</span><br>This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
-                    "css": "text-center"
-                  }
-                ]
-              }
+              "type": "column",
+              "css": "col-md-6 ps-4",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "<strong>“Graduation” NorthStar Goal</strong> <span class='text-success'>(Long-Term)</span><br>This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
+                  "css": "text-center"
+                }
+              ]
             }
           ]
         },
@@ -149,7 +145,7 @@
           "css": "btn btn-link text-primary text-uppercase d-block mx-auto mt-3"
         }
       ]
-    },    
+    },
     {
       "id": 5,
       "questions": true
