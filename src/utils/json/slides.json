@@ -12,13 +12,13 @@
             "items": [
               {
                 "type": "heading",
-                "body": "Welcome to Slide 1",
+                "body": "LEEP 9th GRADE STUDENT DEVELOPMENT PLAN",
                 "css": "mb-2"
               },
               {
-                "type": "paragraph",
-                "body": "This is something I want to try from my side",
-                "css": ""
+                "type": "button",
+                "body": "CLICK HERE TO ENTER THE JOURNEY",
+                "css": "btn btn-primary"
               }
             ]
           },
@@ -27,7 +27,7 @@
             "items": [
               {
                 "type": "image",
-                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "body": "1.png",
                 "css": "mb-1 img-fluid rounded-2"
               }
             ]
@@ -38,12 +38,30 @@
     {
       "id": 2,
       "div": true,
-      "row": false,
+      "row": true,
+      "columns": 2,
       "content": [
         {
-          "type": "image",
-          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "css": "mb-1 img-fluid rounded-2"
+          "col-1": {
+            "css": "col-lg-7 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "paragraph",
+                "body": "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
+                "css": "text-center"
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-5 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "2.png",
+                "css": "mb-1 img-fluid rounded-2"
+              }
+            ]
+          }
         }
       ]
     },
@@ -55,26 +73,21 @@
       "content": [
         {
           "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
+            "css": "col-lg-7 col-md-6 col-sm-12",
             "items": [
               {
-                "type": "heading",
-                "body": "Slide 3 Title",
-                "css": "mb-2"
-              },
-              {
                 "type": "paragraph",
-                "body": "Slide 3 description text.",
-                "css": ""
+                "body": "The development process starts with you! You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
+                "css": "text-center"
               }
             ]
           },
           "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
+            "css": "col-lg-5 col-md-6 col-sm-12",
             "items": [
               {
                 "type": "image",
-                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "body": "3.png",
                 "css": "mb-1 img-fluid rounded-2"
               }
             ]
@@ -86,110 +99,130 @@
       "id": 4,
       "div": true,
       "row": false,
+      "columns": 1,
       "content": [
         {
-          "type": "image",
-          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "css": "mb-1 img-fluid rounded-2"
+          "type": "heading",
+          "body": "Your <span class='text-primary'>NorthStar</span> Goal is the ULTIMATE GOAL you want to accomplish by the end of high school.",
+          "css": "text-white bg-primary p-3 text-center rounded mb-4"
+        },
+        {
+          "type": "row",
+          "columns": 2,
+          "content": [
+            {
+              "col-1": {
+                "css": "col-md-6 border-end pe-4",
+                "items": [
+                  {
+                    "type": "paragraph",
+                    "body": "<strong>“Current Grade” NorthStar Goal</strong> <span class='text-info'>(Short-Term)</span><br>This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
+                    "css": "text-center"
+                  }
+                ]
+              }
+            },
+            {
+              "col-2": {
+                "css": "col-md-6 ps-4",
+                "items": [
+                  {
+                    "type": "paragraph",
+                    "body": "<strong>“Graduation” NorthStar Goal</strong> <span class='text-success'>(Long-Term)</span><br>This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
+                    "css": "text-center"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "body": "Once you set your goals, think about the steps that will help you get there. These steps could be going to a LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.",
+          "css": "text-center mt-4"
+        },
+        {
+          "type": "button",
+          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+          "css": "btn btn-link text-primary text-uppercase d-block mx-auto mt-3"
         }
       ]
-    },
+    },    
     {
       "id": 5,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "heading",
-                "body": "Slide 5 Title",
-                "css": "mb-2"
-              },
-              {
-                "type": "paragraph",
-                "body": "Slide 5 description text.",
-                "css": ""
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
-          }
-        }
-      ]
+      "questions": true
     },
     {
       "id": 6,
-      "div": true,
-      "row": false,
-      "content": [
-        {
-          "type": "image",
-          "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "css": "mb-1 img-fluid rounded-2"
-        }
-      ]
+      "logoSlide": true
     },
     {
       "id": 7,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "heading",
-                "body": "Slide 7 Title",
-                "css": "mb-2"
-              },
-              {
-                "type": "paragraph",
-                "body": "Slide 7 description text.",
-                "css": ""
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=3032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
-          }
-        }
-      ]
+      "milestoneSlide": true
     },
     {
       "id": 8,
+      "milestoneWelcome": true
+    },
+    {
+      "id": 9,
+      "twoColumnsWithImage": true
+    },
+    {
+      "id": 10,
+      "imageAndTwoRows": true
+    },
+    {
+      "id": 11,
+      "twoColoredColumnsWithImage": true
+    },
+    {
+      "id": 12,
+      "tableSlide": true
+    },
+    {
+      "id": 13,
+      "title": "",
+      "description": "",
+      "Personalform": true,
+      "dynamicContent": true
+    },
+    {
+      "id": 14,
+      "personalMissionStatement": true
+    },
+    {
+      "id": 15,
+      "title": "",
+      "description": "",
+      "Missionform": true,
+      "dynamicContent": true
+    },
+    {
+      "id": 16,
+      "title": "Values You Submitted",
+      "description": "",
+      "apiContent": true
+    },
+    {
+      "id": 17,
       "div": true,
       "row": false,
-      "content": {
-        "type": "table",
-        "css": "table table-striped table-bordered",
-        "items": [
-          ["ID", "Name", "Age"],
-          ["1", "Alice", "25"],
-          ["2", "Bob", "30"],
-          ["3", "Charlie", "28"]
-        ]
-      }
+      "content": [
+        {
+          "type": "heading",
+          "body": "NEXT STOP ON THE JOURNEY… MILESTONE 2"
+        },
+        {
+          "type": "paragraph",
+          "body": "CONGRATS, NAME OF STUDENT! You've crushed this milestone and earned your LEEP points, bringing you one step closer to reaching your NorthStar goal! Keep that energy going – you’re on the path to greatness!"
+        },
+        {
+          "type": "button",
+          "body": "Continue",
+          "css": "btn btn-success"
+        }
+      ]
     }
   ]
 }
