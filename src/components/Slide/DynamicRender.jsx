@@ -44,13 +44,19 @@ const DynamicRenderer = ({ content }) => {
     }
   };
 
-  return (
-    <div>
-      {content.map((item, index) => (
-        <div key={index}>{renderContent(item)}</div>
-      ))}
-    </div>
-  );
+  // Check if content is an array (multiple items) or a single object
+  if (Array.isArray(content)) {
+    return (
+      <div>
+        {content.map((item, index) => (
+          <div key={index}>{renderContent(item)}</div>
+        ))}
+      </div>
+    );
+  } else {
+    // Handle single content item
+    return <div>{renderContent(content)}</div>;
+  }
 };
 
 export default DynamicRenderer;
