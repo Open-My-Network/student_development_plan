@@ -44,6 +44,7 @@
         {
           "col-1": {
             "css": "col-lg-7 col-md-6 col-sm-12",
+            "css": "col-lg-7 col-md-6 col-sm-12",
             "items": [
               {
                 "type": "paragraph",
@@ -83,6 +84,7 @@
             ]
           },
           "col-2": {
+            "css": "col-lg-5 col-md-6 col-sm-12",
             "css": "col-lg-5 col-md-6 col-sm-12",
             "items": [
               {

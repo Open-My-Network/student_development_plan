@@ -9,6 +9,7 @@ const Slide = ({ slide }) => {
           <div className="row">
             {Object.entries(slide.content[0]).map(([key, col]) => (
               <div key={key} className={col.css || "col"}>
+                {console.log(col ?? "N/A")}
                 <DynamicRenderer content={col.items} />
               </div>
             ))}
