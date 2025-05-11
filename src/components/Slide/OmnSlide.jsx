@@ -15,7 +15,7 @@ const Slide = ({ slide }) => {
             ))}
           </div>
         ) : (
-          <DynamicRenderer content={[slide.content]} />
+          <DynamicRenderer content={slide.content} />
         )}
       </div>
     </div>
