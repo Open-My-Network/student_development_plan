@@ -154,31 +154,324 @@
     },
     {
       "id": 5,
-      "questions": true
+      "css": "p-4",
+      "content": [
+        {
+          "type": "heading",
+          "body": "CONSIDER THE FOLLOWING QUESTIONS TO ASK YOURSELF ON THIS JOURNEY",
+          "css": "bg-success text-white text-center p-3 rounded"
+        },
+        {
+          "type": "container",
+          "css": "mt-4",
+          "content": [
+            {
+              "type": "row",
+              "content": [
+                {
+                  "css": "col-md-4 border-end border-bottom border-success p-3 text-center",
+                  "items": [
+                    {
+                      "type": "paragraph",
+                      "body": "How will this goal help me reach my big goal for this grade and my future?",
+                      "css": "mb-0"
+                    }
+                  ]
+                },
+                {
+                  "css": "col-md-4 border-end border-bottom border-success p-3 text-center",
+                  "items": [
+                    {
+                      "type": "paragraph",
+                      "body": "What worked well and what could I improve on?",
+                      "css": "mb-0"
+                    }
+                  ]
+                },
+                {
+                  "css": "col-md-4 border-bottom border-success p-3 text-center",
+                  "items": [
+                    {
+                      "type": "paragraph",
+                      "body": "What challenges could I face trying to achieve this milestone goal and how can I overcome them?",
+                      "css": "mb-0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "row",
+              "content": [
+                {
+                  "css": "col-md-4 border-end border-success p-3 text-center",
+                  "items": [
+                    {
+                      "type": "paragraph",
+                      "body": "How do I plan to track my progress during this milestone?",
+                      "css": "mb-0"
+                    }
+                  ]
+                },
+                {
+                  "css": "col-md-4 border-end border-success p-3 text-center",
+                  "items": [
+                    {
+                      "type": "paragraph",
+                      "body": "What tasks do I need to finish? Do I have a clear plan and timeline to reach my goals?",
+                      "css": "mb-0"
+                    }
+                  ]
+                },
+                {
+                  "css": "col-md-4 p-3 text-center",
+                  "items": [
+                    {
+                      "type": "paragraph",
+                      "body": "Who can give me helpful advice, and how do I use that advice to improve?",
+                      "css": "mb-0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+          "css": "btn btn-link text-success fw-semibold d-block mx-auto mt-4",
+          "link": "#"
+        }
+      ]
     },
     {
       "id": 6,
-      "logoSlide": true
+      "div": true,
+      "row": true,
+      "columns": 1,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "leep.png",
+                "css": "img-fluid w-100"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "id": 7,
-      "milestoneSlide": true
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center",
+            "items": [
+              {
+                "type": "heading",
+                "body": "CLICK HERE <br> AND <br> TAKE ACTION",
+                "css": "text-primary text-center fw-semibold"
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-6 col-md-6 col-sm-12",
+            "items": [
+              {
+                "type": "image",
+                "body": "8.png",
+                "css": "img-fluid rounded-2"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "id": 8,
-      "milestoneWelcome": true
+      "div": true,
+      "row": true,
+      "columns": 1,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-12 text-center",
+            "items": [
+              {
+                "type": "heading",
+                "body": "WELCOME TO MILESTONE 1",
+                "css": "text-success mb-3"
+              },
+              {
+                "type": "paragraph",
+                "body": "Congrats on taking the LEEP and starting your awesome journey – this is just the beginning of something great!",
+                "css": "mb-4"
+              },
+              {
+                "type": "button",
+                "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+                "css": "btn btn-link text-primary fw-semibold d-block mx-auto"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "id": 9,
-      "twoColumnsWithImage": true
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+            "items": [
+              {
+                "type": "heading",
+                "body": "MILESTONE 1: THE GOAL AND PURPOSE",
+                "css": "text-primary mb-3"
+              },
+              {
+                "type": "paragraph",
+                "body": "Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.",
+                "css": "mb-3"
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+            "items": [
+              {
+                "type": "paragraph",
+                "body": "This month, we’re going to focus on setting your big “NorthStar Goal.” As you work toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first step to reaching that next milestone!",
+                "css": "mb-3"
+              }
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "body": "e7ad2f70-8769-40cc-9ac8-7382a11754a4.png",
+          "css": "img-fluid mb-3"
+        },
+        {
+          "type": "button",
+          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+          "css": "btn btn-link text-primary fw-semibold d-block mx-auto"
+        }
+      ]
     },
     {
       "id": 10,
-      "imageAndTwoRows": true
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-12 p-0",
+            "items": [
+              {
+                "type": "image",
+                "body": "8.png",
+                "css": "img-fluid w-100"
+              }
+            ]
+          },
+          "col-2": {
+            "css": "col-lg-6 col-md-12 p-3",
+            "items": [
+              {
+                "type": "button",
+                "body": "Create a Personal Core Value Statement",
+                "css": "btn btn-primary d-block w-100 mb-3"
+              },
+              {
+                "type": "button",
+                "body": "Create a Personal Mission Statement",
+                "css": "btn btn-success d-block w-100"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "id": 11,
-      "twoColoredColumnsWithImage": true
+      "div": true,
+      "row": true,
+      "columns": 1,
+      "content": [
+        {
+          "type": "heading",
+          "body": "PERSONAL CORE VALUE STATEMENT",
+          "css": "text-center mb-4"
+        },
+        {
+          "type": "row",
+          "css": "row row-cols-1 row-cols-md-2",
+          "content": [
+            {
+              "css": "col p-3 bg-primary text-white rounded-3 mb-4",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "A Personal Core Value is something that really matters to you. It’s like a personal guide that shapes how you act, make choices, and treat others. For example, if honesty is one of your values, telling the truth is important to you, and you’ll try to be truthful in everything you do. Values help define who you are and who you want to become.",
+                  "css": "mb-3"
+                }
+              ]
+            },
+            {
+              "css": "col p-3",
+              "items": [
+                {
+                  "type": "heading",
+                  "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
+                  "css": "text-center mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "What are the things that help you make decisions and act?",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "ol",
+                  "items": [
+                    "What qualities do you admire in other people?",
+                    "What beliefs or ideas are most important to you?",
+                    "When do you feel happiest and proud of yourself?"
+                  ],
+                  "css": "mb-4"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "Now, write down 10-15 values that really matter to you, like honesty, kindness, or creativity. Then, narrow it down to your top 5 core values – these are the ones that guide what you do every day!",
+                  "css": "text-muted mb-3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "body": "89ae8550-3fa1-47cc-9961-592becc7a12b.png",
+          "css": "img-fluid mb-3"
+        },
+        {
+          "type": "button",
+          "body": "Create a Personal Core Value Statement",
+          "css": "btn btn-link text-primary fw-semibold d-block mx-auto"
+        }
+      ]
     },
     {
       "id": 12,
