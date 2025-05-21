@@ -325,51 +325,51 @@
         }
       ]
     },
-{
-  "id": 9,
-  "div": true,
-  "row": true,
-  "columns": 2,
-  "content": [
     {
-      "col-1": {
-        "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
-        "items": [
-          {
-            "type": "heading",
-            "body": "MILESTONE 1: THE GOAL AND PURPOSE",
-            "css": "text-primary mb-3"
+      "id": 9,
+      "div": true,
+      "row": true,
+      "columns": 2,
+      "content": [
+        {
+          "col-1": {
+            "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+            "items": [
+              {
+                "type": "heading",
+                "body": "MILESTONE 1: THE GOAL AND PURPOSE",
+                "css": "text-primary mb-3"
+              },
+              {
+                "type": "paragraph",
+                "body": "Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.",
+                "css": "mb-3"
+              }
+            ]
           },
-          {
-            "type": "paragraph",
-            "body": "Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.",
-            "css": "mb-3"
+          "col-2": {
+            "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+            "items": [
+              {
+                "type": "paragraph",
+                "body": "This month, we’re going to focus on setting your big “NorthStar Goal.” As you work toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first step to reaching that next milestone!",
+                "css": "mb-3"
+              }
+            ]
           }
-        ]
-      },
-      "col-2": {
-        "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
-        "items": [
-          {
-            "type": "paragraph",
-            "body": "This month, we’re going to focus on setting your big “NorthStar Goal.” As you work toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first step to reaching that next milestone!",
-            "css": "mb-3"
-          }
-        ]
-      }
+        },
+        {
+          "type": "image",
+          "body": "20point.png",
+          "css": "img-fluid mb-3"
+        },
+        {
+          "type": "button",
+          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
+        }
+      ]
     },
-    {
-      "type": "image",
-      "body": "20point.png",
-      "css": "img-fluid mb-3"
-    },
-    {
-      "type": "button",
-      "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
-    }
-  ]
-},
     {
       "id": 10,
       "div": true,
@@ -405,141 +405,142 @@
         }
       ]
     },
-{
-  "id": 11,
-  "div": true,
-  "row": true,
-  "columns": 2,
-  "content": [
     {
-      "col-1": {
-        "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
-        "items": [
-          {
-            "type": "heading",
-            "body": "PERSONAL CORE VALUE STATEMENT",
-            "css": "text-center mb-4"
-          },
-          {
-            "type": "paragraph",
-            "body": "A Personal Core Value is something that really matters to you. It’s like a personal guide that shapes how you act, make choices, and treat others. For example, if honesty is one of your values, telling the truth is important to you, and you’ll try to be truthful in everything you do. Values help define who you are and who you want to become.",
-            "css": "mb-4"
-          }
-        ]
-      },
-      "col-2": {
-        "css": "col-lg-6 col-md-12 p-3",
-        "items": [
-          {
-            "type": "heading",
-            "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
-            "css": "text-center mb-3"
-          },
-          {
-            "type": "paragraph",
-            "body": "What are the things that help you make decisions and act?",
-            "css": "mb-3"
-          },
-          {
-            "type": "ol",
-            "items": [
-              "What qualities do you admire in other people?",
-              "What beliefs or ideas are most important to you?",
-              "When do you feel happiest and proud of yourself?"
-            ],
-            "css": "mb-4"
-          },
-          {
-            "type": "paragraph",
-            "body": "Now, write down 10-15 values that really matter to you, like honesty, kindness, or creativity. Then, narrow it down to your top 5 core values – these are the ones that guide what you do every day!",
-            "css": "text-muted mb-3"
-          }
-        ]
-      }
-    },
-    {
-      "type": "image",
-      "body": "95be209a-dee7-4a5b-86d3-4896855c2041.png",
-      "css": "img-fluid mb-3"
-    },
-    {
-      "type": "button",
-      "body": "Create a Personal Core Value Statement",
-      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
-    }
-  ]
-},
-{
-  "id": 12,
-  "div": true,
-  "row": true,
-  "columns": 1,
-  "content": [
-    {
-      "type": "heading",
-      "body": "SAMPLE VALUES TO GET GOING....",
-      "css": "text-center mb-4"
-    },
-    {
-      "type": "table",
-      "css": "table table-bordered table-striped",
-      "items": [
-        [
-          "Respect - Treating others kindly and valuing their differences",
-          "Accountability - Taking responsibility for your actions",
-          "Kindness - Being friendly, generous, and considerate to others",
-          "Compassion - Wanting to help those who are struggling",
-          "Optimism - Looking at situations with a positive outlook"
-        ],
-        [
-          "Integrity - Doing the right thing, even when no one is watching",
-          "Honesty - Being truthful with yourself and others",
-          "Open-Mindedness - Being willing to consider new ideas and perspectives",
-          "Justice - Standing up for fairness and doing what's right",
-          "Growth - Always aiming to improve and learn"
-        ],
-        [
-          "Responsibility - Owning your actions and choices",
-          "Creativity - Using imagination to think of new ideas",
-          "Patience - Staying calm and persistent, even in challenging situations",
-          "Courage - Being brave enough to face fears or try new things",
-          "Focus - Concentrating on the task or goal at hand"
-        ],
-        [
-          "Perseverance - Sticking with something, even when it’s tough",
-          "Gratitude - Appreciating what you have and showing thankfulness",
-          "Leadership - Inspiring others and setting a good example",
-          "Dedication - Putting in effort and commitment to reach goals",
-          "Loyalty - Standing by friends, family, and commitments"
-        ],
-        [
-          "Empathy - Understanding and caring about how others feel",
-          "Self-Discipline - Staying focused on goals and resisting distractions",
-          "Resilience - Bouncing back from challenges or setbacks",
-          "Adaptability - Being flexible and open to change",
-          "Service - Helping others and contributing to your community"
-        ],
-        [
-          "Curiosity - Being eager to learn and explore new things",
-          "Teamwork - Working well with others to achieve a common goal",
-          "Humility - Recognizing that there’s always something new to learn",
-          "Self-Respect - Valuing yourself and your abilities",
-          "Ambition - Having strong goals and dreams for the future"
-        ]
+      "id": 11,
+      "div": true,
+      "content": [
+        {
+          "type": "row",
+          "content": [
+            {
+              "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+              "items": [
+                {
+                  "type": "heading",
+                  "body": "PERSONAL CORE VALUE STATEMENT",
+                  "css": "text-center mb-4"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "A Personal Core Value is something that really matters to you. It’s like a personal guide that shapes how you act, make choices, and treat others. For example, if honesty is one of your values, telling the truth is important to you, and you’ll try to be truthful in everything you do. Values help define who you are and who you want to become.",
+                  "css": "mb-4"
+                }
+              ]
+            },
+            {
+              "css": "col-lg-6 col-md-12 p-3",
+              "items": [
+                {
+                  "type": "heading",
+                  "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
+                  "css": "text-center mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "What are the things that help you make decisions and act?",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "ol",
+                  "items": [
+                    "What qualities do you admire in other people?",
+                    "What beliefs or ideas are most important to you?",
+                    "When do you feel happiest and proud of yourself?"
+                  ],
+                  "css": "mb-4"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "Now, write down 10-15 values that really matter to you, like honesty, kindness, or creativity. Then, narrow it down to your top 5 core values – these are the ones that guide what you do every day!",
+                  "css": "text-muted mb-3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "body": "95be209a-dee7-4a5b-86d3-4896855c2041.png",
+          "css": "img-fluid mb-3"
+        },
+        {
+          "type": "button",
+          "body": "Create a Personal Core Value Statement",
+          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
+        }
       ]
     },
     {
-      "type": "image",
-      "body": "80fbd178-4867-4dab-9747-2a47b888ce7f.png",
-      "css": "img-fluid mb-3"
+      "id": 12,
+      "div": true,
+      "row": true,
+      "columns": 1,
+      "content": [
+        {
+          "type": "heading",
+          "body": "SAMPLE VALUES TO GET GOING....",
+          "css": "text-center mb-4"
+        },
+        {
+          "type": "table",
+          "css": "table table-bordered table-striped",
+          "items": [
+            [
+              "Respect - Treating others kindly and valuing their differences",
+              "Accountability - Taking responsibility for your actions",
+              "Kindness - Being friendly, generous, and considerate to others",
+              "Compassion - Wanting to help those who are struggling",
+              "Optimism - Looking at situations with a positive outlook"
+            ],
+            [
+              "Integrity - Doing the right thing, even when no one is watching",
+              "Honesty - Being truthful with yourself and others",
+              "Open-Mindedness - Being willing to consider new ideas and perspectives",
+              "Justice - Standing up for fairness and doing what's right",
+              "Growth - Always aiming to improve and learn"
+            ],
+            [
+              "Responsibility - Owning your actions and choices",
+              "Creativity - Using imagination to think of new ideas",
+              "Patience - Staying calm and persistent, even in challenging situations",
+              "Courage - Being brave enough to face fears or try new things",
+              "Focus - Concentrating on the task or goal at hand"
+            ],
+            [
+              "Perseverance - Sticking with something, even when it’s tough",
+              "Gratitude - Appreciating what you have and showing thankfulness",
+              "Leadership - Inspiring others and setting a good example",
+              "Dedication - Putting in effort and commitment to reach goals",
+              "Loyalty - Standing by friends, family, and commitments"
+            ],
+            [
+              "Empathy - Understanding and caring about how others feel",
+              "Self-Discipline - Staying focused on goals and resisting distractions",
+              "Resilience - Bouncing back from challenges or setbacks",
+              "Adaptability - Being flexible and open to change",
+              "Service - Helping others and contributing to your community"
+            ],
+            [
+              "Curiosity - Being eager to learn and explore new things",
+              "Teamwork - Working well with others to achieve a common goal",
+              "Humility - Recognizing that there’s always something new to learn",
+              "Self-Respect - Valuing yourself and your abilities",
+              "Ambition - Having strong goals and dreams for the future"
+            ]
+          ]
+        },
+        {
+          "type": "image",
+          "body": "80fbd178-4867-4dab-9747-2a47b888ce7f.png",
+          "css": "img-fluid mb-3"
+        },
+        {
+          "type": "button",
+          "body": "Create Your Personal Core Value Statement",
+          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
+        }
+      ]
     },
-    {
-      "type": "button",
-      "body": "Create Your Personal Core Value Statement",
-      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
-    }
-  ]
-},
     {
       "id": 13,
       "title": "",
