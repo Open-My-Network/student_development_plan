@@ -41,6 +41,24 @@ const DynamicRenderer = ({ content }) => {
           </button>
         );
 
+      case "input":
+        return (
+          <input
+            className={item.css}
+            type={item.attributes?.type || "text"}
+            placeholder={item.attributes?.placeholder || ""}
+          />
+        );
+
+      case "textarea":
+        return (
+          <textarea
+            className={item.css}
+            rows={item.attributes?.rows || 3}
+            placeholder={item.attributes?.placeholder || ""}
+          />
+        );
+
       case "table":
         return (
           <table className={item.css}>
@@ -73,7 +91,7 @@ const DynamicRenderer = ({ content }) => {
                     Object.keys(colBlock).length === 1 &&
                     colBlock[Object.keys(colBlock)[0]].items;
                   if (isNamedCol) {
-                    const [_, colValue] = Object.entries(colBlock)[0];
+                    const [colValue] = Object.entries(colBlock)[0];
                     return (
                       <div
                         key={`${keyPrefix}-col-named-${index}`}
@@ -104,7 +122,6 @@ const DynamicRenderer = ({ content }) => {
         return <div className={item.css}>{renderChildren(item.items)}</div>;
 
       default:
-        // Handle generic containers like outer slides
         if (item.div && Array.isArray(item.content)) {
           return (
             <div className={item.css || ""}>{renderChildren(item.content)}</div>
