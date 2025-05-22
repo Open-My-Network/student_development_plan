@@ -1,20 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Slide from "./OmnSlide";
-import slidesData from ".././../utils/json/slides.json";
+import slidesData from "../../utils/json/slides.json";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = slidesData.slides.length;
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slidesData.slides.length);
+    setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? slidesData.slides.length - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight") {
+        nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        prevSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="slider-container vh-100 d-flex align-items-center justify-content-center">
@@ -29,19 +41,6 @@ const Slider = () => {
           <Slide slide={slidesData.slides[currentSlide]} />
         </motion.div>
       </AnimatePresence>
-
-      <button
-        className="btn btn-secondary position-absolute start-0"
-        onClick={prevSlide}
-      >
-        Previous
-      </button>
-      <button
-        className="btn btn-secondary position-absolute end-0"
-        onClick={nextSlide}
-      >
-        Next
-      </button>
     </div>
   );
 };
