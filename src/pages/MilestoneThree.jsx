@@ -3,8 +3,14 @@ import Slider from "../components/Slide/OmnSlider";
 
 export const MilestoneThree = () => {
   return (
-    <div className="container">
-      <div className="card p-4 mt-5" style={{ width: "80%", height: "70vh" }}>
+    <div className="container my-5">
+      <div
+        className="card p-4"
+        style={{
+          minHeight: "70vh", // Start at 70vh minimum
+          height: "auto",    // Allow it to expand beyond 70vh if needed
+        }}
+      >
         <Slider />
       </div>
     </div>

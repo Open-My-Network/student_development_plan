@@ -1,20 +1,37 @@
 import React from "react";
 
-const DynamicRenderer = ({ content }) => {
+const DynamicRenderer = ({ content, goNext, goToSlide }) => {
   const renderContent = (item, keyPrefix = "") => {
     if (!item) return null;
 
-    const renderChildren = (children) =>
-      children?.map((child, idx) => (
-        <div key={`${keyPrefix}-child-${idx}`}>
-          {renderContent(child, `${keyPrefix}-${idx}`)}
-        </div>
-      ));
-
     switch (item.type) {
+      case "button":
+        return (
+          <button
+            key={keyPrefix}
+            className={item.css}
+            onClick={() => {
+              if (item.action === "goNext" && goNext) {
+                goNext();
+              } else if (
+                item.action === "goToSlide" &&
+                goToSlide &&
+                item.targetSlideId
+              ) {
+                goToSlide(item.targetSlideId);
+              } else if (item.link) {
+                window.location.href = item.link;
+              }
+            }}
+          >
+            {item.body}
+          </button>
+        );
+
       case "heading":
         return (
           <h2
+            key={keyPrefix}
             className={item.css}
             dangerouslySetInnerHTML={{ __html: item.body }}
           />
@@ -22,28 +39,18 @@ const DynamicRenderer = ({ content }) => {
 
       case "paragraph":
         return (
-          <p
-            className={item.css}
-            dangerouslySetInnerHTML={{ __html: item.body }}
-          />
+          <p key={keyPrefix} className={item.css}>
+            {item.body}
+          </p>
         );
 
       case "image":
-        return <img src={item.body} alt="" className={item.css} />;
-
-      case "button":
-        return (
-          <button
-            className={item.css}
-            onClick={() => (window.location.href = item.link || "#")}
-          >
-            {item.body}
-          </button>
-        );
+        return <img key={keyPrefix} src={item.body} alt="" className={item.css} />;
 
       case "input":
         return (
           <input
+            key={keyPrefix}
             className={item.css}
             type={item.attributes?.type || "text"}
             placeholder={item.attributes?.placeholder || ""}
@@ -53,6 +60,7 @@ const DynamicRenderer = ({ content }) => {
       case "textarea":
         return (
           <textarea
+            key={keyPrefix}
             className={item.css}
             rows={item.attributes?.rows || 3}
             placeholder={item.attributes?.placeholder || ""}
@@ -61,7 +69,7 @@ const DynamicRenderer = ({ content }) => {
 
       case "table":
         return (
-          <table className={item.css}>
+          <table key={keyPrefix} className={item.css}>
             <thead>
               <tr>
                 {item.items?.[0]?.map((header, index) => (
@@ -70,13 +78,15 @@ const DynamicRenderer = ({ content }) => {
               </tr>
             </thead>
             <tbody>
-              {item.items?.slice(1)?.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                  {row.map((cell, cellIndex) => (
-                    <td key={cellIndex}>{cell}</td>
-                  ))}
-                </tr>
-              ))}
+              {item.items
+                ?.slice(1)
+                ?.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {row.map((cell, cellIndex) => (
+                      <td key={cellIndex}>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
             </tbody>
           </table>
         );
@@ -84,7 +94,7 @@ const DynamicRenderer = ({ content }) => {
       case "row":
         if (Array.isArray(item.content)) {
           return (
-            <div className="row">
+            <div key={keyPrefix} className="row">
               {item.content.map((colBlock, index) => {
                 if (typeof colBlock === "object" && !Array.isArray(colBlock)) {
                   const isNamedCol =
@@ -97,7 +107,9 @@ const DynamicRenderer = ({ content }) => {
                         key={`${keyPrefix}-col-named-${index}`}
                         className={colValue.css}
                       >
-                        {renderChildren(colValue.items)}
+                        {colValue.items.map((child, idx) =>
+                          renderContent(child, `${keyPrefix}-${index}-child-${idx}`)
+                        )}
                       </div>
                     );
                   } else {
@@ -106,7 +118,9 @@ const DynamicRenderer = ({ content }) => {
                         key={`${keyPrefix}-col-${index}`}
                         className={colBlock.css}
                       >
-                        {renderChildren(colBlock.items)}
+                        {colBlock.items.map((child, idx) =>
+                          renderContent(child, `${keyPrefix}-${index}-child-${idx}`)
+                        )}
                       </div>
                     );
                   }
@@ -119,29 +133,32 @@ const DynamicRenderer = ({ content }) => {
         return null;
 
       case "column":
-        return <div className={item.css}>{renderChildren(item.items)}</div>;
+        return (
+          <div key={keyPrefix} className={item.css}>
+            {item.items?.map((child, idx) => renderContent(child, `${keyPrefix}-child-${idx}`))}
+          </div>
+        );
 
       default:
         if (item.div && Array.isArray(item.content)) {
           return (
-            <div className={item.css || ""}>{renderChildren(item.content)}</div>
+            <div key={keyPrefix} className={item.css || ""}>
+              {item.content.map((child, idx) => renderContent(child, `${keyPrefix}-child-${idx}`))}
+            </div>
           );
         } else if (Array.isArray(item.content)) {
-          return <>{renderChildren(item.content)}</>;
+          return <>{item.content.map((child, idx) => renderContent(child, `${keyPrefix}-child-${idx}`))}</>;
         }
         return null;
     }
   };
 
   if (Array.isArray(content)) {
-    return (
-      <>{content.map((item, index) => renderContent(item, `top-${index}`))}</>
-    );
+    return <>{content.map((item, index) => renderContent(item, `top-${index}`))}</>;
   } else if (typeof content === "object" && content !== null) {
     return <>{renderContent(content)}</>;
-  } else {
-    return null;
   }
+  return null;
 };
 
 export default DynamicRenderer;

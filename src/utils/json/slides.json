@@ -1,157 +1,158 @@
 {
   "slides": [
+{
+  "id": 1,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
     {
-      "id": 1,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-7 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "heading",
-                "body": "LEEP 9th GRADE STUDENT DEVELOPMENT PLAN",
-                "css": "mb-2"
-              },
-              {
-                "type": "button",
-                "body": "CLICK HERE TO ENTER THE JOURNEY",
-                "css": "btn btn-primary"
-              }
-            ]
+      "col-1": {
+        "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center align-items-start p-3",
+        "items": [
+          {
+            "type": "heading",
+            "body": "LEEP 9th GRADE STUDENT DEVELOPMENT PLAN",
+            "css": "mb-3 fw-bold text-primary"
           },
-          "col-2": {
-            "css": "col-lg-5 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "1.png",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
+          {
+            "type": "button",
+            "body": "CLICK HERE TO ENTER THE JOURNEY",
+            "css": "btn btn-primary mt-2",
+            "action": "goNext"
           }
-        }
-      ]
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-5 col-md-6 col-12 text-center p-3",
+        "items": [
+          {
+            "type": "image",
+            "body": "1.png",
+            "css": "img-fluid rounded-2 shadow-sm"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 2,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center p-3",
+        "items": [
+          {
+            "type": "paragraph",
+            "body": "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
+            "css": "text-center text-lg-start"
+          }
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-5 col-md-6 col-12 text-center p-3",
+        "items": [
+          {
+            "type": "image",
+            "body": "2.png",
+            "css": "img-fluid rounded-2 shadow-sm"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 3,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center p-3",
+        "items": [
+          {
+            "type": "paragraph",
+            "body": "The development process starts with you! You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
+            "css": "text-center text-lg-start"
+          }
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-5 col-md-6 col-12 text-center p-3",
+        "items": [
+          {
+            "type": "image",
+            "body": "3.png",
+            "css": "img-fluid rounded-2 shadow-sm"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 4,
+  "css": "p-4",
+  "content": [
+    {
+      "type": "heading",
+      "body": "Your NorthStar Goal is the ULTIMATE GOAL you want to accomplish by the end of high school.",
+      "css": "bg-primary text-white text-center p-3 rounded"
     },
     {
-      "id": 2,
-      "div": true,
-      "row": true,
-      "columns": 2,
+      "type": "row",
       "content": [
         {
-          "col-1": {
-            "css": "col-lg-7 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "paragraph",
-                "body": "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
-                "css": "text-center"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-5 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "2.png",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-7 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "paragraph",
-                "body": "The development process starts with you! You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
-                "css": "text-center"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-5 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "3.png",
-                "css": "mb-1 img-fluid rounded-2"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "css": "p-4",
-      "content": [
-        {
-          "type": "heading",
-          "body": "Your <span class='text-primary fw-semibold'>NorthStar</span> Goal is the ULTIMATE GOAL you want to accomplish by the end of high school.",
-          "css": "bg-primary text-white text-center p-3 rounded"
-        },
-        {
-          "type": "row",
-          "content": [
+          "css": "col-12 col-md-6 border-md-end border-secondary pe-md-4 mb-3 mb-md-0",
+          "items": [
             {
-              "css": "col-md-6 border-end border-secondary pe-4",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "“Current Grade” NorthStar Goal <span class='text-primary'>(Short-Term)</span>",
-                  "css": "h5 fw-bold"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
-                  "css": "text-muted"
-                }
-              ]
+              "type": "heading",
+              "body": "“Current Grade” NorthStar Goal <span class='text-primary'>(Short-Term)</span>",
+              "css": "h5 fw-bold"
             },
             {
-              "css": "col-md-6 ps-4",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "“Graduation” NorthStar Goal <span class='text-success'>(Long-Term)</span>",
-                  "css": "h5 fw-bold"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
-                  "css": "text-muted"
-                }
-              ]
+              "type": "paragraph",
+              "body": "This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
+              "css": "text-muted"
             }
           ]
         },
         {
-          "type": "paragraph",
-          "body": "Once you set your goals, think about the steps that will help you get there. These steps could be going to a LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.",
-          "css": "mt-4 text-center text-muted"
-        },
-        {
-          "type": "button",
-          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
-          "link": "#"
+          "css": "col-12 col-md-6 ps-md-4",
+          "items": [
+            {
+              "type": "heading",
+              "body": "“Graduation” NorthStar Goal <span class='text-success'>(Long-Term)</span>",
+              "css": "h5 fw-bold"
+            },
+            {
+              "type": "paragraph",
+              "body": "This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
+              "css": "text-muted"
+            }
+          ]
         }
       ]
     },
+    {
+      "type": "paragraph",
+      "body": "Once you set your goals, think about the steps that will help you get there. These steps could be going to a LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.",
+      "css": "mt-4 text-center text-muted"
+    },
+    {
+      "type": "button",
+      "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
+      "action": "goNext"
+    }
+  ]
+},
     {
       "id": 5,
       "css": "p-4",
@@ -241,90 +242,97 @@
           "type": "button",
           "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
           "css": "btn btn-link text-success fw-semibold d-block mx-auto mt-4",
-          "link": "#"
+          "action": "goNext"
         }
       ]
     },
+{
+  "id": 6,
+  "div": true,
+  "row": true,
+  "columns": 1,
+  "content": [
     {
-      "id": 6,
-      "div": true,
-      "row": true,
-      "columns": 1,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "leep.png",
-                "css": "img-fluid w-100"
-              }
-            ]
+      "col-1": {
+        "css": "col-12 text-center p-3 d-flex justify-content-center align-items-center",
+        "items": [
+          {
+            "type": "image",
+            "body": "leep.png",
+            "css": "rounded shadow-sm",
+            "style": {
+              "maxHeight": "70vh",
+              "width": "auto",
+              "height": "auto",
+              "maxWidth": "100%"
+            }
           }
-        }
-      ]
-    },
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 7,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
     {
-      "id": 7,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center",
-            "items": [
-              {
-                "type": "heading",
-                "body": "CLICK HERE <br> AND <br> TAKE ACTION",
-                "css": "text-primary text-center fw-semibold"
-              }
-            ]
+      "col-1": {
+        "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-3",
+        "items": [
+          {
+            "type": "heading",
+            "body": "CLICK HERE <br> AND <br> TAKE ACTION",
+            "css": "text-primary text-center fw-semibold"
+          }
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-6 col-md-6 col-12 text-center p-3",
+        "items": [
+          {
+            "type": "image",
+            "body": "8.png",
+            "css": "img-fluid rounded-2 shadow-sm"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 8,
+  "div": true,
+  "row": true,
+  "columns": 1,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-12 text-center p-4",
+        "items": [
+          {
+            "type": "heading",
+            "body": "WELCOME TO MILESTONE 1",
+            "css": "text-success mb-3 fw-bold"
           },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "8.png",
-                "css": "img-fluid rounded-2"
-              }
-            ]
+          {
+            "type": "paragraph",
+            "body": "Congrats on taking the LEEP and starting your awesome journey – this is just the beginning of something great!",
+            "css": "mb-4 fs-5"
+          },
+          {
+            "type": "button",
+            "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+            "css": "btn btn-link text-primary fw-semibold d-block mx-auto",
+            "action": "goNext"
           }
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "div": true,
-      "row": true,
-      "columns": 1,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-12 text-center",
-            "items": [
-              {
-                "type": "heading",
-                "body": "WELCOME TO MILESTONE 1",
-                "css": "text-success mb-3"
-              },
-              {
-                "type": "paragraph",
-                "body": "Congrats on taking the LEEP and starting your awesome journey – this is just the beginning of something great!",
-                "css": "mb-4"
-              },
-              {
-                "type": "button",
-                "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-                "css": "btn btn-link text-primary fw-semibold d-block mx-auto"
-              }
-            ]
-          }
-        }
-      ]
-    },
+        ]
+      }
+    }
+  ]
+},
 {
   "id": 9,
   "div": true,
@@ -333,27 +341,27 @@
       "type": "row",
       "content": [
         {
-          "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+          "css": "col-12 col-lg-6 p-3 border border-primary rounded-3 mb-3 mb-lg-0",
           "items": [
             {
               "type": "heading",
               "body": "MILESTONE 1: THE GOAL AND PURPOSE",
-              "css": "text-primary mb-3"
+              "css": "text-primary mb-3 fw-bold"
             },
             {
               "type": "paragraph",
               "body": "Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.",
-              "css": "mb-3"
+              "css": "mb-3 fs-5"
             }
           ]
         },
         {
-          "css": "col-lg-6 col-md-12 p-3 border border-primary rounded-3",
+          "css": "col-12 col-lg-6 p-3 border border-primary rounded-3",
           "items": [
             {
               "type": "paragraph",
               "body": "This month, we’re going to focus on setting your big “NorthStar Goal.” As you work toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first step to reaching that next milestone!",
-              "css": "mb-3"
+              "css": "mb-3 fs-5"
             }
           ]
         }
@@ -363,12 +371,12 @@
       "type": "row",
       "content": [
         {
-          "css": "col-12 col-md-6 p-3 mx-auto d-block",
+          "css": "col-12 col-md-6 mx-auto d-block p-3",
           "items": [
             {
               "type": "image",
               "body": "20point.png",
-              "css": "img-fluid w-50 mx-auto d-block",
+              "css": "img-fluid w-75 mx-auto d-block",
               "style": {
                 "maxHeight": "120px",
                 "objectFit": "contain"
@@ -379,47 +387,50 @@
       ]
     },
     {
-      "type":"button",
+      "type": "button",
       "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
+      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
+      "action": "goNext"
     }
   ]
 },
+{
+  "id": 10,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
     {
-      "id": 10,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-12 p-0",
-            "items": [
-              {
-                "type": "image",
-                "body": "8.png",
-                "css": "img-fluid w-100"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-12 p-3",
-            "items": [
-              {
-                "type": "button",
-                "body": "Create a Personal Core Value Statement",
-                "css": "btn btn-primary d-block w-100 mb-3"
-              },
-              {
-                "type": "button",
-                "body": "Create a Personal Mission Statement",
-                "css": "btn btn-success d-block w-100"
-              }
-            ]
+      "col-1": {
+        "css": "col-lg-6 col-md-12 p-0 d-flex justify-content-center align-items-center",
+        "items": [
+          {
+            "type": "image",
+            "body": "8.png",
+            "css": "img-fluid w-100 rounded shadow-sm"
           }
-        }
-      ]
-    },
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-6 col-md-12 p-3 d-flex flex-column justify-content-center",
+        "items": [
+          {
+            "type": "button",
+            "body": "Create a Personal Core Value Statement",
+            "css": "btn btn-primary d-block w-100 mb-3",
+            "action": "goToSlide",
+            "targetSlideId": 13
+          },
+          {
+            "type": "button",
+            "body": "Create a Personal Mission Statement",
+            "css": "btn btn-success d-block w-100"
+          }
+        ]
+      }
+    }
+  ]
+},
 {
   "id": 11,
   "div": true,
@@ -492,7 +503,8 @@
     {
       "type": "button",
       "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3"
+      "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
+      "action": "goNext"
     }
   ]
 },
@@ -506,188 +518,184 @@
       "css": "text-center mb-4 fw-bold fs-3"
     },
     {
-      "type": "row",
+      "type": "container",
+      "css": "border border-primary rounded p-4",
       "content": [
         {
-          "css": "col-md-12",
-          "items": [
+          "type": "row",
+          "content": [
             {
-              "type": "row",
-              "content": [
+              "css": "col-12 col-md border p-3",
+              "items": [
                 {
-                  "css": "col-md border p-2",
-                  "items": [
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Respect</strong> – Treating others kindly and valuing their differences",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Integrity</strong> – Doing the right thing, even when no one is watching",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Responsibility</strong> – Owning your actions and choices",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Perseverance</strong> – Sticking with something, even when it's tough",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Empathy</strong> – Understanding and caring about how others feel",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Curiosity</strong> – Being eager to learn and explore new things",
-                      "css": "mb-2"
-                    }
-                  ]
+                  "type": "paragraph",
+                  "body": "<strong>Respect</strong> – Treating others kindly and valuing their differences",
+                  "css": "mb-3"
                 },
                 {
-                  "css": "col-md border p-2",
-                  "items": [
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Accountability</strong> – Taking responsibility for your actions",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Honesty</strong> – Being truthful with yourself and others",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Creativity</strong> – Using imagination to think of new ideas",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Gratitude</strong> – Appreciating what you have and showing thankfulness",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Self-Discipline</strong> – Staying focused on goals and resisting distractions",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Teamwork</strong> – Working well with others to achieve a common goal",
-                      "css": "mb-2"
-                    }
-                  ]
+                  "type": "paragraph",
+                  "body": "<strong>Integrity</strong> – Doing the right thing, even when no one is watching",
+                  "css": "mb-3"
                 },
                 {
-                  "css": "col-md border p-2",
-                  "items": [
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Kindness</strong> – Being friendly, generous, and considerate to others",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Open-Mindedness</strong> – Being willing to consider new ideas and perspectives",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Patience</strong> – Staying calm and persistent, even in challenging situations",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Leadership</strong> – Inspiring others and setting a good example",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Resilience</strong> – Bouncing back from challenges or setbacks",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Humility</strong> – Recognizing that there's always something new to learn",
-                      "css": "mb-2"
-                    }
-                  ]
+                  "type": "paragraph",
+                  "body": "<strong>Responsibility</strong> – Owning your actions and choices",
+                  "css": "mb-3"
                 },
                 {
-                  "css": "col-md border p-2",
-                  "items": [
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Compassion</strong> – Wanting to help those who are struggling",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Justice</strong> – Standing up for fairness and doing what's right",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Courage</strong> – Being brave enough to face fears or try new things",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Dedication</strong> – Putting in effort and commitment to reach goals",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Adaptability</strong> – Being flexible and open to change",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Self-Respect</strong> – Valuing yourself and your abilities",
-                      "css": "mb-2"
-                    }
-                  ]
+                  "type": "paragraph",
+                  "body": "<strong>Perseverance</strong> – Sticking with something, even when it's tough",
+                  "css": "mb-3"
                 },
                 {
-                  "css": "col-md border p-2",
-                  "items": [
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Optimism</strong> – Looking at situations with a positive outlook",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Growth</strong> – Always aiming to improve and learn",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Focus</strong> – Concentrating on the task or goal at hand",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Loyalty</strong> – Standing by friends, family, and commitments",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Service</strong> – Helping others and contributing to your community",
-                      "css": "mb-2"
-                    },
-                    {
-                      "type": "paragraph",
-                      "body": "<strong>Ambition</strong> – Having strong goals and dreams for the future",
-                      "css": "mb-2"
-                    }
-                  ]
+                  "type": "paragraph",
+                  "body": "<strong>Empathy</strong> – Understanding and caring about how others feel",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Curiosity</strong> – Being eager to learn and explore new things",
+                  "css": "mb-3"
+                }
+              ]
+            },
+            {
+              "css": "col-12 col-md border p-3",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Accountability</strong> – Taking responsibility for your actions",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Honesty</strong> – Being truthful with yourself and others",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Creativity</strong> – Using imagination to think of new ideas",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Gratitude</strong> – Appreciating what you have and showing thankfulness",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Self-Discipline</strong> – Staying focused on goals and resisting distractions",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Teamwork</strong> – Working well with others to achieve a common goal",
+                  "css": "mb-3"
+                }
+              ]
+            },
+            {
+              "css": "col-12 col-md border p-3",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Kindness</strong> – Being friendly, generous, and considerate to others",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Open-Mindedness</strong> – Being willing to consider new ideas and perspectives",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Patience</strong> – Staying calm and persistent, even in challenging situations",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Leadership</strong> – Inspiring others and setting a good example",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Resilience</strong> – Bouncing back from challenges or setbacks",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Humility</strong> – Recognizing that there's always something new to learn",
+                  "css": "mb-3"
+                }
+              ]
+            },
+            {
+              "css": "col-12 col-md border p-3",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Compassion</strong> – Wanting to help those who are struggling",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Justice</strong> – Standing up for fairness and doing what's right",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Courage</strong> – Being brave enough to face fears or try new things",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Dedication</strong> – Putting in effort and commitment to reach goals",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Adaptability</strong> – Being flexible and open to change",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Self-Respect</strong> – Valuing yourself and your abilities",
+                  "css": "mb-3"
+                }
+              ]
+            },
+            {
+              "css": "col-12 col-md border p-3",
+              "items": [
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Optimism</strong> – Looking at situations with a positive outlook",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Growth</strong> – Always aiming to improve and learn",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Focus</strong> – Concentrating on the task or goal at hand",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Loyalty</strong> – Standing by friends, family, and commitments",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Service</strong> – Helping others and contributing to your community",
+                  "css": "mb-3"
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<strong>Ambition</strong> – Having strong goals and dreams for the future",
+                  "css": "mb-3"
                 }
               ]
             }
@@ -696,7 +704,7 @@
       ]
     }
   ]
-},    
+},  
 {
   "id": 13,
   "div": true,
@@ -836,55 +844,58 @@
     }
   ]
 },
-         {
-      "id": 16,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center",
-            "items": [
-              {
-                "type": "heading",
-                "body": "CLICK HERE <br> AND <br> TAKE ACTION",
-                "css": "text-primary text-center fw-semibold"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-sm-12",
-            "items": [
-              {
-                "type": "image",
-                "body": "8.png",
-                "css": "img-fluid rounded-2"
-              }
-            ]
+{
+  "id": 16,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-3",
+        "items": [
+          {
+            "type": "heading",
+            "body": "CLICK HERE <br> AND <br> TAKE ACTION",
+            "css": "text-primary text-center fw-semibold"
           }
-        }
-      ]
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-6 col-md-6 col-12 text-center p-3",
+        "items": [
+          {
+            "type": "image",
+            "body": "8.png",
+            "css": "img-fluid rounded-2 shadow-sm"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 17,
+  "div": true,
+  "row": false,
+  "content": [
+    {
+      "type": "heading",
+      "body": "NEXT STOP ON THE JOURNEY… MILESTONE 2",
+      "css": "text-center fw-bold mb-4 fs-4"
     },
     {
-      "id": 17,
-      "div": true,
-      "row": false,
-      "content": [
-        {
-          "type": "heading",
-          "body": "NEXT STOP ON THE JOURNEY… MILESTONE 2"
-        },
-        {
-          "type": "paragraph",
-          "body": "CONGRATS, NAME OF STUDENT! You've crushed this milestone and earned your LEEP points, bringing you one step closer to reaching your NorthStar goal! Keep that energy going – you’re on the path to greatness!"
-        },
-        {
-          "type": "button",
-          "body": "Continue",
-          "css": "btn btn-success"
-        }
-      ]
+      "type": "paragraph",
+      "body": "CONGRATS, NAME OF STUDENT! You've crushed this milestone and earned your LEEP points, bringing you one step closer to reaching your NorthStar goal! Keep that energy going – you’re on the path to greatness!",
+      "css": "text-center mb-4 fs-5"
+    },
+    {
+      "type": "button",
+      "body": "Continue",
+      "css": "btn btn-success d-block mx-auto px-4"
     }
+  ]
+}
+
   ]
 }

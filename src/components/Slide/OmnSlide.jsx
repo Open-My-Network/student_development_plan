@@ -1,7 +1,7 @@
 import React from "react";
 import DynamicRenderer from "./DynamicRender";
 
-const Slide = ({ slide }) => {
+const Slide = ({ slide, goNext, goToSlide }) => {
   return (
     <div className="carousel">
       <div key={slide.id} className={slide.css || ""}>
@@ -9,13 +9,20 @@ const Slide = ({ slide }) => {
           <div className="row">
             {Object.entries(slide.content[0]).map(([key, col]) => (
               <div key={key} className={col.css || "col"}>
-                {console.log(col ?? "N/A")}
-                <DynamicRenderer content={col.items} />
+                <DynamicRenderer
+                  content={col.items}
+                  goNext={goNext}
+                  goToSlide={goToSlide}
+                />
               </div>
             ))}
           </div>
         ) : (
-          <DynamicRenderer content={slide.content} />
+          <DynamicRenderer
+            content={slide.content}
+            goNext={goNext}
+            goToSlide={goToSlide}
+          />
         )}
       </div>
     </div>
