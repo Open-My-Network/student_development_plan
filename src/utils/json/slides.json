@@ -848,6 +848,32 @@
   "id": 16,
   "div": true,
   "row": true,
+  "columns": 1,
+  "apiContent": true,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-12 p-3",
+        "items": [
+          {
+            "type": "heading",
+            "body": "Your Submitted Core Values & Mission Statements",
+            "css": "text-center fw-bold mb-3"
+          },
+          {
+            "type": "table", 
+            "css": "table table-striped table-bordered",
+            "apiBind": true
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 17,
+  "div": true,
+  "row": true,
   "columns": 2,
   "content": [
     {
@@ -875,7 +901,7 @@
   ]
 },
 {
-  "id": 17,
+  "id": 18,
   "div": true,
   "row": false,
   "content": [

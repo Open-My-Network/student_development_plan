@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const DynamicRenderer = ({ content, goNext, goToSlide }) => {
+  const [apiData, setApiData] = useState([]);
+
+  // Check if current content has a table with apiBind = true
+  const hasApiTable = Array.isArray(content)
+    ? content.some((item) => item.type === "table" && item.apiBind)
+    : false;
+
+  // Fetch combined API data when slide content contains apiBind table
+  useEffect(() => {
+    if (hasApiTable) {
+      fetch("http://localhost:3001/development-plan/combined-values?user_id=645")
+        .then((res) => {
+          if (!res.ok) throw new Error("API fetch failed");
+          return res.json();
+        })
+        .then((data) => setApiData(data))
+        .catch((err) => {
+          console.error("Failed to fetch API data:", err);
+          setApiData([]);
+        });
+    } else {
+      setApiData([]); // Clear when not on API slide
+    }
+  }, [content, hasApiTable]);
+
   const renderContent = (item, keyPrefix = "") => {
     if (!item) return null;
 
@@ -68,28 +93,61 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
         );
 
       case "table":
-        return (
-          <table key={keyPrefix} className={item.css}>
-            <thead>
-              <tr>
-                {item.items?.[0]?.map((header, index) => (
-                  <th key={index}>{header}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {item.items
-                ?.slice(1)
-                ?.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={cellIndex}>{cell}</td>
-                    ))}
+        if (item.apiBind) {
+          // Render dynamic table with API data
+          return (
+            <table key={keyPrefix} className={item.css}>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Statement</th>
+                  <th>Date Submitted</th>
+                </tr>
+              </thead>
+              <tbody>
+                {apiData.length === 0 ? (
+                  <tr>
+                    <td colSpan="3" className="text-center">
+                      No data available
+                    </td>
                   </tr>
-                ))}
-            </tbody>
-          </table>
-        );
+                ) : (
+                  apiData.map((row) => (
+                    <tr key={row.id}>
+                      <td>{row.value_type}</td>
+                      <td>{row.statement}</td>
+                      <td>{new Date(row.created_at).toLocaleDateString()}</td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          );
+        } else {
+          // Static table rendering if no apiBind
+          return (
+            <table key={keyPrefix} className={item.css}>
+              <thead>
+                <tr>
+                  {item.items?.[0]?.map((header, index) => (
+                    <th key={index}>{header}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {item.items
+                  ?.slice(1)
+                  ?.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          );
+        }
 
       case "row":
         if (Array.isArray(item.content)) {
