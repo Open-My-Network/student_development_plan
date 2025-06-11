@@ -5,6 +5,7 @@
   "div": true,
   "row": true,
   "columns": 2,
+  "animation": "animate__bounceIn",
   "content": [
     {
       "col-1": {
@@ -737,7 +738,8 @@
       "type": "button",
       "body": "SUBMIT",
       "css": "btn btn-success d-block mx-auto px-4",
-      "action": "submitCoreValueStatement"
+      "action": "submitCoreValueStatement",
+      "targetSlideId": "core_value"
     }
   ]
 },
@@ -840,7 +842,8 @@
       "type": "button",
       "body": "SUBMIT",
       "css": "btn btn-success d-block mx-auto px-4",
-      "action": "submitCoreValueStatement"
+      "action": "submitCoreValueStatement",
+      "targetSlideId": "mission_statement"
     }
   ]
 },
@@ -857,11 +860,11 @@
         "items": [
           {
             "type": "heading",
-            "body": "Your Submitted Core Values & Mission Statements",
+            "body": "Your Submitted Core Values",
             "css": "text-center fw-bold mb-3"
           },
           {
-            "type": "table", 
+            "type": "apitable", 
             "css": "table table-striped table-bordered",
             "apiBind": true
           }
@@ -921,7 +924,34 @@
       "css": "btn btn-success d-block mx-auto px-4"
     }
   ]
+},
+{
+  "id": 6,
+  "div": true,
+  "row": true,
+  "columns": 1,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-12 text-center p-3 d-flex justify-content-center align-items-center",
+        "items": [
+          {
+            "type": "video",
+            "body": "video.mp4",
+            "css": "rounded shadow-sm",
+            "style": {
+              "maxHeight": "70vh",
+              "width": "auto",
+              "height": "auto",
+              "maxWidth": "100%"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
+
 
   ]
 }
