@@ -12,6 +12,10 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
   const [editValueType, setEditValueType] = useState("");
   const [editValueTitle, setEditValueTitle] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
+  const [formValues, setFormValues] = useState({
+  core_value: "",
+  mission_statement: ""
+  });
   const userId = localStorage.getItem('user_id') || 3;
 
   // Check if current content has a table with apiBind = true
@@ -49,40 +53,39 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
   }, [content, hasApiTable]);
 
   // Handle submit for core value and mission statement
-  const handleSubmit = async (type) => {
-  const statement = type === 'core_value' ? coreValue : missionStatement;
+const handleSubmit = async (targetSlideId) => {
   
+  const valueTypeMap = {
+    'core_value': 'personal_core',
+    'mission_statement': 'personal_mission'
+  };
+
+  const fieldName = targetSlideId;
+  const statement = formValues[fieldName];
+  console.log("Submitting:",targetSlideId);
+
   if (!statement || statement.trim() === "") {
     alert("Please fill out the statement!");
     return;
   }
 
   try {
-    // Determine the value_type based on which type we're submitting
-    const valueType = type === 'core_value' ? 'personal_core' : 'personal_mission';
-
-    // Use createValue instead of updateItem for new submissions
     const isSuccess = await createValue({
       user_id: userId,
-      value_type: valueType,
+      value_type: valueTypeMap[fieldName],
       statement: statement
     });
 
     if (isSuccess) {
-      alert(`${type === 'core_value' ? 'Core Value' : 'Mission Statement'} created successfully!`);
-      // Clear the input field after successful submission
-      if (type === 'core_value') {
-        setCoreValue("");
-      } else {
-        setMissionStatement("");
-      }
-      fetchAllData(); // Refresh data to show the new entry
+      alert(`${fieldName === 'core_value' ? 'Core Value' : 'Mission Statement'} submitted successfully!`);
+      setFormValues(prev => ({ ...prev, [fieldName]: "" }));
+      fetchAllData();
     } else {
-      alert('Failed to create new entry');
+      alert('Failed to submit statement');
     }
   } catch (error) {
-    console.error('Error creating statement:', error);
-    alert('An error occurred while creating the statement');
+    console.error('Error submitting statement:', error);
+    alert('An error occurred while submitting the statement');
   }
 };
   // Function for deleting an item
@@ -302,22 +305,27 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
           />
         );
 
-      case "textarea":
-        return (
-          <textarea
-            key={keyPrefix}
-            className={item.css}
-            rows={item.attributes?.rows || 3}
-            placeholder={item.attributes?.placeholder || ""}
-            onChange={(e) => {
-              if (item.targetSlideId === 'core_value') {
-                setCoreValue(e.target.value);
-              } else {
-                setMissionStatement(e.target.value);
-              }
-            }}
-          />
-        );
+case "textarea":
+  // Default to 'core_value' if targetSlideId is undefined
+  const targetType = item.targetSlideId || 'core_value';
+  console.log('Rendering textarea with targetType:', targetType);
+  
+  return (
+    <textarea
+      key={keyPrefix}
+      className={item.css}
+      rows={item.attributes?.rows || 3}
+      placeholder={item.attributes?.placeholder || ""}
+      value={formValues[targetType] || ""}
+      onChange={(e) => {
+        console.log('Textarea onChange - targetType:', targetType, 'value:', e.target.value);
+        setFormValues(prev => ({
+          ...prev,
+          [targetType]: e.target.value
+        }));
+      }}
+    />
+  );
 
       case "apitable":
         if (item.apiBind) {

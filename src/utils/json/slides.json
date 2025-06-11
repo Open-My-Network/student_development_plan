@@ -732,7 +732,8 @@
       "attributes": {
         "rows": "5",
         "placeholder": "Write your personal core value statement here..."
-      }
+      },
+      "targetSlideId": "core_value"
     },
     {
       "type": "button",
@@ -836,7 +837,8 @@
       "attributes": {
         "rows": "5",
         "placeholder": "Write your personal mission statement here..."
-      }
+      },
+      "targetSlideId": "mission_statement"
     },
     {
       "type": "button",
