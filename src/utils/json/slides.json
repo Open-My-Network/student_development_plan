@@ -425,7 +425,9 @@
           {
             "type": "button",
             "body": "Create a Personal Mission Statement",
-            "css": "btn btn-success d-block w-100"
+            "css": "btn btn-success d-block w-100",
+            "action": "goToSlide",
+            "targetSlideId": 15
           }
         ]
       }
