@@ -283,7 +283,7 @@ const handleSubmit = async (targetSlideId) => {
         );
 
       case "image":
-        return <img key={keyPrefix} src={item.body} alt="" className={item.css} />;
+        return <img key={keyPrefix} src={item.body} alt="" className={item.css} style={item.style}/>;
       
       case "video":
         return (
