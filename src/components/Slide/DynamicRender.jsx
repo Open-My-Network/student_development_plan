@@ -287,8 +287,8 @@ const handleSubmit = async (targetSlideId) => {
       
       case "video":
         return (
-          <div key={keyPrefix} className={item.css}>
-            <video controls className="img-fluid rounded-2 shadow-sm" style={{ maxWidth: '100%' }}>
+          <div key={keyPrefix} className={item.css} >
+            <video controls className="img-fluid rounded-2 shadow-sm" style={item.style}>
               <source src={item.body} type="video/mp4" />
               Your browser does not support the video tag.
             </video>

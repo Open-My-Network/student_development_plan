@@ -946,7 +946,6 @@
                 "style": {
                   "maxHeight": "70vh",
                   "width": "auto",
-                  "height": "auto",
                   "maxWidth": "100%"
                 }
               }
