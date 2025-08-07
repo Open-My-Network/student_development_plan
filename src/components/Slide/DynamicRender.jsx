@@ -248,6 +248,7 @@ const handleSubmit = async (targetSlideId) => {
     <button
       key={keyPrefix}
       className={item.css}
+      style={item.style}
       onClick={() => {
         if (item.action === "goNext" && goNext) {
           goNext();
@@ -268,6 +269,7 @@ const handleSubmit = async (targetSlideId) => {
           <motion.h2
             key={keyPrefix}
             className={item.css}
+            style={item.style}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -277,9 +279,12 @@ const handleSubmit = async (targetSlideId) => {
 
       case "paragraph":
         return (
-          <p key={keyPrefix} className={item.css}>
-            {item.body}
-          </p>
+          <p 
+            key={keyPrefix} 
+            className={item.css}
+            style={item.style} 
+            dangerouslySetInnerHTML={{ __html: item.body }} 
+          />
         );
 
       case "image":

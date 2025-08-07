@@ -1,42 +1,52 @@
 {
   "slides": [
+ {
+  "id": 1,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "animation": "animate__bounceIn",
+  "content": [
     {
-      "id": 1,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "animation": "animate__bounceIn",
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center align-items-start p-3",
-            "items": [
-              {
-                "type": "heading",
-                "body": "LEEP 9th GRADE STUDENT DEVELOPMENT PLAN",
-                "css": "mb-3 fw-bold text-primary"
-              },
-              {
-                "type": "button",
-                "body": "CLICK HERE TO ENTER THE JOURNEY",
-                "css": "btn btn-primary mt-2",
-                "action": "goNext"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-5 col-md-6 col-12 text-center p-3",
-            "items": [
-              {
-                "type": "image",
-                "body": "1.png",
-                "css": "img-fluid rounded-2 shadow-sm"
-              }
-            ]
+      "col-1": {
+        "css": "col-lg-5 col-md-6 col-12 text-center p-3",
+        "items": [
+          {
+            "type": "image",
+            "body": "pp0.png",
+            "css": "img-fluid rounded-2 shadow-sm"
           }
-        }
-      ]
-    },
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center align-items-start p-3",
+        "items": [
+          {
+            "type": "heading",
+            "body": "LEEP 9th GRADE STUDENT DEVELOPMENT PLAN",
+            "css": "mb-3 fw-bold",
+            "style": {
+              "color": "#00b0f0"
+            }
+            
+          },
+          {
+            "type": "button",
+            "body": "CLICK HERE TO ENTER THE JOURNEY",
+            "css": "btn mt-4",
+            "style": {
+              "color": "#92d050",
+              "background": "white",
+              "fontSize": "1.5rem",
+              "fontWeight": "bold"
+            },
+            "action": "goNext"
+          }
+        ]
+      }
+    }
+  ]
+},
     {
       "id": 2,
       "div": true,
@@ -59,8 +69,8 @@
             "items": [
               {
                 "type": "image",
-                "body": "2.png",
-                "css": "img-fluid rounded-2 shadow-sm"
+                "body": "pp1.png",
+                "css": "w-100 rounded-0 border-0 shadow-none"
               }
             ]
           }
@@ -89,71 +99,79 @@
             "items": [
               {
                 "type": "image",
-                "body": "3.png",
-                "css": "img-fluid rounded-2 shadow-sm"
+                "body": "pp2.png",
+                "css": "w-100 rounded-0 border-0 shadow-none"
               }
             ]
           }
         }
       ]
     },
+  {
+  "id": 4,
+  "css": "p-4",
+  "content": [
     {
-      "id": 4,
-      "css": "p-4",
+      "type": "heading",
+      "body": "Your NorthStar Goal is the ULTIMATE GOAL you want to accomplish by the end of high school.",
+      "css": "text-white text-center p-3 rounded",
+      "style": {
+        "background":"#0f9ed5"
+      }
+      
+    },
+    {
+      "type": "row",
       "content": [
         {
-          "type": "heading",
-          "body": "Your NorthStar Goal is the ULTIMATE GOAL you want to accomplish by the end of high school.",
-          "css": "bg-primary text-white text-center p-3 rounded"
-        },
-        {
-          "type": "row",
-          "content": [
+          "css": "col-12 col-md-6 border-end border-2 border-secondary pe-md-4 mb-3 mb-md-0",
+          "items": [
             {
-              "css": "col-12 col-md-6 border-md-end border-secondary pe-md-4 mb-3 mb-md-0",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "“Current Grade” NorthStar Goal <span class='text-primary'>(Short-Term)</span>",
-                  "css": "h5 fw-bold"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
-                  "css": "text-muted"
-                }
-              ]
+              "type": "heading",
+              "body": "“Current Grade” NorthStar Goal <span style='color: #27bcf2'>(Short-Term)</span>",
+              "css": "h5 fw-bold"
             },
             {
-              "css": "col-12 col-md-6 ps-md-4",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "“Graduation” NorthStar Goal <span class='text-success'>(Long-Term)</span>",
-                  "css": "h5 fw-bold"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
-                  "css": "text-muted"
-                }
-              ]
+              "type": "paragraph",
+              "body": "This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
+              "css": "text-muted"
             }
           ]
         },
         {
-          "type": "paragraph",
-          "body": "Once you set your goals, think about the steps that will help you get there. These steps could be going to a LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.",
-          "css": "mt-4 text-center text-muted"
-        },
-        {
-          "type": "button",
-          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
-          "action": "goNext"
+          "css": "col-12 col-md-6 ps-md-4",
+          "items": [
+            {
+              "type": "heading",
+              "body": "“Graduation” NorthStar Goal <span style='color: #95d155'>(Long-Term)</span>",
+              "css": "h5 fw-bold"
+            },
+            {
+              "type": "paragraph",
+              "body": "This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
+              "css": "text-muted"
+            }
+          ]
         }
       ]
     },
+    {
+      "type": "paragraph",
+      "body": "Once you set your goals, think about the steps that will help you get there.These steps could be going to a LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.",
+      "css": "mt-4 text-center text-muted"
+    },
+    {
+      "type": "button",
+      "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+      "css": "btn fw-semibold d-block mx-auto mt-3 px-4 py-2",
+      "action": "goNext",
+      "style": {
+        "color": "#01b0f0",
+        "fontSize": "1.3rem"
+      }
+    }
+  ]
+},
     {
       "id": 5,
       "css": "p-4",
@@ -161,7 +179,12 @@
         {
           "type": "heading",
           "body": "CONSIDER THE FOLLOWING QUESTIONS TO ASK YOURSELF ON THIS JOURNEY",
-          "css": "bg-success text-white text-center p-3 rounded"
+          "css": "text-white text-center p-3 rounded",
+          "style": {
+            "fontSize": "1.5rem",
+            "fontWeight": "bold",
+            "background": "#92d050"
+          }
         },
         {
           "type": "container",
@@ -242,67 +265,159 @@
         {
           "type": "button",
           "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-          "css": "btn btn-link text-success fw-semibold d-block mx-auto mt-4",
-          "action": "goNext"
+          "css": "btn fw-semibold d-block mx-auto mt-4",
+          "action": "goNext",
+          "style":{
+            "color": "#92d050",
+            "fontSize": "1.3rem"
+          }
+
         }
       ]
     },
+{
+  "id": 6,
+  "div": true,
+  "row": true,
+  "columns": 1,
+  "content": [
     {
-      "id": 6,
-      "div": true,
-      "row": true,
-      "columns": 1,
+      "col-1": {
+        "css": "col-12 p-0",
+        "items": [
+          {
+            "type": "image",
+            "body": "leep.png",
+            "css": "w-100",
+            "style": {
+              "width": "100%",
+              "maxHeight": "60vh",
+              "height": "auto",
+              "objectFit": "cover",
+              "display": "block"
+            }
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "id": 7,
+  "css": "p-4 d-flex align-items-center justify-content-center",
+  "style": {
+    "background": "linear-gradient(145deg, #92d050 0%, #00b0f0 100%)",
+    "minHeight": "100vh",
+    "position": "relative",
+    "overflow": "hidden"
+  },
+  "content": [
+    {
+      "type": "row",
       "content": [
         {
-          "col-1": {
-            "css": "col-12 text-center p-3 d-flex justify-content-center align-items-center",
-            "items": [
-              {
-                "type": "image",
-                "body": "leep.png",
-                "css": "rounded shadow-sm",
-                "style": {
-                  "maxHeight": "40vh",
-                  "width": "80%",
-                  "height": "40vh",
-                  "maxWidth": "100%"
+          "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-1 order-2",
+          "items": [
+            {
+              "type": "div",
+              "css": "text-center position-relative",
+              "content": [
+                {
+                  "type": "heading",
+                  "body": "TAKE<br>ACTION NOW",
+                  "css": "fw-bold mb-4",
+                  "style": {
+                    "fontSize": "3.5rem",
+                    "lineHeight": "1.2",
+                    "color": "#003366",
+                    "textShadow": "2px 2px 0px rgba(255,255,255,0.3)",
+                    "position": "relative",
+                    "zIndex": "2"
+                  }
+                },
+                {
+                  "type": "div",
+                  "css": "mb-5 mx-auto",
+                  "style": {
+                    "height": "6px",
+                    "background": "linear-gradient(90deg, #003366 0%, #00b0f0 100%)",
+                    "width": "120px",
+                    "borderRadius": "3px"
+                  }
+                },
+                {
+                  "type": "button",
+                  "body": "CLICK HERE",
+                  "css": "btn btn-lg rounded-pill fw-bold px-5 py-3",
+                  "style": {
+                    "background": "#003366",
+                    "color": "white",
+                    "border": "none",
+                    "fontSize": "1.5rem",
+                    "boxShadow": "0 8px 20px rgba(0,0,0,0.15)",
+                    "transition": "all 0.3s ease",
+                    "position": "relative",
+                    "zIndex": "2"
+                  },
+                  "hoverStyle": {
+                    "transform": "translateY(-3px)",
+                    "boxShadow": "0 12px 25px rgba(0,0,0,0.2)",
+                    "background": "#002244"
+                  },
+                  "action": "goNext"
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-2 order-1",
+          "items": [
+            {
+              "type": "image",
+              "body": "8.png", 
+              "css": "img-fluid position-relative",
+              "style": {
+                "maxHeight": "500px",
+                "borderRadius": "16px",
+                "boxShadow": "0 20px 40px rgba(0,0,0,0.2)",
+                "border": "8px solid white",
+                "zIndex": "2",
+                "transform": "rotate(3deg)"
               }
-            ]
-          }
+            }
+          ]
         }
       ]
     },
     {
-      "id": 7,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-3",
-            "items": [
-              {
-                "type": "heading",
-                "body": "CLICK HERE <br> AND <br> TAKE ACTION",
-                "css": "text-primary text-center fw-semibold"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-12 text-center p-3",
-            "items": [
-              {
-                "type": "image",
-                "body": "8.png",
-                "css": "img-fluid rounded-2 shadow-sm"
-              }
-            ]
-          }
-        }
-      ]
+      "type": "div",
+      "css": "position-absolute",
+      "style": {
+        "top": "-100px",
+        "right": "-100px",
+        "width": "400px",
+        "height": "400px",
+        "background": "rgba(255,255,255,0.15)",
+        "borderRadius": "50%",
+        "zIndex": "1"
+      }
     },
+    {
+      "type": "div",
+      "css": "position-absolute",
+      "style": {
+        "bottom": "-150px",
+        "left": "-150px",
+        "width": "500px",
+        "height": "500px",
+        "background": "rgba(0,176,240,0.1)",
+        "borderRadius": "50%",
+        "zIndex": "1"
+      }
+    }
+  ]
+},
     {
       "id": 8,
       "div": true,
@@ -316,85 +431,106 @@
               {
                 "type": "heading",
                 "body": "WELCOME TO MILESTONE 1",
-                "css": "text-success mb-3 fw-bold"
+                "css": "mb-3 fw-bold",
+                "style": {
+                 "color": "#92d050"
+                }
               },
               {
                 "type": "paragraph",
                 "body": "Congrats on taking the LEEP and starting your awesome journey – this is just the beginning of something great!",
-                "css": "mb-4 fs-5"
+                "css": "mb-6 fs-4"
               },
               {
                 "type": "button",
                 "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-                "css": "btn btn-link text-primary fw-semibold d-block mx-auto",
-                "action": "goNext"
+                "css": "btn fw-semibold d-block mx-auto mt-3 px-4 py-2",
+                "action": "goNext",
+                "style": {
+                  "color": "#01b0f0",
+                  "fontSize": "1.3rem"
+                }
               }
-            ]
+          ]
           }
         }
       ]
     },
+{
+  "id": 9,
+  "div": true,
+  "css": "bg-white p-4",
+  "content": [
     {
-      "id": 9,
-      "div": true,
+      "type": "row",
       "content": [
         {
-          "type": "row",
-          "content": [
+          "css": "col-12 col-md-6 mx-auto d-block p-3",
+          "items": [
             {
-              "css": "col-12 col-lg-6 p-3 border border-primary rounded-3 mb-3 mb-lg-0",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "MILESTONE 1: THE GOAL AND PURPOSE",
-                  "css": "text-primary mb-3 fw-bold"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.",
-                  "css": "mb-3 fs-5"
-                }
-              ]
-            },
-            {
-              "css": "col-12 col-lg-6 p-3 border border-primary rounded-3",
-              "items": [
-                {
-                  "type": "paragraph",
-                  "body": "This month, we’re going to focus on setting your big “NorthStar Goal.” As you work toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first step to reaching that next milestone!",
-                  "css": "mb-3 fs-5"
-                }
-              ]
+              "type": "image",
+              "body": "20point.png",
+              "css": "img-fluid w-100 d-block",
+              "style": {
+                "width": "100%",
+                "maxHeight": "30vh",
+                "height": "auto",
+                "objectFit": "contain",
+                "display": "block"
+              }
             }
           ]
-        },
-        {
-          "type": "row",
-          "content": [
-            {
-              "css": "col-12 col-md-6 mx-auto d-block p-3",
-              "items": [
-                {
-                  "type": "image",
-                  "body": "20point.png",
-                  "css": "img-fluid w-75 mx-auto d-block",
-                  "style": {
-                    "maxHeight": "120px",
-                    "objectFit": "contain"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "button",
-          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
-          "action": "goNext"
         }
       ]
     },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-12 col-lg-6 p-3 border border-primary rounded-3 mb-3 mb-lg-0",
+          "items": [
+            {
+              "type": "heading",
+              "body": "MILESTONE 1: THE GOAL AND PURPOSE",
+              "css": "text-primary mb-3 fw-bold"
+            },
+            {
+              "type": "paragraph",
+              "body": "Establish meaningful, achievable goals for 9th Grade that will assist me with current and future success.",
+              "css": "mb-3 fs-5"
+            }
+          ]
+        },
+        {
+          "css": "col-12 col-lg-6 p-3 border border-primary rounded-3",
+          "items": [
+            {
+              "type": "paragraph",
+              "body": "This month, we’re going to focus on setting your big “NorthStar Goal.” As you work toward your first milestone, you’ll create smaller goals to help you along the way. Here’s your first step to reaching that next milestone!",
+              "css": "mb-3 fs-5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-12 text-center mt-4",
+          "items": [
+            {
+              "type": "button",
+              "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+              "css": "btn btn-info text-white rounded-pill px-4 py-2 fw-bold shadow",
+              "action": "goNext"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
     {
       "id": 10,
       "div": true,
@@ -434,83 +570,145 @@
         }
       ]
     },
+{
+  "id": 11,
+  "css": "p-3 d-flex flex-column",
+  "style": {
+    "minHeight": "100vh",
+    "overflowY": "auto"
+  },
+  "content": [
     {
-      "id": 11,
-      "div": true,
+      "type": "row",
       "content": [
         {
-          "type": "heading",
-          "body": "PERSONAL CORE VALUE STATEMENT",
-          "css": "text-center mb-4"
-        },
-        {
-          "type": "row",
-          "content": [
+          "css": "col-12 text-center mb-3",
+          "items": [
             {
-              "css": "col-md-6 mb-4",
-              "items": [
-                {
-                  "type": "paragraph",
-                  "body": "A Personal Core Value is something that really matters to you. It’s like a personal guide that shapes how you act, make choices, and treat others. For example, if honesty is one of your values, telling the truth is important to you, and you’ll try to be truthful in everything you do. Values help define who you are and who you want to become.",
-                  "css": "p-3 text-black",
-                  "attributes": {
-                    "style": "background-color: #D3E6F9; border-radius: 5px;"
-                  }
-                }
-              ]
-            },
-            {
-              "css": "col-md-6 mb-4",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
-                  "css": "h5"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "What are the things that help you make decisions and act?"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "<ol><li><strong>What qualities do you admire in other people?</strong></li><li><strong>What beliefs or ideas are most important to you?</strong></li><li><strong>When do you feel happiest and proud of yourself?</strong></li></ol>"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "Now, write down 10-15 values that really matter to you, like honesty, kindness, or creativity. Then, narrow it down to your top 5 core values – these are the ones that guide what you do every day!",
-                  "css": "text-muted"
-                }
-              ]
+              "type": "image",
+              "body": "20point.png",
+              "css": "img-fluid",
+              "style": {
+                "maxHeight": "120px",
+                "objectFit": "contain"
+              }
             }
           ]
-        },
-        {
-          "type": "row",
-          "content": [
-            {
-              "css": "col-12 col-md-6 p-3 mx-auto d-block",
-              "items": [
-                {
-                  "type": "image",
-                  "body": "20point.png",
-                  "css": "img-fluid w-50 mx-auto d-block",
-                  "style": {
-                    "maxHeight": "120px",
-                    "objectFit": "contain"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "button",
-          "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-          "css": "btn btn-link text-primary fw-semibold d-block mx-auto mt-3",
-          "action": "goNext"
         }
       ]
     },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-12 text-center mb-3",
+          "items": [
+            {
+              "type": "heading",
+              "body": "PERSONAL CORE VALUE STATEMENT",
+              "css": "fw-bold mb-2",
+              "style": {
+                "color": "#003366",
+                "fontSize": "1.8rem"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-md-6 mb-3",
+          "items": [
+            {
+              "type": "div",
+              "css": "p-3 h-100",
+              "style": {
+                "backgroundColor": "#D3E6F9",
+                "borderRadius": "8px",
+                "borderLeft": "4px solid #00b0f0",
+                "height": "100%"
+              },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "body": "Now, write down 10-15 values that really matter to you, like honesty, kindness, or creativity. Then, narrow it down to your top 5 core values – these are the ones that guide what you do every day!",
+                  "css": "mb-0",
+                  "style": {
+                    "fontSize": "0.95rem"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "css": "col-md-6 mb-3",
+          "items": [
+            {
+              "type": "div",
+              "css": "p-3 h-100",
+              "style": {
+                "backgroundColor": "#f0f8ff",
+                "borderRadius": "8px",
+                "borderLeft": "4px solid #92d050",
+                "height": "100%"
+              },
+              "content": [
+                {
+                  "type": "heading",
+                  "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
+                  "css": "h5 fw-bold mb-2",
+                  "style": {
+                    "color": "#003366",
+                    "fontSize": "1.1rem"
+                  }
+                },
+                {
+                  "type": "paragraph",
+                  "body": "What are the things that help you make decisions and act?",
+                  "css": "mb-2",
+                  "style": {
+                    "fontSize": "0.95rem"
+                  }
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<div style='font-size: 0.95rem'><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>1.</div><div><strong>What qualities do you admire in other people?</strong></div></div><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>2.</div><div><strong>What beliefs or ideas are most important to you?</strong></div></div><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>3.</div><div><strong>When do you feel happiest and proud of yourself?</strong></div></div></div>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-12 text-center mt-2",
+          "items": [
+            {
+              "type": "button",
+              "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+              "css": "btn btn-primary px-4 py-2 fw-bold",
+              "style": {
+                "background": "#00b0f0",
+                "border": "none",
+                "fontSize": "1rem",
+                "borderRadius": "50px",
+                "whiteSpace": "nowrap"
+              },
+              "action": "goNext"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
     {
       "id": 12,
       "div": true,
@@ -746,66 +944,105 @@
         }
       ]
     },
+{
+  "id": 14,
+  "css": "p-3 d-flex flex-column",
+  "style": {
+    "minHeight": "100vh",
+    "overflowY": "auto"
+  },
+  "content": [
     {
-      "id": 14,
-      "div": true,
+      "type": "row",
       "content": [
         {
-          "type": "heading",
-          "body": "PERSONAL MISSION STATEMENT",
-          "css": "text-center mb-4"
-        },
+          "css": "col-12 text-center mb-3",
+          "items": [
+            {
+              "type": "image",
+              "body": "20point.png",
+              "css": "img-fluid",
+              "style": {
+                "maxHeight": "120px",
+                "objectFit": "contain"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
         {
-          "type": "row",
-          "content": [
+          "css": "col-12 text-center mb-3",
+          "items": [
             {
-              "css": "col-md-6 mb-4",
-              "items": [
+              "type": "heading",
+              "body": "PERSONAL MISSION STATEMENT",
+              "css": "fw-bold mb-2",
+              "style": {
+                "color": "#003366",
+                "fontSize": "1.8rem"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-md-6 mb-3",
+          "items": [
+            {
+              "type": "div",
+              "css": "p-3 h-100",
+              "style": {
+                "backgroundColor": "#8CD948",
+                "borderRadius": "8px",
+                "borderLeft": "4px solid #92d050",
+                "height": "100%"
+              },
+              "content": [
                 {
                   "type": "paragraph",
-                  "body": "A personal mission statement is like a life guide—a short sentence or two that shows what matters most to you and how you want to live. Think of it as your personal roadmap, helping you stay focused on your goals and the kind of person you want to be. It’s there to help you make choices and keep you on track toward the future you want.",
-                  "css": "p-3 text-black",
-                  "attributes": {
-                    "style": "background-color: #8CD948; border-radius: 5px;"
+                  "body": "A personal mission statement is like a life guide—a short sentence or two that shows what matters most to you and how you want to live. Think of it as your personal roadmap, helping you stay focused on your goals and the kind of person you want to be. It's there to help you make choices and keep you on track toward the future you want.",
+                  "css": "mb-0",
+                  "style": {
+                    "fontSize": "0.95rem"
                   }
-                }
-              ]
-            },
-            {
-              "css": "col-md-6 mb-4",
-              "items": [
-                {
-                  "type": "heading",
-                  "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
-                  "css": "h5"
-                },
-                {
-                  "type": "paragraph",
-                  "body": "<ol><li><strong>What do I care about the most?</strong></li><li><strong>What kind of person do I want to be?</strong></li><li><strong>How do I want to treat others?</strong></li><li><strong>What are my biggest goals or dreams for the future?</strong></li></ol>"
                 }
               ]
             }
           ]
         },
         {
-          "type": "paragraph",
-          "body": "Create a Personal Mission Statement",
-          "css": "text-center text-success fs-4 mb-4"
-        },
-        {
-          "type": "row",
-          "content": [
+          "css": "col-md-6 mb-3",
+          "items": [
             {
-              "css": "col-12 col-md-6 p-3 mx-auto d-block",
-              "items": [
+              "type": "div",
+              "css": "p-3 h-100",
+              "style": {
+                "backgroundColor": "#f0f8ff",
+                "borderRadius": "8px",
+                "borderLeft": "4px solid #00b0f0",
+                "height": "100%"
+              },
+              "content": [
                 {
-                  "type": "image",
-                  "body": "20point.png",
-                  "css": "img-fluid w-50 mx-auto d-block",
+                  "type": "heading",
+                  "body": "THINK ABOUT WHAT MATTERS MOST TO YOU",
+                  "css": "h5 fw-bold mb-2",
                   "style": {
-                    "maxHeight": "120px",
-                    "objectFit": "contain"
+                    "color": "#003366",
+                    "fontSize": "1.1rem"
                   }
+                },
+                {
+                  "type": "paragraph",
+                  "body": "<div style='font-size: 0.95rem'><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>1.</div><div><strong>What do I care about the most?</strong></div></div><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>2.</div><div><strong>What kind of person do I want to be?</strong></div></div><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>3.</div><div><strong>How do I want to treat others?</strong></div></div><div class='d-flex mb-2'><div style='min-width: 25px; font-weight: bold'>4.</div><div><strong>What are my biggest goals or dreams for the future?</strong></div></div></div>"
                 }
               ]
             }
@@ -813,6 +1050,50 @@
         }
       ]
     },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-12 text-center mb-3",
+          "items": [
+            {
+              "type": "heading",
+              "body": "Create a Personal Mission Statement",
+              "css": "fw-bold",
+              "style": {
+                "color": "#92d050",
+                "fontSize": "1.5rem"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "content": [
+        {
+          "css": "col-12 text-center mt-2",
+          "items": [
+            {
+              "type": "button",
+              "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+              "css": "btn btn-primary px-4 py-2 fw-bold",
+              "style": {
+                "background": "#00b0f0",
+                "border": "none",
+                "fontSize": "1rem",
+                "borderRadius": "50px",
+                "whiteSpace": "nowrap"
+              },
+              "action": "goNext"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
     {
       "id": 15,
       "div": true,
@@ -877,36 +1158,122 @@
         }
       ]
     },
+{
+  "id": 17,
+  "css": "p-4 d-flex align-items-center justify-content-center",
+  "style": {
+    "background": "linear-gradient(145deg, #92d050 0%, #00b0f0 100%)",
+    "minHeight": "100vh",
+    "position": "relative",
+    "overflow": "hidden"
+  },
+  "content": [
     {
-      "id": 17,
-      "div": true,
-      "row": true,
-      "columns": 2,
+      "type": "row",
       "content": [
         {
-          "col-1": {
-            "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-3",
-            "items": [
-              {
-                "type": "heading",
-                "body": "CLICK HERE <br> AND <br> TAKE ACTION",
-                "css": "text-primary text-center fw-semibold"
+          "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-1 order-2",
+          "items": [
+            {
+              "type": "div",
+              "css": "text-center position-relative",
+              "content": [
+                {
+                  "type": "heading",
+                  "body": "CLICK HERE<br>AND<br>TAKE ACTION",
+                  "css": "fw-bold mb-4",
+                  "style": {
+                    "fontSize": "3.5rem",
+                    "lineHeight": "1.2",
+                    "color": "#003366",
+                    "textShadow": "2px 2px 0px rgba(255,255,255,0.3)",
+                    "position": "relative",
+                    "zIndex": "2"
+                  }
+                },
+                {
+                  "type": "div",
+                  "css": "mb-5 mx-auto",
+                  "style": {
+                    "height": "6px",
+                    "background": "linear-gradient(90deg, #003366 0%, #00b0f0 100%)",
+                    "width": "120px",
+                    "borderRadius": "3px"
+                  }
+                },
+                {
+                  "type": "button",
+                  "body": "CLICK HERE",
+                  "css": "btn btn-lg rounded-pill fw-bold px-5 py-3",
+                  "style": {
+                    "background": "#003366",
+                    "color": "white",
+                    "border": "none",
+                    "fontSize": "1.5rem",
+                    "boxShadow": "0 8px 20px rgba(0,0,0,0.15)",
+                    "transition": "all 0.3s ease",
+                    "position": "relative",
+                    "zIndex": "2"
+                  },
+                  "hoverStyle": {
+                    "transform": "translateY(-3px)",
+                    "boxShadow": "0 12px 25px rgba(0,0,0,0.2)",
+                    "background": "#002244"
+                  },
+                  "action": "goNext"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-2 order-1",
+          "items": [
+            {
+              "type": "image",
+              "body": "8.png",
+              "css": "img-fluid position-relative",
+              "style": {
+                "maxHeight": "500px",
+                "borderRadius": "16px",
+                "boxShadow": "0 20px 40px rgba(0,0,0,0.2)",
+                "border": "8px solid white",
+                "zIndex": "2",
+                "transform": "rotate(3deg)"
               }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-6 col-12 text-center p-3",
-            "items": [
-              {
-                "type": "image",
-                "body": "8.png",
-                "css": "img-fluid rounded-2 shadow-sm"
-              }
-            ]
-          }
+            }
+          ]
         }
       ]
     },
+    {
+      "type": "div",
+      "css": "position-absolute",
+      "style": {
+        "top": "-100px",
+        "right": "-100px",
+        "width": "400px",
+        "height": "400px",
+        "background": "rgba(255,255,255,0.15)",
+        "borderRadius": "50%",
+        "zIndex": "1"
+      }
+    },
+    {
+      "type": "div",
+      "css": "position-absolute",
+      "style": {
+        "bottom": "-150px",
+        "left": "-150px",
+        "width": "500px",
+        "height": "500px",
+        "background": "rgba(0,176,240,0.1)",
+        "borderRadius": "50%",
+        "zIndex": "1"
+      }
+    }
+  ]
+},
     {
       "id": 18,
       "div": true,
@@ -929,30 +1296,39 @@
         }
       ]
     },
+{
+  "id": 19,
+  "div": true,
+  "row": true,
+  "columns": 1,
+  "content": [
     {
-      "id": 19,
-      "div": true,
-      "row": true,
-      "columns": 1,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-12 text-center p-3 d-flex justify-content-center align-items-center",
-            "items": [
-              {
-                "type": "video",
-                "body": "video.mp4",
-                "css": "rounded shadow-sm",
-                "style": {
-                  "maxHeight": "70vh",
-                  "width": "auto",
-                  "maxWidth": "100%"
-                }
-              }
-            ]
+      "col-1": {
+        "css": "col-12 text-center p-3 d-flex justify-content-center align-items-center",
+        "items": [
+          {
+            "type": "video",
+            "body": "video.mp4",
+            "css": "rounded shadow-sm",
+            "style": {
+              "maxHeight": "70vh",
+              "width": "auto",
+              "maxWidth": "100%"
+            }
+          },
+          {
+            "type": "paragraph",
+            "body": "Here is the video description that goes along with the video above.",
+            "css": "mt-3 text-center",
+            "style": {
+              "fontSize": "1.2rem",
+              "color": "#333"
+            }
           }
-        }
-      ]
+        ]
+      }
     }
+  ]
+}
   ]
 }
