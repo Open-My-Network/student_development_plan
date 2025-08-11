@@ -418,8 +418,86 @@
     }
   ]
 },
+{
+  "id": 8,
+  "css": "position-relative",
+  "style": {
+    "minHeight": "100vh",
+    "overflow": "hidden",
+    "backgroundColor": "#4CAF50",
+    "border": "5px solid red" 
+  },
+  "content": [
     {
-      "id": 8,
+      "type": "div",
+      "css": "container-fluid h-100",
+      "content": [
+        {
+          "type": "row",
+          "css": "h-100 align-items-center",
+          "content": [
+            {
+              "css": "col-lg-6 col-md-6 col-12 d-flex flex-column justify-content-center align-items-start p-5",
+              "items": [
+                {
+                  "type": "heading",
+                  "body": "TAKE<br>ACTION NOW",
+                  "css": "fw-bold mb-4",
+                  "style": {
+                    "fontSize": "4rem",
+                    "lineHeight": "1.1",
+                    "color": "#4CAF50",
+                    "fontFamily": "Arial, sans-serif",
+                    "textTransform": "uppercase"
+                  }
+                },
+                {
+                  "type": "button",
+                  "body": "CLICK HERE",
+                  "css": "btn",
+                  "style": {
+                    "background": "#000",
+                    "color": "#fff",
+                    "borderRadius": "50px",
+                    "padding": "15px 30px",
+                    "cursor": "pointer",
+                    "fontSize": "1.3rem",
+                    "fontWeight": "bold",
+                    "letterSpacing": "2px",
+                    "border": "none",
+                    "display": "flex",
+                    "alignItems": "center",
+                    "justifyContent": "center"
+                  },
+                  "action": "goNext"
+                }
+              ]
+            },
+            {
+              "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-5",
+              "items": [
+                {
+                  "type": "image",
+                  "body": "8.png",
+                  "style": {
+                    "width": "450px",
+                    "height": "400px",
+                    "objectFit": "cover",
+                    "clipPath": "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                    "border": "8px solid #fff",
+                    "boxShadow": "0 10px 30px rgba(0,0,0,0.2)"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
+    {
+      "id": 9,
       "div": true,
       "row": true,
       "columns": 1,
@@ -457,7 +535,7 @@
       ]
     },
 {
-  "id": 9,
+  "id": 10,
   "div": true,
   "css": "bg-white p-4",
   "content": [
@@ -532,7 +610,7 @@
   ]
 },
     {
-      "id": 10,
+      "id": 11,
       "div": true,
       "row": true,
       "columns": 2,
@@ -571,7 +649,7 @@
       ]
     },
 {
-  "id": 11,
+  "id": 12,
   "css": "p-3 d-flex flex-column",
   "style": {
     "minHeight": "100vh",
@@ -710,7 +788,7 @@
   ]
 },
     {
-      "id": 12,
+      "id": 13,
       "div": true,
       "content": [
         {
@@ -907,7 +985,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 14,
       "div": true,
       "content": [
         {
@@ -945,7 +1023,7 @@
       ]
     },
 {
-  "id": 14,
+  "id": 15,
   "css": "p-3 d-flex flex-column",
   "style": {
     "minHeight": "100vh",
@@ -1095,7 +1173,7 @@
   ]
 },
     {
-      "id": 15,
+      "id": 16,
       "div": true,
       "content": [
         {
@@ -1133,7 +1211,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 17,
       "div": true,
       "row": true,
       "columns": 1,
@@ -1159,7 +1237,7 @@
       ]
     },
 {
-  "id": 17,
+  "id": 18,
   "css": "p-4 d-flex align-items-center justify-content-center",
   "style": {
     "background": "linear-gradient(145deg, #92d050 0%, #00b0f0 100%)",
@@ -1275,7 +1353,7 @@
   ]
 },
     {
-      "id": 18,
+      "id": 19,
       "div": true,
       "row": false,
       "content": [
@@ -1297,7 +1375,7 @@
       ]
     },
 {
-  "id": 19,
+  "id": 20,
   "div": true,
   "row": true,
   "columns": 1,
