@@ -33,7 +33,7 @@ const Slider = () => {
 
   return (
     <div className="slider-container d-flex align-items-center justify-content-center w-100 h-100">
-      <div className="w-100 h-100 p-2">
+      <div className="w-100 h-100">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlideIndex}

@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { fetchData, deleteItem, markAsTop, unmarkAsTop, updateItem, fetchTopvalue, createValue } from '../../value/service/api';
+import {
+  fetchData,
+  deleteItem,
+  markAsTop,
+  unmarkAsTop,
+  updateItem,
+  fetchTopvalue,
+  createValue,
+} from "../../value/service/api";
 import { motion } from "framer-motion";
 
 const DynamicRenderer = ({ content, goNext, goToSlide }) => {
@@ -13,10 +21,10 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
   const [editValueTitle, setEditValueTitle] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
   const [formValues, setFormValues] = useState({
-  core_value: "",
-  mission_statement: ""
+    core_value: "",
+    mission_statement: "",
   });
-  const userId = localStorage.getItem('user_id') || 3;
+  const userId = localStorage.getItem("user_id") || 3;
 
   // Check if current content has a table with apiBind = true
   const hasApiTable = Array.isArray(content)
@@ -29,7 +37,7 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
       setLoading(true);
       const [topData, regularData] = await Promise.all([
         fetchTopvalue(userId),
-        fetchData(userId)
+        fetchData(userId),
       ]);
 
       setTopValue(topData.items || []);
@@ -53,49 +61,52 @@ const DynamicRenderer = ({ content, goNext, goToSlide }) => {
   }, [content, hasApiTable]);
 
   // Handle submit for core value and mission statement
-const handleSubmit = async (targetSlideId) => {
-  
-  const valueTypeMap = {
-    'core_value': 'personal_core',
-    'mission_statement': 'personal_mission'
-  };
+  const handleSubmit = async (targetSlideId) => {
+    const valueTypeMap = {
+      core_value: "personal_core",
+      mission_statement: "personal_mission",
+    };
 
-  const fieldName = targetSlideId;
-  const statement = formValues[fieldName];
-  console.log("Submitting:",targetSlideId);
+    const fieldName = targetSlideId;
+    const statement = formValues[fieldName];
+    console.log("Submitting:", targetSlideId);
 
-  if (!statement || statement.trim() === "") {
-    alert("Please fill out the statement!");
-    return;
-  }
-
-  try {
-    const isSuccess = await createValue({
-      user_id: userId,
-      value_type: valueTypeMap[fieldName],
-      statement: statement
-    });
-
-    if (isSuccess) {
-      alert(`${fieldName === 'core_value' ? 'Core Value' : 'Mission Statement'} submitted successfully!`);
-      setFormValues(prev => ({ ...prev, [fieldName]: "" }));
-      fetchAllData();
-    } else {
-      alert('Failed to submit statement');
+    if (!statement || statement.trim() === "") {
+      alert("Please fill out the statement!");
+      return;
     }
-  } catch (error) {
-    console.error('Error submitting statement:', error);
-    alert('An error occurred while submitting the statement');
-  }
-};
+
+    try {
+      const isSuccess = await createValue({
+        user_id: userId,
+        value_type: valueTypeMap[fieldName],
+        statement: statement,
+      });
+
+      if (isSuccess) {
+        alert(
+          `${
+            fieldName === "core_value" ? "Core Value" : "Mission Statement"
+          } submitted successfully!`
+        );
+        setFormValues((prev) => ({ ...prev, [fieldName]: "" }));
+        fetchAllData();
+      } else {
+        alert("Failed to submit statement");
+      }
+    } catch (error) {
+      console.error("Error submitting statement:", error);
+      alert("An error occurred while submitting the statement");
+    }
+  };
   // Function for deleting an item
   const handleDelete = async (itemId) => {
     const isSuccess = await deleteItem(itemId, userId);
     if (isSuccess) {
       fetchAllData(); // Refresh data after deletion
-      alert('Item deleted successfully');
+      alert("Item deleted successfully");
     } else {
-      alert('Failed to delete item');
+      alert("Failed to delete item");
     }
   };
 
@@ -104,9 +115,9 @@ const handleSubmit = async (targetSlideId) => {
     const isSuccess = await markAsTop(itemId, userId);
     if (isSuccess) {
       fetchAllData(); // Refresh data after marking
-      alert('Item marked as top');
+      alert("Item marked as top");
     } else {
-      alert('Failed to mark item as top');
+      alert("Failed to mark item as top");
     }
   };
 
@@ -115,9 +126,9 @@ const handleSubmit = async (targetSlideId) => {
     const isSuccess = await unmarkAsTop(itemId, userId);
     if (isSuccess) {
       fetchAllData(); // Refresh data after unmarking
-      alert('Item unmarked as top');
+      alert("Item unmarked as top");
     } else {
-      alert('Failed to unmark item');
+      alert("Failed to unmark item");
     }
   };
 
@@ -142,7 +153,7 @@ const handleSubmit = async (targetSlideId) => {
         user_id: userId,
         value_type: editValueType,
         statement: editValueTitle,
-        is_top: editingItem.is_top || false
+        is_top: editingItem.is_top || false,
       };
 
       const isSuccess = await updateItem(updatedItem);
@@ -150,13 +161,13 @@ const handleSubmit = async (targetSlideId) => {
       if (isSuccess) {
         fetchAllData(); // Refresh data from server
         setShowEditModal(false);
-        alert('Item updated successfully');
+        alert("Item updated successfully");
       } else {
-        alert('Failed to update item');
+        alert("Failed to update item");
       }
     } catch (error) {
-      console.error('Error updating item:', error);
-      alert('An error occurred while updating the item');
+      console.error("Error updating item:", error);
+      alert("An error occurred while updating the item");
     }
   };
 
@@ -165,55 +176,76 @@ const handleSubmit = async (targetSlideId) => {
     if (!showEditModal) return null;
 
     return (
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 1000
-      }}>
-        <div style={{
-          backgroundColor: 'white',
-          padding: '20px',
-          borderRadius: '8px',
-          width: '80%',
-          maxWidth: '500px'
-        }}>
-          <h2 style={{ marginBottom: '20px' }}>Edit Item</h2>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0,0,0,0.5)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: 1000,
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "20px",
+            borderRadius: "8px",
+            width: "80%",
+            maxWidth: "500px",
+          }}
+        >
+          <h2 style={{ marginBottom: "20px" }}>Edit Item</h2>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px' }}>Type</label>
+          <div style={{ marginBottom: "15px" }}>
+            <label style={{ display: "block", marginBottom: "5px" }}>
+              Type
+            </label>
             <input
               type="text"
-              style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd' }}
+              style={{
+                width: "100%",
+                padding: "8px",
+                borderRadius: "4px",
+                border: "1px solid #ddd",
+              }}
               value={editValueType}
               onChange={(e) => setEditValueType(e.target.value)}
             />
           </div>
 
-          <div style={{ marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px' }}>Statement</label>
+          <div style={{ marginBottom: "15px" }}>
+            <label style={{ display: "block", marginBottom: "5px" }}>
+              Statement
+            </label>
             <textarea
-              style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd', minHeight: '100px' }}
+              style={{
+                width: "100%",
+                padding: "8px",
+                borderRadius: "4px",
+                border: "1px solid #ddd",
+                minHeight: "100px",
+              }}
               value={editValueTitle}
               onChange={(e) => setEditValueTitle(e.target.value)}
             />
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+          <div
+            style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}
+          >
             <button
               style={{
-                padding: '8px 16px',
-                backgroundColor: '#6c757d',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer'
+                padding: "8px 16px",
+                backgroundColor: "#6c757d",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
               }}
               onClick={() => setShowEditModal(false)}
             >
@@ -221,12 +253,12 @@ const handleSubmit = async (targetSlideId) => {
             </button>
             <button
               style={{
-                padding: '8px 16px',
-                backgroundColor: '#007bff',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer'
+                padding: "8px 16px",
+                backgroundColor: "#007bff",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                cursor: "pointer",
               }}
               onClick={handleUpdateSubmit}
             >
@@ -244,26 +276,30 @@ const handleSubmit = async (targetSlideId) => {
 
     switch (item.type) {
       case "button":
-  return (
-    <button
-      key={keyPrefix}
-      className={item.css}
-      style={item.style}
-      onClick={() => {
-        if (item.action === "goNext" && goNext) {
-          goNext();
-        } else if (item.action === "goToSlide" && goToSlide && item.targetSlideId) {
-          goToSlide(item.targetSlideId);
-        } else if (item.link) {
-          window.location.href = item.link;
-        } else if (item.action === "submitCoreValueStatement") {
-          handleSubmit(item.targetSlideId);
-        }
-      }}
-    >
-      {item.body}
-    </button>
-  );
+        return (
+          <button
+            key={keyPrefix}
+            className={item.css}
+            style={item.style}
+            onClick={() => {
+              if (item.action === "goNext" && goNext) {
+                goNext();
+              } else if (
+                item.action === "goToSlide" &&
+                goToSlide &&
+                item.targetSlideId
+              ) {
+                goToSlide(item.targetSlideId);
+              } else if (item.link) {
+                window.location.href = item.link;
+              } else if (item.action === "submitCoreValueStatement") {
+                handleSubmit(item.targetSlideId);
+              }
+            }}
+          >
+            {item.body}
+          </button>
+        );
       case "heading":
         return (
           <motion.h2
@@ -279,21 +315,33 @@ const handleSubmit = async (targetSlideId) => {
 
       case "paragraph":
         return (
-          <p 
-            key={keyPrefix} 
+          <p
+            key={keyPrefix}
             className={item.css}
-            style={item.style} 
-            dangerouslySetInnerHTML={{ __html: item.body }} 
+            style={item.style}
+            dangerouslySetInnerHTML={{ __html: item.body }}
           />
         );
 
       case "image":
-        return <img key={keyPrefix} src={item.body} alt="" className={item.css} style={item.style}/>;
-      
+        return (
+          <img
+            key={keyPrefix}
+            src={item.body}
+            alt=""
+            className={item.css}
+            style={item.style}
+          />
+        );
+
       case "video":
         return (
-          <div key={keyPrefix} className={item.css} >
-            <video controls className="img-fluid rounded-2 shadow-sm" style={item.style}>
+          <div key={keyPrefix} className={item.css}>
+            <video
+              controls
+              className="img-fluid rounded-2 shadow-sm"
+              style={item.style}
+            >
               <source src={item.body} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -310,27 +358,32 @@ const handleSubmit = async (targetSlideId) => {
           />
         );
 
-case "textarea":
-  // Default to 'core_value' if targetSlideId is undefined
-  const targetType = item.targetSlideId || 'core_value';
-  console.log('Rendering textarea with targetType:', targetType);
-  
-  return (
-    <textarea
-      key={keyPrefix}
-      className={item.css}
-      rows={item.attributes?.rows || 3}
-      placeholder={item.attributes?.placeholder || ""}
-      value={formValues[targetType] || ""}
-      onChange={(e) => {
-        console.log('Textarea onChange - targetType:', targetType, 'value:', e.target.value);
-        setFormValues(prev => ({
-          ...prev,
-          [targetType]: e.target.value
-        }));
-      }}
-    />
-  );
+      case "textarea":
+        // Default to 'core_value' if targetSlideId is undefined
+        const targetType = item.targetSlideId || "core_value";
+        console.log("Rendering textarea with targetType:", targetType);
+
+        return (
+          <textarea
+            key={keyPrefix}
+            className={item.css}
+            rows={item.attributes?.rows || 3}
+            placeholder={item.attributes?.placeholder || ""}
+            value={formValues[targetType] || ""}
+            onChange={(e) => {
+              console.log(
+                "Textarea onChange - targetType:",
+                targetType,
+                "value:",
+                e.target.value
+              );
+              setFormValues((prev) => ({
+                ...prev,
+                [targetType]: e.target.value,
+              }));
+            }}
+          />
+        );
 
       case "apitable":
         if (item.apiBind) {
@@ -361,7 +414,10 @@ case "textarea":
                     ) : (
                       <>
                         {topValue.map((row) => (
-                          <tr key={row.id} style={{ backgroundColor: '#ffffcc' }}>
+                          <tr
+                            key={row.id}
+                            style={{ backgroundColor: "#ffffcc" }}
+                          >
                             <td>{row.value_type}</td>
                             <td>{row.value_title}</td>
                             <td>
@@ -386,38 +442,45 @@ case "textarea":
                             </td>
                           </tr>
                         ))}
-                        {apiData.filter(item => !topValue.some(topItem => topItem.id === item.id)).map((row) => (
-                          <tr key={row.id}>
-                            <td>{row.value_type}</td>
-                            <td>{row.value_title}</td>
-                            <td>
-                              <button
-                                className="btn btn-primary btn-sm me-2"
-                                onClick={() => handleMarkAsTop(row.id)}
-                              >
-                                Mark as Top
-                              </button>
-                              <button
-                                className="btn btn-warning btn-sm me-2"
-                                onClick={() => handleEditClick(row)}
-                              >
-                                Update
-                              </button>
-                              <button
-                                className="btn btn-danger btn-sm"
-                                onClick={() => handleDelete(row.id)}
-                              >
-                                Delete
-                              </button>
-                            </td>
-                          </tr>
-                        ))}
+                        {apiData
+                          .filter(
+                            (item) =>
+                              !topValue.some(
+                                (topItem) => topItem.id === item.id
+                              )
+                          )
+                          .map((row) => (
+                            <tr key={row.id}>
+                              <td>{row.value_type}</td>
+                              <td>{row.value_title}</td>
+                              <td>
+                                <button
+                                  className="btn btn-primary btn-sm me-2"
+                                  onClick={() => handleMarkAsTop(row.id)}
+                                >
+                                  Mark as Top
+                                </button>
+                                <button
+                                  className="btn btn-warning btn-sm me-2"
+                                  onClick={() => handleEditClick(row)}
+                                >
+                                  Update
+                                </button>
+                                <button
+                                  className="btn btn-danger btn-sm"
+                                  onClick={() => handleDelete(row.id)}
+                                >
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
                       </>
                     )}
                   </tbody>
                 </table>
               </div>
-              <EditModal/>
+              <EditModal />
             </>
           );
         } else {
@@ -432,15 +495,13 @@ case "textarea":
                   </tr>
                 </thead>
                 <tbody>
-                  {item.items
-                    ?.slice(1)
-                    ?.map((row, rowIndex) => (
-                      <tr key={rowIndex}>
-                        {row.map((cell, cellIndex) => (
-                          <td key={cellIndex}>{cell}</td>
-                        ))}
-                      </tr>
-                    ))}
+                  {item.items?.slice(1)?.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={cellIndex}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -464,7 +525,10 @@ case "textarea":
                         className={colValue.css}
                       >
                         {colValue.items.map((child, idx) =>
-                          renderContent(child, `${keyPrefix}-${index}-child-${idx}`)
+                          renderContent(
+                            child,
+                            `${keyPrefix}-${index}-child-${idx}`
+                          )
                         )}
                       </div>
                     );
@@ -475,7 +539,10 @@ case "textarea":
                         className={colBlock.css}
                       >
                         {colBlock.items.map((child, idx) =>
-                          renderContent(child, `${keyPrefix}-${index}-child-${idx}`)
+                          renderContent(
+                            child,
+                            `${keyPrefix}-${index}-child-${idx}`
+                          )
                         )}
                       </div>
                     );
@@ -492,11 +559,19 @@ case "textarea":
         if (item.div && Array.isArray(item.content)) {
           return (
             <div key={keyPrefix} className={item.css || ""}>
-              {item.content.map((child, idx) => renderContent(child, `${keyPrefix}-child-${idx}`))}
+              {item.content.map((child, idx) =>
+                renderContent(child, `${keyPrefix}-child-${idx}`)
+              )}
             </div>
           );
         } else if (Array.isArray(item.content)) {
-          return <>{item.content.map((child, idx) => renderContent(child, `${keyPrefix}-child-${idx}`))}</>;
+          return (
+            <>
+              {item.content.map((child, idx) =>
+                renderContent(child, `${keyPrefix}-child-${idx}`)
+              )}
+            </>
+          );
         }
         return null;
     }
