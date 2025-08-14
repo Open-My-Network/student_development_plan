@@ -95,12 +95,12 @@
             ]
           },
           "col-2": {
-            "css": "col-lg-5 col-md-6 col-12 text-center p-3",
+            "css": "col-lg-5 col-md-6 col-12 p-0 d-flex",
             "items": [
               {
                 "type": "image",
                 "body": "pp2.png",
-                "css": "w-100 rounded-0 border-0 shadow-none"
+                "css": "w-100 h-100 object-fit-cover rounded-0 border-0 shadow-none"
               }
             ]
           }
