@@ -416,81 +416,62 @@
         }
       ]
     },
+
     {
       "id": 8,
-      "css": "position-relative",
-      "style": {
-        "minHeight": "100vh",
-        "overflow": "hidden",
-        "backgroundColor": "#4CAF50",
-        "border": "5px solid red"
-      },
+      "div": true,
+      "row": true,
+      "css": "align-items-stretch",
+      "columns": 2,
       "content": [
         {
-          "type": "div",
-          "css": "container-fluid h-100",
-          "content": [
-            {
-              "type": "row",
-              "css": "h-100 align-items-center",
-              "content": [
+          "col-1": {
+            "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center p-5",
+              "items": [
                 {
-                  "css": "col-lg-6 col-md-6 col-12 d-flex flex-column justify-content-center align-items-start p-5",
-                  "items": [
-                    {
-                      "type": "heading",
-                      "body": "TAKE<br>ACTION NOW",
-                      "css": "fw-bold mb-4",
-                      "style": {
-                        "fontSize": "4rem",
-                        "lineHeight": "1.1",
-                        "color": "#4CAF50",
-                        "fontFamily": "Arial, sans-serif",
-                        "textTransform": "uppercase"
-                      }
-                    },
-                    {
-                      "type": "button",
-                      "body": "CLICK HERE",
-                      "css": "btn",
-                      "style": {
-                        "background": "#000",
-                        "color": "#fff",
-                        "borderRadius": "50px",
-                        "padding": "15px 30px",
-                        "cursor": "pointer",
-                        "fontSize": "1.3rem",
-                        "fontWeight": "bold",
-                        "letterSpacing": "2px",
-                        "border": "none",
-                        "display": "flex",
-                        "alignItems": "center",
-                        "justifyContent": "center"
-                      },
-                      "action": "goNext"
-                    }
-                  ]
+                  "type": "heading",
+                  "body": "TAKE<br>ACTION NOW",
+                  "css": "fw-bold mb-4",
+                  "style": {
+                    "fontSize": "4rem",
+                    "lineHeight": "1.1",
+                    "color": "#4CAF50",
+                    "fontFamily": "Arial, sans-serif",
+                    "textTransform": "uppercase"
+                  }
                 },
                 {
-                  "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-5",
-                  "items": [
-                    {
-                      "type": "image",
-                      "body": "8.png",
-                      "style": {
-                        "width": "450px",
-                        "height": "400px",
-                        "objectFit": "cover",
-                        "clipPath": "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                        "border": "8px solid #fff",
-                        "boxShadow": "0 10px 30px rgba(0,0,0,0.2)"
-                      }
-                    }
-                  ]
+                  "type": "button",
+                  "body": "CLICK HERE",
+                  "css": "btn",
+                  "style": {
+                    "background": "#000",
+                    "color": "#fff",
+                    "borderRadius": "50px",
+                    "padding": "15px 30px",
+                    "cursor": "pointer",
+                    "fontSize": "1.3rem",
+                    "fontWeight": "bold",
+                    "letterSpacing": "2px",
+                    "border": "none",
+                    "display": "flex",
+                    "alignItems": "center",
+                    "justifyContent": "center"
+                  },
+                  "action": "goNext"
                 }
               ]
-            }
-          ]
+          },
+          "col-2": {
+            "css": "col-lg-5 col-md-6 col-12 p-0 d-flex",
+            "items": [
+              {
+                "type": "image",
+                "body": "t2.png",
+                "css": "w-100 h-100 object-fit-cover rounded-0 border-0 shadow-none"
+              }
+            ]
+          }
         }
       ]
     },
