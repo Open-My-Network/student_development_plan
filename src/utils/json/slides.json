@@ -9,12 +9,12 @@
       "content": [
         {
           "col-1": {
-            "css": "col-lg-5 col-md-6 col-12 text-center p-3",
+            "css": "col-lg-5 col-md-6 col-12 p-0 d-flex",
             "items": [
               {
                 "type": "image",
-                "body": "pp0.png",
-                "css": "img-fluid rounded-2 shadow-sm"
+                "body": "1p.png",
+                "css": "w-100 h-100 object-fit-cover rounded-0 border-0 shadow-none"
               }
             ]
           },
@@ -154,12 +154,12 @@
                 {
                   "type": "heading",
                   "body": "“Current Grade” NorthStar Goal <span style='color: #27bcf2'>(Short-Term)</span>",
-                  "css": "h5 fw-bold"
+                  "css": "h3 fw-bold mb-4 text-center"
                 },
                 {
                   "type": "paragraph",
                   "body": "This goal is all about staying on track and doing your best in your current grade. It focuses on your schoolwork, personal growth, and activities that will help you succeed this year.",
-                  "css": "text-muted"
+                  "css": "fs-5 lh-lg text-center"
                 }
               ]
             },
@@ -169,12 +169,12 @@
                 {
                   "type": "heading",
                   "body": "“Graduation” NorthStar Goal <span style='color: #95d155'>(Long-Term)</span>",
-                  "css": "h5 fw-bold"
+                  "css": "h3 fw-bold mb-4 text-center"
                 },
                 {
                   "type": "paragraph",
                   "body": "This is your big dream for when you finish school. It’s the goal you're aiming for, with steps you take now and later to help you reach it and succeed.",
-                  "css": "text-muted"
+                  "css": "fs-5 lh-lg text-center"
                 }
               ]
             }
@@ -183,7 +183,7 @@
         {
           "type": "paragraph",
           "body": "Once you set your goals, think about the steps that will help you get there.These steps could be going to a LEEP workshop, studying on your own, doing special projects, or completing assignments that help you grow.",
-          "css": "mt-4 text-center text-muted"
+          "css": "mt-4 fs-5 lh-lg text-center"
         },
         {
           "type": "button",
@@ -199,7 +199,7 @@
     },
     {
       "id": 5,
-      "css": "p-4",
+      "css": "flex-column justify-content-center align-items-center p-5",
       "content": [
         {
           "type": "heading",
@@ -224,7 +224,7 @@
                     {
                       "type": "paragraph",
                       "body": "How will this goal help me reach my big goal for this grade and my future?",
-                      "css": "mb-0"
+                      "css": "mt-2 fs-5 lh-lg"
                     }
                   ]
                 },
@@ -234,7 +234,7 @@
                     {
                       "type": "paragraph",
                       "body": "What worked well and what could I improve on?",
-                      "css": "mb-0"
+                      "css": "mt-2 fs-5 lh-lg"
                     }
                   ]
                 },
@@ -244,7 +244,7 @@
                     {
                       "type": "paragraph",
                       "body": "What challenges could I face trying to achieve this milestone goal and how can I overcome them?",
-                      "css": "mb-0"
+                      "css": "mt-2 fs-5 lh-lg"
                     }
                   ]
                 }
@@ -259,7 +259,7 @@
                     {
                       "type": "paragraph",
                       "body": "How do I plan to track my progress during this milestone?",
-                      "css": "mb-0"
+                      "css": "mt-2 fs-5 lh-lg"
                     }
                   ]
                 },
@@ -269,7 +269,7 @@
                     {
                       "type": "paragraph",
                       "body": "What tasks do I need to finish? Do I have a clear plan and timeline to reach my goals?",
-                      "css": "mb-0"
+                      "css": "mt-2 fs-5 lh-lg"
                     }
                   ]
                 },
@@ -279,7 +279,7 @@
                     {
                       "type": "paragraph",
                       "body": "Who can give me helpful advice, and how do I use that advice to improve?",
-                      "css": "mb-0"
+                      "css": "mt-2 fs-5 lh-lg"
                     }
                   ]
                 }
