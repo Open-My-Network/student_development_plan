@@ -55,14 +55,30 @@
       "content": [
         {
           "col-1": {
-            "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center p-3",
-            "items": [
-              {
-                "type": "paragraph",
-                "body": "Welcome to LEEP’s 9th Grade Development Plans! Get ready for an awesome journey built just for you. We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
-                "css": "text-center text-lg-start"
-              }
-            ]
+          "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center p-3",
+          "items": [
+            {
+              "type": "heading",
+              "body": "Welcome to <span style='color:#92d050;'>LEEP’s</span>",
+              "css": "fw-bold display-4 mb-4 text-center"
+            },
+          {
+            "type": "heading",
+            "body": "9th Grade Development Plans!",
+            "css": "fw-bold display-5 mb-4 text-center"
+          },
+                    {
+            "type": "paragraph",
+            "body": "Get ready for an awesome journey built just for you.",
+            "css": "fw-semibold fs-3 mb-4 text-center"
+          },
+          {
+            "type": "paragraph",
+            "body": "We’ll give you the tools, skills, and a simple plan to help you reach your goals in school and in life. This is your first step toward making your dreams real, and we’re here to help you the whole way. Let’s get started and make it happen!",
+            "css": "fs-5 lh-lg text-center"
+          }
+          ]
+
           },
           "col-2": {
             "css": "col-lg-5 col-md-6 col-12 p-0 d-flex",
@@ -88,9 +104,19 @@
             "css": "col-lg-7 col-md-6 col-12 d-flex flex-column justify-content-center p-3",
             "items": [
               {
+                "type": "heading",
+                "body": "The development process",
+                "css": "fw-bold display-4 mb-4 text-center"
+              },
+              {
+                "type": "heading",
+                "body": "starts with <span style='color:#92d050;'>You</span>!",
+                "css": "fw-bold display-5 mb-4 text-center"
+              },
+              {
                 "type": "paragraph",
-                "body": "The development process starts with you! You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
-                "css": "text-center text-lg-start"
+                "body": "You know your interests, skills, and goals best. By understanding what's important to you, you can take control of your future and choose options that fit your priorities.",
+                "css": "fs-5 lh-lg text-center"
               }
             ]
           },
