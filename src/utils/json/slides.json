@@ -328,123 +328,6 @@
     },
     {
       "id": 7,
-      "css": "p-4 d-flex align-items-center justify-content-center",
-      "style": {
-        "background": "linear-gradient(145deg, #92d050 0%, #00b0f0 100%)",
-        "minHeight": "100vh",
-        "position": "relative",
-        "overflow": "hidden"
-      },
-      "content": [
-        {
-          "type": "row",
-          "content": [
-            {
-              "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-1 order-2",
-              "items": [
-                {
-                  "type": "div",
-                  "css": "text-center position-relative",
-                  "content": [
-                    {
-                      "type": "heading",
-                      "body": "TAKE<br>ACTION NOW",
-                      "css": "fw-bold mb-4",
-                      "style": {
-                        "fontSize": "3.5rem",
-                        "lineHeight": "1.2",
-                        "color": "#003366",
-                        "textShadow": "2px 2px 0px rgba(255,255,255,0.3)",
-                        "position": "relative",
-                        "zIndex": "2"
-                      }
-                    },
-                    {
-                      "type": "div",
-                      "css": "mb-5 mx-auto",
-                      "style": {
-                        "height": "6px",
-                        "background": "linear-gradient(90deg, #003366 0%, #00b0f0 100%)",
-                        "width": "120px",
-                        "borderRadius": "3px"
-                      }
-                    },
-                    {
-                      "type": "button",
-                      "body": "CLICK HERE",
-                      "css": "btn btn-lg rounded-pill fw-bold px-5 py-3",
-                      "style": {
-                        "background": "#003366",
-                        "color": "white",
-                        "border": "none",
-                        "fontSize": "1.5rem",
-                        "boxShadow": "0 8px 20px rgba(0,0,0,0.15)",
-                        "transition": "all 0.3s ease",
-                        "position": "relative",
-                        "zIndex": "2"
-                      },
-                      "hoverStyle": {
-                        "transform": "translateY(-3px)",
-                        "boxShadow": "0 12px 25px rgba(0,0,0,0.2)",
-                        "background": "#002244"
-                      },
-                      "action": "goNext"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "css": "col-lg-6 col-md-6 col-12 d-flex align-items-center justify-content-center p-4 order-md-2 order-1",
-              "items": [
-                {
-                  "type": "image",
-                  "body": "8.png",
-                  "css": "img-fluid position-relative",
-                  "style": {
-                    "maxHeight": "500px",
-                    "borderRadius": "16px",
-                    "boxShadow": "0 20px 40px rgba(0,0,0,0.2)",
-                    "border": "8px solid white",
-                    "zIndex": "2",
-                    "transform": "rotate(3deg)"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "div",
-          "css": "position-absolute",
-          "style": {
-            "top": "-100px",
-            "right": "-100px",
-            "width": "400px",
-            "height": "400px",
-            "background": "rgba(255,255,255,0.15)",
-            "borderRadius": "50%",
-            "zIndex": "1"
-          }
-        },
-        {
-          "type": "div",
-          "css": "position-absolute",
-          "style": {
-            "bottom": "-150px",
-            "left": "-150px",
-            "width": "500px",
-            "height": "500px",
-            "background": "rgba(0,176,240,0.1)",
-            "borderRadius": "50%",
-            "zIndex": "1"
-          }
-        }
-      ]
-    },
-
-    {
-      "id": 8,
       "div": true,
       "row": true,
       "css": "align-items-stretch",
@@ -493,7 +376,7 @@
             "items": [
               {
                 "type": "image",
-                "body": "t2.png",
+                "body": "m1.png",
                 "css": "w-100 h-100 object-fit-cover rounded-0 border-0 shadow-none"
               }
             ]
@@ -501,46 +384,92 @@
         }
       ]
     },
+{
+  "id": 8,
+  "css": "position-relative d-flex flex-column justify-content-center align-items-center text-center p-5",
+  "style": {
+    "minHeight": "100vh",
+    "backgroundColor": "#fff",
+    "position": "relative"
+  },
+  "content": [
     {
-      "id": 9,
-      "div": true,
-      "row": true,
-      "columns": 1,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-12 text-center p-4",
-            "items": [
-              {
-                "type": "heading",
-                "body": "WELCOME TO MILESTONE 1",
-                "css": "mb-3 fw-bold",
-                "style": {
-                  "color": "#92d050"
-                }
-              },
-              {
-                "type": "paragraph",
-                "body": "Congrats on taking the LEEP and starting your awesome journey – this is just the beginning of something great!",
-                "css": "mb-6 fs-4"
-              },
-              {
-                "type": "button",
-                "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
-                "css": "btn fw-semibold d-block mx-auto mt-3 px-4 py-2",
-                "action": "goNext",
-                "style": {
-                  "color": "#01b0f0",
-                  "fontSize": "1.3rem"
-                }
-              }
-            ]
-          }
-        }
-      ]
+      "type": "heading",
+      "body": "WELCOME TO<br>MILESTONE 1",
+      "css": "fw-bold display-3 mb-4",
+      "style": {
+        "color": "#4CAF50",
+        "textTransform": "uppercase"
+      }
     },
     {
-      "id": 10,
+      "type": "heading",
+      "body": "Congrats on taking the <b>LE<span style='color:#92d050;'>E</span>P’s</b><br>& starting your awesome journey.",
+      "css": "fw-bold display-6 mb-4"
+    },
+    {
+      "type": "paragraph",
+      "body": "This is just the beginning of something great!",
+      "css": "fw-semibold fs-3 mb-4 "
+    },
+    {
+      "type": "button",
+      "body": "CLICK TO MOVE FORWARD ON YOUR JOURNEY",
+      "css": "fw-bold",
+      "action": "goNext",
+      "style": {
+        "color": "#01b0f0",
+        "fontSize": "1.2rem",
+        "background": "none",
+        "border": "none",
+        "cursor": "pointer",
+        "textDecoration": "underline"
+      }
+    },
+    {
+      "type": "image",
+      "body": "lightbulb.jpg",
+      "style": {
+        "position": "absolute",
+        "top": "20px",
+        "left": "20px",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "image",
+      "body": "sun.jpg",
+      "style": {
+        "position": "absolute",
+        "bottom": "80px",
+        "left": "40px",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "image",
+      "body": "globe.jpg",
+      "style": {
+        "position": "absolute",
+        "bottom": "40px",
+        "right": "40px",
+        "width": "100px"
+      }
+    },
+    {
+      "type": "image",
+      "body": "rays.png",
+      "style": {
+        "position": "absolute",
+        "top": "80px",
+        "right": "100px",
+        "width": "80px"
+      }
+    }
+  ]
+},
+    {
+      "id": 9,
       "div": true,
       "css": "bg-white p-4",
       "content": [
@@ -614,47 +543,48 @@
         }
       ]
     },
+{
+  "id": 10,
+  "div": true,
+  "row": true,
+  "columns": 2,
+  "content": [
+    {
+      "col-1": {
+        "css": "col-lg-5 col-md-6 col-12 p-0 d-flex",
+        "items": [
+          {
+            "type": "image",
+            "body": "mil1.png",
+            "css": "w-100 h-100 object-fit-cover rounded-0 border-0 shadow-none"
+          }
+        ]
+      },
+      "col-2": {
+        "css": "col-lg-6 col-md-12 p-3 d-flex flex-column justify-content-center",
+        "style": "background-color:#07a0e3 !important;",
+        "items": [
+          {
+            "type": "paragraph",
+            "body": "Create a Personal <b style='color:#4CAF50;'>Core Value </b> Statement",
+            "css": "fs-5 fw-medium btn btn-light d-block w-100 mb-3",
+            "action": "goToSlide",
+            "targetSlideId": 13
+          },
+          {
+            "type": "paragraph",
+            "body": "Create a Personal <b style='color:#4CAF50;'>Mission</b> Statement",
+            "css": "fs-5 fw-medium btn btn-light d-block w-100",
+            "action": "goToSlide",
+            "targetSlideId": 15
+          }
+        ]
+      }
+    }
+  ]
+},
     {
       "id": 11,
-      "div": true,
-      "row": true,
-      "columns": 2,
-      "content": [
-        {
-          "col-1": {
-            "css": "col-lg-6 col-md-12 p-0 d-flex justify-content-center align-items-center",
-            "items": [
-              {
-                "type": "image",
-                "body": "8.png",
-                "css": "img-fluid w-100 rounded shadow-sm"
-              }
-            ]
-          },
-          "col-2": {
-            "css": "col-lg-6 col-md-12 p-3 d-flex flex-column justify-content-center",
-            "items": [
-              {
-                "type": "button",
-                "body": "Create a Personal Core Value Statement",
-                "css": "btn btn-primary d-block w-100 mb-3",
-                "action": "goToSlide",
-                "targetSlideId": 13
-              },
-              {
-                "type": "button",
-                "body": "Create a Personal Mission Statement",
-                "css": "btn btn-success d-block w-100",
-                "action": "goToSlide",
-                "targetSlideId": 15
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "id": 12,
       "css": "p-3 d-flex flex-column",
       "style": {
         "minHeight": "100vh",
@@ -793,7 +723,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 12,
       "div": true,
       "content": [
         {
@@ -990,7 +920,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 13,
       "div": true,
       "content": [
         {
@@ -1028,7 +958,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 14,
       "css": "p-3 d-flex flex-column",
       "style": {
         "minHeight": "100vh",
@@ -1178,7 +1108,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 15,
       "div": true,
       "content": [
         {
@@ -1216,7 +1146,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": 16,
       "div": true,
       "row": true,
       "columns": 1,
@@ -1242,7 +1172,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": 17,
       "css": "p-4 d-flex align-items-center justify-content-center",
       "style": {
         "background": "linear-gradient(145deg, #92d050 0%, #00b0f0 100%)",
@@ -1358,7 +1288,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": 18,
       "div": true,
       "row": false,
       "content": [
@@ -1380,7 +1310,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": 19,
       "div": true,
       "row": true,
       "columns": 1,
