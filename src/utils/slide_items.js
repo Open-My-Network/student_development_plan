@@ -1,6 +1,7 @@
 import slide1 from "../assets/1.png";
 import slide2 from "../assets/2.png";
 import slide3 from "../assets/3.png";
+import slide18 from "../assets/1.png";
 import { MyButton } from "../components/Button";
 
 
@@ -97,12 +98,4 @@ export const slides = [
         Keep that energy going – you’re on the path to greatness!`,
     cta: true,
   },
-  // {
-  //   id: 16,
-  //   apiSlide: true,
-  // },
-  // {
-  //   id: 17, // New slide ID
-  //   formWithFields: true, // Custom flag for the form slide
-  // },
 ];

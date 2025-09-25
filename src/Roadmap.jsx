@@ -5,13 +5,13 @@ import { FaBox, FaWarehouse, FaBoxOpen, FaTruck, FaRedo, FaLock, FaCheck } from 
 import "./style/Roadmap.css";
 
 const steps = [
-  { id: 1, title: "Inventory Handling", icon: <FaBox />, description: "Sourcing, storing, and shipping products." },
-  { id: 2, title: "Warehouse Storage", icon: <FaWarehouse />, description: "Pallet racking & material handling." },
-  { id: 3, title: "Order Processing", icon: <FaBoxOpen />, description: "Packing & processing of orders." },
-  { id: 4, title: "Packing", icon: <FaBox />, description: "Boxing & preparing orders for shipping." },
-  { id: 5, title: "Shipping", icon: <FaTruck />, description: "3PL shipping based on customer choice." },
-  { id: 6, title: "Returns", icon: <FaRedo />, description: "Handling refunds & product replacements." },
-  { id: 7, title: "Quality Check", icon: <FaBoxOpen />, description: "Ensuring product quality before dispatch." },
+  { id: 1, title: "Milestone 1", icon: <FaBox />, description: "Sourcing, storing, and shipping products." },
+  { id: 2, title: "Milestone 2", icon: <FaWarehouse />, description: "Pallet racking & material handling." },
+  { id: 3, title: "Milestone 3", icon: <FaBoxOpen />, description: "Packing & processing of orders asdas." },
+  { id: 4, title: "Milestone 4", icon: <FaBox />, description: "Boxing & preparing orders for shipping." },
+  { id: 5, title: "Milestone 5", icon: <FaTruck />, description: "3PL shipping based on customer choice." },
+  { id: 6, title: "Milestone 6", icon: <FaRedo />, description: "Handling refunds & product replacements." },
+  { id: 7, title: "Milestone 7", icon: <FaBoxOpen />, description: "Ensuring product quality before dispatch." },
   { id: 8, title: "Customer Support", icon: <FaBox />, description: "Managing queries and resolving issues." },
   { id: 9, title: "Feedback & Review", icon: <FaRedo />, description: "Collecting customer feedback." },
 ];
