@@ -4,7 +4,7 @@ import DynamicRenderer from "./DynamicRender";
 const Slide = ({ slide, goNext, goToSlide }) => {
   return (
     <div className="carousel">
-      <div key={slide.id} className={slide.css || ""}>
+      <div key={slide.id} className={slide.css || ""}> 
         {slide.row ? (
           <div className="row">
             {Object.entries(slide.content[0]).map(([key, col]) => (

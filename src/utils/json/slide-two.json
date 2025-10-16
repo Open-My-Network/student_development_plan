@@ -1,0 +1,29 @@
+{
+    "slides": [
+        {
+        "type": "title",
+        "title": "Welcome to the Presentation",
+        "subtitle": "An Introduction to Our Topic"
+        },
+        {
+        "type": "bullet",
+        "title": "Key Points",
+        "bullets": [
+            "First key point",
+            "Second key point",
+            "Third key point"
+        ]
+        },
+        {
+        "type": "image",
+        "title": "Visual Representation",
+        "imageUrl": "https://example.com/image.png",
+        "caption": "An illustrative image"
+        },
+        {
+        "type": "quote",
+        "quote": "The only limit to our realization of tomorrow is our doubts of today.",
+        "author": "Franklin D. Roosevelt"
+        }
+    ]
+}
