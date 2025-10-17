@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import MilestoneOne from "./Milestone_One";
 import { MilestoneTwo } from "./MilestoneTwo";
 import { MilestoneThree } from "./MilestoneThree";
+import NotFound from "./not.found";
 
 const BaseMilestone = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const BaseMilestone = () => {
     case "three":
       return <MilestoneThree />;
     default:
-      return <div>Page not found</div>;
+      return <NotFound />;
   }
 };
 
