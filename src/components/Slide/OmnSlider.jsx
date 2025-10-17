@@ -1,9 +1,12 @@
+// Slider.jsx
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Slide from "./OmnSlide";
-import slidesData from "../../utils/json/slides.json";
+import slideOne from "../../utils/json/slide-one.json";
+import slideTwo from "../../utils/json/slide-two.json";
 
-const Slider = () => {
+const Slider = ({ page }) => {
+  const slidesData = page === "two" ? slideTwo : slideOne;
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const goNext = () => {
@@ -14,7 +17,6 @@ const Slider = () => {
 
   const goToSlide = (id) => {
     const idx = slidesData.slides.findIndex((slide) => slide.id === id);
-    console.log("goToSlide called:", id, "found index:", idx);
     if (idx !== -1) setCurrentSlideIndex(idx);
   };
 
