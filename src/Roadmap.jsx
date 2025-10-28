@@ -23,7 +23,7 @@ export default function Roadmap() {
   const handleStepClick = (index, stepId) => {
     if (index <= activeStep + 1) {
       setActiveStep(index);
-      navigate(`/step/${stepId}`); // Navigate to the step detail page
+      navigate(`/step-one`); // Navigate to the step detail page
     }
   };
 
