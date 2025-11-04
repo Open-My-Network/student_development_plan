@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Roadmap />} />
         <Route path="/milestone/:id" element={<BaseMilestone />} />
-        <Route path ="/step-one" element={<MilestoneTwo/>} />
+        <Route path ="/one" element={<MilestoneTwo/>} />
       </Routes>
     </Router>
   );

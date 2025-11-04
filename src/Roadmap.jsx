@@ -5,7 +5,7 @@ import { FaBox, FaWarehouse, FaBoxOpen, FaTruck, FaRedo, FaLock, FaCheck } from 
 import "./style/Roadmap.css";
 
 const steps = [
-  { id: 1, title: "Milestone 1", icon: <FaBox />, description: "Sourcing, storing, and shipping products." },
+  { id: 1, title: "Milestone 1", icon: <FaBox />, description: "Finding My Why – Figure out who you are." },
   { id: 2, title: "Milestone 2", icon: <FaWarehouse />, description: "Pallet racking & material handling." },
   { id: 3, title: "Milestone 3", icon: <FaBoxOpen />, description: "Packing & processing of orders asdas." },
   { id: 4, title: "Milestone 4", icon: <FaBox />, description: "Boxing & preparing orders for shipping." },
@@ -23,7 +23,7 @@ export default function Roadmap() {
   const handleStepClick = (index, stepId) => {
     if (index <= activeStep + 1) {
       setActiveStep(index);
-      navigate(`/step-one`); // Navigate to the step detail page
+      navigate(`/one`); // Navigate to the step detail page
     }
   };
 
